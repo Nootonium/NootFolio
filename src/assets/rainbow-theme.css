@@ -1,0 +1,15 @@
+/* rainbow-theme.css */
+.rainbow-theme {
+    /* Add your custom styles for the rainbow theme here */
+  }
+  
+  .rainbow-theme .bg-rainbow {
+    /* Add a rainbow background gradient */
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  }
+  
+  .rainbow-theme .text-rainbow {
+    /* Add a rainbow text color */
+    color: #FF00FF;
+  }
+   
