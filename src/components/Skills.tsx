@@ -1,6 +1,6 @@
 function Skills() {
   return (
-    <div>
+    <div className='h-screen snap-start'>
       <h1>Skills</h1>
     </div>
   );

@@ -22,27 +22,16 @@ function App() {
 
   return (
     <>
-      <ThemeToggle />
-      <Tab.Group vertical as='div' className={`relative bg-${themeClasses[theme]}`}>
-        <Sidebar />
-        <Tab.Panels className='pl-44'>
-          <Tab.Panel style={{ minHeight: '100vh' }}>
-            <Hero />
-          </Tab.Panel>
-          <Tab.Panel style={{ minHeight: '100vh' }}>
-            <About />
-          </Tab.Panel>
-          <Tab.Panel style={{ minHeight: '100vh' }}>
-            <Skills />
-          </Tab.Panel>
-          <Tab.Panel style={{ minHeight: '100vh' }}>
-            <Projects />
-          </Tab.Panel>
-          <Tab.Panel style={{ minHeight: '100vh' }}>
-            <Contact />
-          </Tab.Panel>
-        </Tab.Panels>
-      </Tab.Group>
+      <Sidebar />
+      <div className='snap snap-y snap-mandatory scroll-smooth'>
+        <div className='h-screen snap-start'>test1</div>
+        <div className='h-screen snap-start'>test2</div>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </div>
     </>
   );
 }

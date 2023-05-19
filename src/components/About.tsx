@@ -1,8 +1,4 @@
 function About() {
-  return (
-    <>
-      <div>About</div>
-    </>
-  );
+  return <div className='h-screen snap-start'>About</div>;
 }
 export default About;

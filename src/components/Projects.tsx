@@ -1,6 +1,6 @@
 function Projects() {
   return (
-    <div>
+    <div className='h-screen snap-start'>
       <h1>Projects</h1>
     </div>
   );

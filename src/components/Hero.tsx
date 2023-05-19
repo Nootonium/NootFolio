@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <div className='hero'>
+    <div className='h-screen snap-start'>
       <h1>
         In this example, the StickyNav component consists of a div with a nav element inside. The
         outer div has the Tailwind CSS classes sticky top-0 z-50 to make it sticky at the top of the

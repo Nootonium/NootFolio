@@ -1,8 +1,4 @@
 function Contact() {
-  return (
-    <>
-      <div className='flex flex-col space-y-2 rounded-lg bg-gray-800 p-4 shadow-md'>contak</div>
-    </>
-  );
+  return <div className='h-screen snap-start'>contak</div>;
 }
 export default Contact;
