@@ -21,8 +21,8 @@ function Sidebar() {
       <button
         className={`flex w-full items-center justify-start space-x-2 rounded-lg px-4 py-2 ${buttonClasses[theme]}`}
       >
-        <HomeIcon className='w-8' />
-        <span className='sr-only md:not-sr-only'>Home</span>
+        <HomeIcon className='h-8' />
+        <span className='sr-only font-semibold md:not-sr-only'>Home</span>
       </button>
       <button
         className={`flex w-full items-center justify-start space-x-2 rounded-lg px-4 py-2 ${buttonClasses[theme]}`}
@@ -33,14 +33,14 @@ function Sidebar() {
       <button
         className={`flex w-full items-center justify-start space-x-2 rounded-lg px-4 py-2 ${buttonClasses[theme]}`}
       >
-        <CommandLineIcon className='h-8' />
-        <span className='sr-only md:not-sr-only'>Skills</span>
+        <BriefcaseIcon className='h-8' />
+        <span className='sr-only md:not-sr-only'>Projects</span>
       </button>
       <button
         className={`flex w-full items-center justify-start space-x-2 rounded-lg px-4 py-2 ${buttonClasses[theme]}`}
       >
-        <BriefcaseIcon className='h-8' />
-        <span className='sr-only md:not-sr-only'>Projects</span>
+        <CommandLineIcon className='h-8' />
+        <span className='sr-only md:not-sr-only'>Skills</span>
       </button>
       <button
         className={`flex w-full items-center justify-start space-x-2 rounded-lg px-4 py-2 ${buttonClasses[theme]}`}
