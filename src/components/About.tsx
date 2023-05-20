@@ -1,8 +1,8 @@
 function About() {
   return (
-    <div className='snap-start' id='home'>
+    <div className='snap-start bg-dark-200 opacity-90' id='home'>
       about
-      <div>
+      <div className=''>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt gravida ligula, quis
         mollis magna porta ac. Suspendisse ultricies diam ut metus cursus sollicitudin. Mauris
         vulputate sagittis augue eu tincidunt. Mauris finibus consectetur velit eget interdum. Cras

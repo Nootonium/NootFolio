@@ -17,7 +17,7 @@ function Sidebar() {
   };
 
   return (
-    <div className='fixed left-8 top-1/3 flex w-min flex-col space-y-2 rounded-lg bg-gray-800 p-2 shadow-md'>
+    <div className='fixed left-8 top-1/3 z-10 flex w-min flex-col space-y-2 rounded-lg bg-gray-800 p-2 shadow-md'>
       <button
         className={`flex w-full items-center justify-start space-x-2 rounded-lg px-4 py-2 ${buttonClasses[theme]}`}
         data-to-scrollspy-id='home'
