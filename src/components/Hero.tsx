@@ -1,10 +1,15 @@
 function Hero() {
   return (
-    <div className='h-screen snap-start' id='home'>
-      <img
-        className='absolute left-0 top-0 -z-10 h-full w-full object-cover'
-        src='src/assets/DRy1.gif'
-      ></img>
+    <div className='relative flex h-screen snap-start items-center justify-center' id='home'>
+      <div className='absolute flex h-min items-center justify-center bg-white bg-opacity-50 shadow-lg'>
+        <p className='text-left text-2xl md:text-4xl lg:text-6xl'>
+          {`Hi there!`}
+          <br />
+          {`I'm Dan,`}
+          <br />
+          {`Aspiring full-stack web developer with a passion for creative problem solving.`}
+        </p>
+      </div>
     </div>
   );
 }
