@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className='snap-start'>
+    <div className='snap-start' id='home'>
       about
       <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt gravida ligula, quis

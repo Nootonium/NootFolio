@@ -1,5 +1,6 @@
 import { useTheme } from './components/ThemeContext';
 import './assets/rainbow-theme.css';
+import ScrollSpy from 'react-ui-scrollspy';
 
 import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
@@ -20,12 +21,15 @@ function App() {
   return (
     <>
       <Sidebar />
+
       <div className='h-screen snap-y snap-mandatory overflow-y-scroll'>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
+        <ScrollSpy>
+          <Hero />
+          <About />
+          <Projects />
+          <Skills />
+          <Contact />
+        </ScrollSpy>
       </div>
     </>
   );
