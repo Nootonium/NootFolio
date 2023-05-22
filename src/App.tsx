@@ -25,7 +25,7 @@ function App() {
         src='src/assets/DRy1.gif'
       ></img>
       <Navbar />
-      <div className='h-screen snap-y snap-mandatory overflow-y-scroll'>
+      <div className='h-screen w-screen snap-y snap-mandatory overflow-y-scroll'>
         <ScrollSpy>
           <Hero />
           <About />

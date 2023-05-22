@@ -4,6 +4,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        Oswald: ['Oswald', 'sans-serif'],
+      },
       backgroundColor: {
         rainbow: 'bg-gradient-to-r from-red-500 via-yellow-500 to-cyan-500',
       },
@@ -23,5 +26,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

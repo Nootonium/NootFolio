@@ -16,12 +16,14 @@ function NavButton({ Icon, text }: { Icon: any; text: string }) {
   };
 
   return (
-    <button
-      className={`flex w-auto items-center justify-start space-x-2 rounded-lg px-2 py-1 md:w-28 ${buttonClasses[theme]}`}
-    >
-      <Icon className='h-8 flex-shrink-0' />
-      <span className='sr-only text-center text-xs font-semibold md:not-sr-only'>{text}</span>
-    </button>
+    <div className='tooltip' data-tip={text}>
+      <button
+        className={`flex w-auto items-center justify-start space-x-2 rounded-lg px-2 py-1 sm:w-28 ${buttonClasses[theme]}`}
+      >
+        <Icon className='h-8 flex-shrink-0' />
+        <span className='sr-only text-center text-xs font-semibold sm:not-sr-only'>{text}</span>
+      </button>{' '}
+    </div>
   );
 }
 
