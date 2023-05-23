@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className='flex min-h-screen snap-start justify-center bg-white bg-opacity-75' id='home'>
+    <div className='flex min-h-screen snap-start justify-center bg-dark-100 bg-opacity-75' id='home'>
       <div className='mx-4 max-w-xl py-24 lg:mx-auto'>
         <h1 className='font-Oswald text-6xl'>About Me</h1>
         <br />
@@ -15,8 +15,8 @@ function About() {
         </p>
         <br />
         <p>
-          {`When I'm not coding, you might find me exploring nature, tinkering with DIY electronics
-          projects, or getting lost in a good science fiction book.`}
+          {`When I'm not coding, you might find me exploring nature, tinkering with projects,
+            or getting lost in a good science fiction book.`}
         </p>
       </div>
     </div>
