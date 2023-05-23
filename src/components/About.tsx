@@ -1,6 +1,12 @@
-function About() {
+import { forwardRef } from 'react';
+
+const About = forwardRef<HTMLDivElement>(function About(props, ref) {
   return (
-    <div className='flex min-h-screen snap-start justify-center bg-dark-100 bg-opacity-75' id='home'>
+    <div
+      ref={ref}
+      className='flex min-h-screen snap-start justify-center bg-dark-100 bg-opacity-75'
+      id='about'
+    >
       <div className='mx-4 max-w-xl py-24 lg:mx-auto'>
         <h1 className='font-Oswald text-6xl'>About Me</h1>
         <br />
@@ -21,5 +27,5 @@ function About() {
       </div>
     </div>
   );
-}
+});
 export default About;

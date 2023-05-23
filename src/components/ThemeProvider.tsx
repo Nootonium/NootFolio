@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react';
-import { ThemeContext } from './ThemeContext';
+import { ThemeContext } from '../hooks/ThemeContext';
 import { Theme } from '../types';
 
 function ThemeProvider({ children }: { children: ReactNode }) {

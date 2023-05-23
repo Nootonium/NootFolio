@@ -5,7 +5,7 @@ import {
   BriefcaseIcon,
   EnvelopeIcon,
 } from '@heroicons/react/24/outline';
-import { useTheme } from './ThemeContext';
+import { useTheme } from '../hooks/ThemeContext';
 
 function NavButton({ Icon, text }: { Icon: any; text: string }) {
   const { theme } = useTheme();
@@ -16,25 +16,27 @@ function NavButton({ Icon, text }: { Icon: any; text: string }) {
   };
 
   return (
-    <div className='tooltip' data-tip={text}>
-      <button
-        className={`mx-2 flex w-auto items-center justify-start py-2 sm:w-28 ${buttonClasses[theme]}`}
-      >
-        <Icon className='h-8 flex-shrink-0' />
-        <span className='sr-only text-center text-lg sm:not-sr-only'>{text}</span>
-      </button>{' '}
-    </div>
+    <button
+      data-tip={text}
+      className={`tooltip mx-2 flex w-auto flex-row items-center justify-start py-2 sm:w-28 ${buttonClasses[theme]}`}
+    >
+      <Icon className='h-8 flex-shrink-0' />
+      <span className='sr-only text-center text-lg sm:not-sr-only'>{text}</span>
+    </button>
   );
 }
 
-function Navbar() {
+function Navbar({ activeSection }) {
   return (
     <div className='fixed bottom-0 left-1/2 z-20 mb-4 flex -translate-x-1/2 flex-row rounded-md bg-dark-100 shadow-md'>
-      <NavButton Icon={HomeIcon} text='Home' />
-      <NavButton Icon={IdentificationIcon} text='About' />
-      <NavButton Icon={BriefcaseIcon} text='Projects' />
-      <NavButton Icon={CommandLineIcon} text='Skills' />
-      <NavButton Icon={EnvelopeIcon} text='Contact' />
+      <div className='btm-nav'>
+        <NavButton Icon={HomeIcon} text='Home' />
+        <NavButton Icon={IdentificationIcon} text='About' />
+        <NavButton Icon={BriefcaseIcon} text='Projects' />
+        <NavButton Icon={CommandLineIcon} text='Skills' />
+        <NavButton Icon={EnvelopeIcon} text='Contact' />
+        {activeSection}
+      </div>
     </div>
   );
 }
