@@ -3,13 +3,15 @@ import ProjectCard from './ProjectCard';
 
 function Projects() {
   return (
-    <div className='flex min-h-screen w-screen snap-start justify-center'>
-      <div className='max-w-7xl lg:mx-auto'>
+    <div className='flex min-h-screen snap-start justify-center bg-dark-100 bg-opacity-75'>
+      <div className='mx-4 flex max-w-xl grow flex-col pb-32 pt-12 lg:mx-auto'>
         <h1 className='font-Oswald text-6xl'>Projects</h1>
         <br />
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
+        <div className='flex flex-col justify-center'>
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
       </div>
     </div>
   );

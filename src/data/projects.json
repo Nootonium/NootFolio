@@ -6,5 +6,13 @@
     "tech_stack": ["died", "died", "died"],
     "link": "https://www.imdb.com/title/tt0111161/",
     "github": "https.github.com"
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "description": "test project",
+    "image_url": "https://www.imdb.com/title/tt0111161/mediaviewer/rm4280603648",
+    "tech_stack": ["died", "died", "died"],
+    "link": "https://www.imdb.com/title/tt0111161/",
+    "github": "https.github.com"
   }
 ]
