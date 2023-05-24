@@ -39,7 +39,13 @@ function NavButton({
   );
 }
 
-function NavBar({ activeSection }: { activeSection: string }) {
+function NavBar({
+  activeSection,
+  openContact,
+}: {
+  activeSection: string;
+  openContact: () => void;
+}) {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (!element) return;
@@ -76,7 +82,7 @@ function NavBar({ activeSection }: { activeSection: string }) {
         text='Contact'
         isActive={activeSection == 'contact'}
         // eslint-disable-next-line @typescript-eslint/no-empty-function
-        onClick={() => {}} // TODO: Implement contact section
+        onClick={openContact} // TODO: Implement contact section
       />
     </div>
   );

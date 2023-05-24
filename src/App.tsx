@@ -3,9 +3,10 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 import NavBar from './components/NavBar';
 import useScrollSpy from './hooks/useScrollSpy';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 function App() {
   const heroRef = useRef(null);
@@ -13,6 +14,9 @@ function App() {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const activeSection = useScrollSpy([heroRef, aboutRef, projectsRef, skillsRef]);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const onOpen = () => setIsContactOpen(true);
+  const onClose = () => setIsContactOpen(false);
 
   return (
     <>
@@ -35,7 +39,8 @@ function App() {
           <Skills />
         </section>
       </div>
-      <NavBar activeSection={activeSection} />
+      <Contact isContactOpen={isContactOpen} onClose={onClose} />
+      <NavBar activeSection={activeSection} openContact={onOpen} />
     </>
   );
 }
