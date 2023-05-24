@@ -1,21 +1,17 @@
 import projects from '../data/projects.json';
 import ProjectCard from './ProjectCard';
 
-import { forwardRef } from 'react';
-
-const Projects = forwardRef<HTMLDivElement>(function Projects(props, ref) {
+function Projects() {
   return (
-    <div ref={ref} className='flex min-h-screen snap-start justify-center'>
-      <div className='mx-4 max-w-7xl py-24 lg:mx-auto'>
+    <div className='flex min-h-screen w-screen snap-start justify-center'>
+      <div className='max-w-7xl lg:mx-auto'>
         <h1 className='font-Oswald text-6xl'>Projects</h1>
         <br />
         {projects.map((project, index) => (
-          <div key={index} className=''>
-            <ProjectCard project={project} />
-          </div>
+          <ProjectCard key={index} project={project} />
         ))}
       </div>
     </div>
   );
-});
+}
 export default Projects;

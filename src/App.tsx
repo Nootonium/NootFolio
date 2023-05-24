@@ -3,7 +3,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Navbar from './components/Navbar';
+import NavBar from './components/NavBar';
 import useScrollSpy from './hooks/useScrollSpy';
 import { useRef } from 'react';
 
@@ -13,6 +13,7 @@ function App() {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const activeSection = useScrollSpy([heroRef, aboutRef, projectsRef, skillsRef]);
+
   return (
     <>
       <img
@@ -21,7 +22,7 @@ function App() {
         alt='background'
       ></img>
       <div className='h-screen w-screen snap-y snap-mandatory overflow-y-scroll'>
-        <section ref={heroRef} id='hero'>
+        <section ref={heroRef} id='home'>
           <Hero />
         </section>
         <section ref={aboutRef} id='about'>
@@ -34,7 +35,7 @@ function App() {
           <Skills />
         </section>
       </div>
-      <Navbar activeSection={activeSection} />
+      <NavBar activeSection={activeSection} />
     </>
   );
 }

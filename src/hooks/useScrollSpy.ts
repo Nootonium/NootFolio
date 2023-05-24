@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, RefObject } from 'react';
 
-function useScrollSpy(sections) {
+function useScrollSpy(sections: RefObject<HTMLElement>[]) {
   const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
@@ -12,16 +12,21 @@ function useScrollSpy(sections) {
           }
         });
       },
-      { threshold: 0.7 }, // Adjust this value as needed. 0.7 means 70% of the section is visible.
+      { threshold: 0.6 },
     );
 
     sections.forEach(section => {
-      observer.observe(section.current);
+      const currentSection = section.current;
+      if (currentSection) {
+        observer.observe(currentSection);
+      }
     });
 
     return () => {
       sections.forEach(section => {
-        observer.unobserve(section.current);
+        if (section.current) {
+          observer.unobserve(section.current);
+        }
       });
     };
   }, [sections]);

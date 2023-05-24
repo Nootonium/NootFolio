@@ -2,12 +2,8 @@ import { Project } from '../types';
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className='my-2 w-full bg-white p-4 shadow-lg'>
-      <img
-        src={project.image_url}
-        alt={project.title}
-        className='mb-4 aspect-video w-full rounded object-cover'
-      />
+    <div className='my-2 bg-dark-100 p-4 shadow-lg'>
+      <img src={project.image_url} alt={project.title} className='mb-4 rounded object-cover' />
       <h2 className='mb-2 text-xl font-bold'>{project.title}</h2>
       <p className='mb-2 text-gray-700'>{project.description}</p>
       <div className='mb-2'>
