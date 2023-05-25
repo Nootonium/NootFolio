@@ -81,8 +81,7 @@ function NavBar({
         Icon={EnvelopeIcon}
         text='Contact'
         isActive={activeSection == 'contact'}
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        onClick={openContact} // TODO: Implement contact section
+        onClick={openContact}
       />
     </div>
   );
