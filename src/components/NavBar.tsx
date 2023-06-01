@@ -6,6 +6,7 @@ import {
   EnvelopeIcon,
 } from '@heroicons/react/24/outline';
 import { useTheme } from '../hooks/ThemeContext';
+import ThemeToggle from './ThemeToggle';
 
 function NavButton({
   Icon,
@@ -53,6 +54,7 @@ function NavBar({
   };
   return (
     <div className='fixed bottom-0 left-1/2 z-20 mb-4 flex -translate-x-1/2 flex-row rounded-md bg-dark-200 px-2'>
+      <ThemeToggle />
       <NavButton
         Icon={HomeIcon}
         text='Home'

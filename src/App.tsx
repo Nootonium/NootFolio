@@ -25,7 +25,7 @@ function App() {
         src='src/assets/DRy1.gif'
         alt='background'
       ></img>
-      <div className='h-screen w-screen snap-y snap-mandatory overflow-y-scroll'>
+      <div className='h-screen w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll'>
         <section ref={heroRef} id='home'>
           <Hero />
         </section>

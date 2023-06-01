@@ -1,4 +1,5 @@
 import { Project } from '../types';
+import TechBadge from './TechBadge';
 
 function ProjectCard({ project }: { project: Project }) {
   return (
@@ -13,12 +14,7 @@ function ProjectCard({ project }: { project: Project }) {
         <p className='mb-2 text-gray-700'>{project.description}</p>
         <div className='mb-2'>
           {project.tech_stack.map((tech, index) => (
-            <span
-              key={index}
-              className='mb-2 mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700'
-            >
-              {tech}
-            </span>
+            <TechBadge key={index} tech={tech} />
           ))}
         </div>
         <div className='flex flex-col justify-center md:flex-row md:justify-between'>
