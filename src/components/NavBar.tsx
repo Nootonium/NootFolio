@@ -6,7 +6,6 @@ import {
   EnvelopeIcon,
 } from '@heroicons/react/24/outline';
 import { useTheme } from '../hooks/ThemeContext';
-import ThemeToggle from './ThemeToggle';
 
 function NavButton({
   Icon,
@@ -14,28 +13,28 @@ function NavButton({
   isActive,
   onClick,
 }: {
-  Icon: any;
+  Icon: any; // TODO: Fix any
   text: string;
-  isActive?: boolean;
+  isActive: boolean;
   onClick: () => void;
 }) {
   const { theme } = useTheme();
-  const buttonClasses = {
-    light: '',
-    dark: 'bg-gray-900 text-gray-300 hover:bg-gray-700',
-    rainbow: 'bg-rainbow text-white hover:bg-gradient-to-r hover:from-red-600 hover:to-blue-600',
+  const activeClasses = {
+    light: 'text-black',
+    dark: 'text-white',
+    rainbow: 'bg-rainbow-300',
   };
 
-  const activeSection = isActive ? 'text-white' : '';
+  const activeSection = isActive ? activeClasses[theme] : '';
 
   return (
     <button
       data-tip={text}
       onClick={onClick}
-      className={`tooltip mx-1 flex w-auto flex-row items-center justify-center py-2 sm:w-28 ${buttonClasses[theme]} ${activeSection}`}
+      className={`tooltip tooltip-info flex w-auto flex-row items-center justify-center rounded-md p-2 sm:w-32  ${activeSection}`}
     >
       <Icon className='h-8 flex-shrink-0 sm:mr-1' />
-      <span className='sr-only text-center text-lg sm:not-sr-only'>{text}</span>
+      <span className='sr-only text-center font-Oswald text-lg sm:not-sr-only'>{text}</span>
     </button>
   );
 }
@@ -47,14 +46,22 @@ function NavBar({
   activeSection: string;
   openContact: () => void;
 }) {
+  const { theme } = useTheme();
+  const navbarBGClasses = {
+    light: 'bg-neutral-100 text-neutral-600',
+    dark: 'bg-neutral-900 text-neutral-400',
+    rainbow: '',
+  };
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (!element) return;
     element.scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <div className='fixed bottom-0 left-1/2 z-20 mb-4 flex -translate-x-1/2 flex-row rounded-md bg-dark-200 px-2'>
-      <ThemeToggle />
+    <div
+      className={`fixed bottom-0 left-1/2 z-20 mb-6 flex -translate-x-1/2 flex-row rounded-md bg-opacity-70 pr-1 ${navbarBGClasses[theme]}`}
+    >
       <NavButton
         Icon={HomeIcon}
         text='Home'

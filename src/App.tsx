@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import NavBar from './components/NavBar';
 import useScrollSpy from './hooks/useScrollSpy';
 import { useRef, useState } from 'react';
+import ThemeToggle from './components/ThemeToggle';
 
 function App() {
   const heroRef = useRef(null);
@@ -40,6 +41,9 @@ function App() {
         </section>
       </div>
       <Contact isContactOpen={isContactOpen} onClose={onClose} />
+
+      <ThemeToggle />
+
       <NavBar activeSection={activeSection} openContact={onOpen} />
     </>
   );

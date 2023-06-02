@@ -1,6 +1,16 @@
+import { useTheme } from '../hooks/ThemeContext';
+
 function About() {
+  const { theme } = useTheme();
+  const aboutClasses = {
+    light: 'bg-neutral-100 text-black',
+    dark: 'bg-neutral-900 text-white',
+    rainbow: '',
+  };
   return (
-    <div className='flex min-h-screen snap-start justify-center bg-dark-100 bg-opacity-75'>
+    <div
+      className={`bg-dark-100 flex min-h-screen snap-start justify-center bg-opacity-75 ${aboutClasses[theme]}`}
+    >
       <div className='mx-4 max-w-xl py-24 lg:mx-auto'>
         <h1 className='font-Oswald text-6xl'>About Me</h1>
         <br />
