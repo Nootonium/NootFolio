@@ -41,9 +41,7 @@ function App() {
         </section>
       </div>
       <Contact isContactOpen={isContactOpen} onClose={onClose} />
-
       <ThemeToggle />
-
       <NavBar activeSection={activeSection} openContact={onOpen} />
     </>
   );

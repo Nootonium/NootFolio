@@ -3,7 +3,7 @@
     "title": "The Shawshank Redemption",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium vitae felis ut euismod. Quisque nec dui sem. Cras et lectus sapien. Nam interdum dignissim velit ac mattis. Integer ante diam, efficitur ac accumsan quis, lobortis at ligula. Suspendisse et orci ut lectus luctus ultricies nec nec massa. Donec efficitur tincidunt arcu in aliquet.",
     "image_url": "https://www.imdb.com/title/tt0111161/mediaviewer/rm4280603648",
-    "tech_stack": ["died", "died", "died"],
+    "tech_stack": ["ts", "js", "python"],
     "link": "https://www.imdb.com/title/tt0111161/",
     "github": "https.github.com"
   },

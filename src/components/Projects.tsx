@@ -1,19 +1,28 @@
 import projects from '../data/projects.json';
 import ProjectCard from './ProjectCard';
+import { useTheme } from '../hooks/ThemeContext';
 
 function Projects() {
+  const { theme } = useTheme();
+
+  const projectsClasses = {
+    light: 'bg-white text-black',
+    dark: 'bg-black text-white',
+    rainbow: 'bg-rainbow-300',
+  };
+
   return (
-    <div className='flex min-h-screen snap-start justify-center bg-dark-100 bg-opacity-75'>
-      <div className='mx-4 max-w-xl pb-32 pt-16 lg:mx-auto'>
-        <h1 className='font-Oswald text-6xl'>Projects</h1>
-        <br />
-        <div className='carousel-center carousel shadow-xl'>
-          {projects.map((project, index) => (
-            <div className='carousel-item w-full' key={index}>
-              <ProjectCard project={project} />
-            </div>
-          ))}
-        </div>
+    <div
+      className={`flex min-h-screen w-full snap-start flex-col items-center bg-opacity-90 ${projectsClasses[theme]}`}
+    >
+      <h1 className='mt-8 font-Oswald text-6xl sm:mt-16'>Projects</h1>
+      <br />
+      <div className='carousel-center carousel mx-4 mb-24'>
+        {projects.map((project, index) => (
+          <div className='carousel-item w-full' key={index}>
+            <ProjectCard project={project} />
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         Oswald: ['Oswald', 'sans-serif'],
+        OpenSans: ['Open Sans', 'sans-serif'],
       },
       backgroundColor: {
         rainbow: 'bg-gradient-to-r from-red-500 via-yellow-500 to-cyan-500',
