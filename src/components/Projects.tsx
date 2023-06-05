@@ -17,7 +17,7 @@ function Projects() {
     >
       <h1 className='mt-8 font-Oswald text-6xl sm:mt-16'>Projects</h1>
       <br />
-      <div className='carousel-center carousel mx-4 mb-24'>
+      <div className='carousel-center carousel mx-4 mb-24 max-w-4xl'>
         {projects.map((project, index) => (
           <div className='carousel-item w-full' key={index}>
             <ProjectCard project={project} />

@@ -37,7 +37,7 @@ function App() {
           <Projects />
         </section>
         <section ref={skillsRef} id='skills'>
-          <Skills />
+          <Skills active={activeSection == 'skills'} />
         </section>
       </div>
       <Contact isContactOpen={isContactOpen} onClose={onClose} />
