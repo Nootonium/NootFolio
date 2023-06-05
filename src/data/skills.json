@@ -1,9 +1,13 @@
 {
   "skills": {
     "coding": [
-      { "name": "python", "level": 4 },
-      { "name": "javascript", "level": 2 },
-      { "name": "java", "level": 3 }
+      { "name": "Python", "level": 4 },
+      { "name": "Javascript", "level": 3 },
+      { "name": "TypeScript", "level": 3 },
+      { "name": "Java", "level": 3 },
+      { "name": "HTML", "level": 3 },
+      { "name": "CSS", "level": 3 },
+      { "name": "SQL", "level": 3 }
     ],
     "languages": [
       { "name": "english", "level": 4 },
@@ -11,19 +15,31 @@
       { "name": "french", "level": 6 }
     ],
     "frameworks": [
-      { "name": "django", "level": 4 },
-      { "name": "react", "level": 2 },
-      { "name": "bootstrap", "level": 3 },
-      { "name": "material-ui", "level": 3 },
-      { "name": "jquery", "level": 3 },
+      { "name": "django", "level": 3 },
+      { "name": "flask", "level": 3 },
+      { "name": "pytorch", "level": 2 },
+      { "name": "bootstrap", "level": 2 },
+      { "name": "tailwindcss", "level":3}
+      { "name": "react", "level": 4 },
       { "name": "node", "level": 2 },
       { "name": "express", "level": 2 },
-      { "name": "flask", "level": 3 },
-      { "name": "spring", "level": 2 },
-      { "name": "junit", "level": 2 },
-      { "name": "mockito", "level": 2 }
-
+      { "name": "spring", "level": 3 },
+      { "name": "junit", "level": 3 },
+      { "name": "Vue.js", "level": 2 }
+    ],
+    "tools": [
+      { "name": "Git", "level": 4 },
+      { "name": "Docker", "level": 3 },
+      { "name": "PostgreSQL", "level": 3 },
+      { "name": "MySQL", "level": 3},
+      { "name": "MongoDB", "level": 2 }
+    ],
+    "softSkills": [
+      { "name": "Problem-solving", "level": 4 },
+      { "name": "Communication", "level": 4 },
+      { "name": "Teamwork", "level": 4 },
+      { "name": "Leadership", "level": 3 },
+      { "name": "Time management", "level": 4 }
     ]
-    
   }
 }
