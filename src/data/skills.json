@@ -1,45 +1,55 @@
 {
-  "skills": {
-    "coding": [
-      { "name": "Python", "level": 4 },
-      { "name": "Javascript", "level": 3 },
-      { "name": "TypeScript", "level": 3 },
-      { "name": "Java", "level": 3 },
-      { "name": "HTML", "level": 3 },
-      { "name": "CSS", "level": 3 },
-      { "name": "SQL", "level": 3 }
-    ],
-    "languages": [
-      { "name": "english", "level": 4 },
-      { "name": "spanish", "level": 3 },
-      { "name": "french", "level": 6 }
-    ],
-    "frameworks": [
-      { "name": "django", "level": 3 },
-      { "name": "flask", "level": 3 },
-      { "name": "pytorch", "level": 2 },
-      { "name": "bootstrap", "level": 2 },
-      { "name": "tailwindcss", "level":3}
-      { "name": "react", "level": 4 },
-      { "name": "node", "level": 2 },
-      { "name": "express", "level": 2 },
-      { "name": "spring", "level": 3 },
-      { "name": "junit", "level": 3 },
-      { "name": "Vue.js", "level": 2 }
-    ],
-    "tools": [
-      { "name": "Git", "level": 4 },
-      { "name": "Docker", "level": 3 },
-      { "name": "PostgreSQL", "level": 3 },
-      { "name": "MySQL", "level": 3},
-      { "name": "MongoDB", "level": 2 }
-    ],
-    "softSkills": [
-      { "name": "Problem-solving", "level": 4 },
-      { "name": "Communication", "level": 4 },
-      { "name": "Teamwork", "level": 4 },
-      { "name": "Leadership", "level": 3 },
-      { "name": "Time management", "level": 4 }
-    ]
-  }
+  "Programming Languages": [
+    { "name": "Python", "level": 3 },
+    { "name": "Javascript", "level": 2 },
+    { "name": "TypeScript", "level": 2 },
+    { "name": "Java", "level": 2 },
+    { "name": "HTML", "level": 2 },
+    { "name": "CSS", "level": 2 },
+    { "name": "SQL", "level": 2 }
+  ],
+
+  "Frontend Skills": [
+    { "name": "React", "level": 3 },
+    { "name": "Vue.js", "level": 2 },
+    { "name": "Bootstrap", "level": 2 },
+    { "name": "TailwindCSS", "level": 3 }
+  ],
+
+  "Backend Skills": [
+    { "name": "Django", "level": 3 },
+    { "name": "Flask", "level": 3 },
+    { "name": "Node", "level": 3 },
+    { "name": "Express", "level": 2 },
+    { "name": "Spring", "level": 3 }
+  ],
+
+  "Database Skills": [
+    { "name": "PostgreSQL", "level": 3 },
+    { "name": "MySQL", "level": 3 },
+    { "name": "MongoDB", "level": 2 }
+  ],
+
+  "DevOps/Tools": [
+    { "name": "Git", "level": 3 },
+    { "name": "Docker", "level": 2 }
+  ],
+
+  "Soft Skills": [
+    { "name": "Problem-solving", "level": 3 },
+    { "name": "Communication", "level": 2 },
+    { "name": "Teamwork", "level": 3 },
+    { "name": "Leadership", "level": 1 },
+    { "name": "Time management", "level": 2 }
+  ],
+
+  "Data Science Skills": [
+    { "name": "PyTorch", "level": 1 }
+  ],
+
+  "Languages": [
+    { "name": "English", "level": 4 },
+    { "name": "Spanish", "level": 3 },
+    { "name": "French", "level": 5 }
+  ]
 }
