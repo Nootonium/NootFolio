@@ -90,7 +90,7 @@ function NavBar({
         Icon={EnvelopeIcon}
         text='Contact'
         isActive={activeSection == 'contact'}
-        onClick={openContact}
+        onClick={() => openContact()}
       />
     </div>
   );

@@ -37,7 +37,7 @@
 
   "Soft Skills": [
     { "name": "Problem-solving", "level": 3 },
-    { "name": "Communication", "level": 2 },
+    { "name": "Communication", "level": 3 },
     { "name": "Teamwork", "level": 3 },
     { "name": "Leadership", "level": 1 },
     { "name": "Time management", "level": 2 }

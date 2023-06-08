@@ -15,7 +15,7 @@ function Hero() {
         <h1 className='font-Oswald text-6xl md:text-7xl lg:text-8xl'>{`Hi there! I'm Dan,`}</h1>
         <br />
         <p className='font-Oswald text-5xl md:text-6xl lg:text-7xl'>
-          {`Aspiring full-stack web developer with a passion for creative problem solving.`}
+          {`Aspiring full\u2011stack web developer with a passion for creative problem solving.`}
         </p>
       </div>
     </div>

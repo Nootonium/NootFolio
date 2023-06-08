@@ -1,6 +1,6 @@
 .crawl {
   transform: perspective(250px) rotateX(20deg);
-  animation: scrollCrawl 120s linear;
+  animation: scrollCrawl 10s linear;
 }
 @keyframes scrollCrawl {
   0% {
@@ -11,11 +11,7 @@
     opacity: 1;
   }
   100% {
-    transform: perspective(250px) rotateX(20deg) translateY(-4000px);
+    transform: perspective(250px) rotateX(20deg) translateY(-3500px);
     opacity: 0;
   }
-}
-
-.star{
-  box-shadow: 100px 100px white;
 }
