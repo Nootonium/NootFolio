@@ -40,7 +40,7 @@ function ContactForm() {
       <textarea
         {...register('message', { required: true })}
         placeholder='Message'
-        className='textarea my-2 rounded border p-2'
+        className='textarea my-2 max-h-60 rounded border p-2'
       />
       {errors.message && <Alert message='This field is required' Icon={XCircleIcon} type='error' />}
 

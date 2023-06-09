@@ -17,8 +17,8 @@ function Alert({ Icon, message, type }: AlertProps) {
   }
 
   return (
-    <div className={`alert justify-start py-2 ${modifierClasses[type]}`}>
-      <Icon className='h-6 w-6' />
+    <div className={`flex items-center justify-start rounded-md p-2 ${modifierClasses[type]}`}>
+      <Icon className='mr-2 h-6 w-6' />
       <span>{message}</span>
     </div>
   );
