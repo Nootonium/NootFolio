@@ -13,3 +13,9 @@ export interface Project {
   link: string;
   github: string;
 }
+
+export interface MessageData {
+  name: string;
+  email: string;
+  message: string;
+}

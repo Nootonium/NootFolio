@@ -1,22 +1,23 @@
 import { useForm } from 'react-hook-form';
 import Alert from './Alert';
 import { XCircleIcon } from '@heroicons/react/24/outline';
-
-interface FormInputs {
-  name: string;
-  email: string;
-  message: string;
-}
+import { MessageData } from '../types';
+import { postMessage } from '../api';
 
 function ContactForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormInputs>();
+  } = useForm<MessageData>();
 
-  const onSubmit = (data: FormInputs) => {
-    console.log(data);
+  const onSubmit = (data: MessageData) => {
+    try {
+      const response = postMessage(data);
+      console.log(response);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
