@@ -13,11 +13,11 @@ function Projects() {
 
   return (
     <div
-      className={`flex min-h-screen w-full snap-start flex-col items-center bg-opacity-90 ${projectsClasses[theme]}`}
+      className={`relative flex min-h-screen w-full snap-start justify-center bg-opacity-90 ${projectsClasses[theme]}`}
     >
-      <h1 className='mt-8 font-Oswald text-6xl sm:mt-16'>Projects</h1>
+      <h1 className='z-10 mt-8 font-Oswald text-6xl sm:mt-16'>Projects</h1>
       <br />
-      <div className='carousel-center carousel mx-4 max-w-4xl'>
+      <div className='carousel-center carousel absolute h-full w-full'>
         {projects.map((project, index) => (
           <div className='carousel-item w-full' key={index}>
             <ProjectCard project={project} />

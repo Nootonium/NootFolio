@@ -59,8 +59,6 @@ function Skills({ active }: { active: boolean }) {
       textRef.current.classList.add('crawl');
     }
   };
-  console.log('render');
-  console.log(active);
   useEffect(() => {
     if (textRef.current) {
       if (active) {
