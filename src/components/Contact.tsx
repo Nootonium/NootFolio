@@ -20,7 +20,7 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
           leaveFrom='opacity-100'
           leaveTo='opacity-0'
         >
-          <div className='absolute inset-0 bg-black/50 transition-opacity' />
+          <div className='absolute inset-0 z-20 bg-black/50 transition-opacity' />
         </Transition.Child>
         <Transition.Child
           as='div'
@@ -30,7 +30,7 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
           leave='ease-in duration-300'
           leaveFrom='opacity-100 translate-y-0'
           leaveTo='opacity-0 translate-y-full'
-          className='fixed inset-0'
+          className='fixed inset-0 z-30'
         >
           <Dialog.Panel
             as='div'

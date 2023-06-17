@@ -7,40 +7,53 @@ function ProjectCard({ project }: { project: Project }) {
   const { theme } = useTheme();
 
   const cardClasses = {
-    light: 'bg-neutral-200',
-    dark: 'bg-neutral-800',
+    light: 'bg-white text-black bg-opacity-80',
+    dark: 'bg-black text-white bg-opacity-30',
     rainbow: 'bg-rainbow-500',
   };
 
   return (
-    <div className={`relative flex w-full  ${cardClasses[theme]}`}>
+    <div className={`relative flex w-full justify-center`}>
       <img
         src={project.image_url}
         alt={project.title}
         className='absolute h-full w-full object-cover'
       />
-      <div className='z-10 mb-20 mt-28 w-full bg-black bg-opacity-50 p-2 text-left sm:mt-36'>
-        <h2 className='mb-2 font-bold'>{project.title}</h2>
-        <div>
-          <p className={`min-h-12`}>{project.description}</p>
-        </div>
-        <div className='mb-2 space-x-2'>
-          {project.tech_stack.map((tech, index) => (
-            <TechBadge key={index} tech={tech} />
-          ))}
-        </div>
-        <div className='flex flex-row items-center justify-between'>
-          <a
-            href={project.link ? project.link : project.github}
-            target='_blank'
-            rel='noreferrer'
-            className='rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700'
-          >
-            View Project
-          </a>
-          <a href={project.github} target='_blank' rel='noreferrer' className='pr-2'>
-            <i className='fab fa-github fa-2x'></i>
-          </a>
+      <div
+        className={`z-10 mx-4 mb-32 mt-4 w-full max-w-4xl rounded-md pb-2 pt-20 shadow-xl sm:mt-14 ${cardClasses[theme]}`}
+      >
+        <div className='grid h-full grid-rows-[min-content,auto,auto,min-content] gap-2 overflow-x-auto p-4 font-OpenSans text-base sm:px-12 sm:text-xl'>
+          <h2 className='row-span-1 flex items-end font-Oswald text-xl sm:text-4xl'>
+            {project.title}
+          </h2>
+          <div className='row-span-1 rounded-sm px-2'>
+            <h3 className='text-xl sm:text-2xl'>Description:</h3>
+            <p className='min-h-16 max-h-72 overflow-x-auto text-justify'>{project.description}</p>
+          </div>
+          <div className='row-span-1 rounded-sm px-2 '>
+            <h3 className='text-xl sm:text-2xl'>Technologies used:</h3>
+            {project.tech_stack.map((tech, index) => (
+              <TechBadge key={index} tech={tech} />
+            ))}
+          </div>
+          <div className='row-span-1 grid grid-cols-2 '>
+            <a
+              href={project.link ? project.link : project.github}
+              target='_blank'
+              rel='noreferrer'
+              className='btn-ghost btn col-start-1 rounded text-center shadow-md ring-2 ring-neutral-500'
+            >
+              View Project
+            </a>
+            <a
+              href={project.github}
+              target='_blank'
+              rel='noreferrer'
+              className='col-start-2 justify-self-end'
+            >
+              <i className='fab fa-github fa-2x'></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>

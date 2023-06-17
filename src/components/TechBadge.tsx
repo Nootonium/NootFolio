@@ -1,10 +1,10 @@
 function TechBadge({ tech }: { tech: string }) {
   const techColors: { [key: string]: string } = {
-    ts: 'bg-blue-600 text-white', // TypeScript - Blue
+    typescript: 'bg-blue-600 text-white', // TypeScript - Blue
     django: 'bg-green-600 text-white', // Django - Dark Green
     html: 'bg-orange-500 text-white', // HTML - Orange
     css: 'bg-blue-400 text-white', // CSS - Blue
-    js: 'bg-yellow-300 text-black', // JavaScript - Yellow
+    javascript: 'bg-yellow-300 text-black', // JavaScript - Yellow
     react: 'bg-blue-500 text-white', // React - Blue
     vue: 'bg-green-400 text-white', // Vue.js - Green
     angular: 'bg-red-600 text-white', // Angular - Red
@@ -17,6 +17,13 @@ function TechBadge({ tech }: { tech: string }) {
     swift: 'bg-orange-400 text-white', // Swift - Orange
     kotlin: 'bg-orange-700 text-white', // Kotlin - Dark Orange
     php: 'bg-purple-500 text-white', // PHP - Purple
+    flask: 'bg-cyan-500 text-white',
+    poetry: 'bg-blue-400 text-white',
+    node: 'bg-green-500 text-white',
+    express: 'bg-black text-white',
+    mongodb: 'bg-green-400 text-white',
+    jest: 'bg-red-400 text-white',
+    winston: 'bg-blue-400 text-white',
   };
 
   let colorClasses = 'bg-neutral-300 text-neutral-800';
@@ -27,7 +34,7 @@ function TechBadge({ tech }: { tech: string }) {
   return (
     <span
       key={tech}
-      className={`inline-block rounded-full px-3 py-1 text-sm font-semibold ${colorClasses}`}
+      className={`m-1 inline-block rounded-full px-4 py-2 text-lg font-semibold ${colorClasses}`}
     >
       {tech}
     </span>
