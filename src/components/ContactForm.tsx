@@ -25,7 +25,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmitWithLoading)} className='flex flex-col'>
+    <form onSubmit={handleSubmit(onSubmitWithLoading)} className='flex flex-col font-OpenSans'>
       <input
         {...register('name', { required: true })}
         placeholder='Name'

@@ -103,7 +103,7 @@ function Skills({ active }: { active: boolean }) {
       ))}
       <div
         ref={textRef}
-        className={`crawl max-w-xs px-8 font-Oswald text-lg sm:max-w-md sm:text-3xl ${skilltextClasses[theme]}`}
+        className={`crawl max-w-xs px-8 font-JetBrainsMono text-lg sm:max-w-md sm:text-3xl ${skilltextClasses[theme]}`}
       >
         <h1 className='text-center text-4xl sm:text-7xl'>Skills</h1>
         <br />
@@ -114,7 +114,7 @@ function Skills({ active }: { active: boolean }) {
               <h1 className='text-center text-3xl capitalize sm:text-6xl'>{key}</h1>
               <br />
               {skills[skillKey].map((skill, index) => (
-                <div key={index} className='flex flex-wrap'>
+                <div key={index} className='flex flex-wrap font-OpenSans'>
                   <span className='text-left'>{skill.name}</span>
                   <span className='flex-grow' />
                   <span className='text-right'>{jediRanks[skill.level]}</span>
@@ -126,7 +126,11 @@ function Skills({ active }: { active: boolean }) {
           );
         })}
       </div>
-      <button className='absolute right-8 top-24' onClick={() => resetAnimation()}>
+      <button
+        data-tip='refresh'
+        className='tooltip tooltip-left tooltip-info absolute right-8 top-24'
+        onClick={() => resetAnimation()}
+      >
         <ArrowPathIcon className={`w-8 ${skilltextClasses[theme]}`} />
       </button>
       <CustomPopover>

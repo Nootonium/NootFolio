@@ -28,7 +28,7 @@ function App() {
       ></img>
       <div className='h-screen w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll'>
         <section ref={heroRef} id='home'>
-          <Hero />
+          <Hero openContact={onOpen} />
         </section>
         <section ref={aboutRef} id='about'>
           <About />

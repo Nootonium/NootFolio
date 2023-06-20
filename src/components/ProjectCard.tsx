@@ -23,15 +23,15 @@ function ProjectCard({ project }: { project: Project }) {
         className={`z-10 mx-4 mb-32 mt-4 w-full max-w-4xl rounded-md pb-2 pt-20 shadow-xl sm:mt-14 ${cardClasses[theme]}`}
       >
         <div className='grid h-full grid-rows-[min-content,auto,auto,min-content] gap-2 overflow-x-auto p-4 font-OpenSans text-base sm:px-12 sm:text-xl'>
-          <h2 className='row-span-1 flex items-end font-Oswald text-xl sm:text-4xl'>
+          <h2 className='row-span-1 flex items-end font-JetBrainsMono text-xl sm:text-4xl'>
             {project.title}
           </h2>
           <div className='row-span-1 rounded-sm px-2'>
-            <h3 className='text-xl sm:text-2xl'>Description:</h3>
+            <h3 className='font-JetBrainsMono text-xl sm:text-2xl'>Description:</h3>
             <p className='min-h-16 max-h-72 overflow-x-auto text-justify'>{project.description}</p>
           </div>
           <div className='row-span-1 rounded-sm px-2 '>
-            <h3 className='text-xl sm:text-2xl'>Technologies used:</h3>
+            <h3 className='font-JetBrainsMono text-xl sm:text-2xl'>Technologies used:</h3>
             {project.tech_stack.map((tech, index) => (
               <TechBadge key={index} tech={tech} />
             ))}

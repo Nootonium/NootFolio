@@ -24,9 +24,9 @@ export default function CustomPopover({ children }: CustomPopoverProps) {
 
   return (
     <Popover className='absolute right-8 top-16'>
-      <Popover.Button>
+      <Popover.Button data-tip='info' className='tooltip tooltip-left tooltip-info'>
         <InformationCircleIcon
-          className={`w-8 ${popoverIconClasses[theme]}`}
+          className={`tooltip tooltip-left tooltip-info w-8 ${popoverIconClasses[theme]}`}
         ></InformationCircleIcon>
       </Popover.Button>
       <Transition

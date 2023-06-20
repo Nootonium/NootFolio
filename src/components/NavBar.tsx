@@ -31,10 +31,10 @@ function NavButton({
     <button
       data-tip={text}
       onClick={onClick}
-      className={`tooltip tooltip-success flex w-auto flex-row items-center justify-center rounded-md p-2 sm:w-32  ${activeSection}`}
+      className={`tooltip tooltip-info flex w-auto flex-row items-center justify-center rounded-md p-2 sm:w-32  ${activeSection}`}
     >
       <Icon className='h-8 flex-shrink-0 sm:mr-1' />
-      <span className='sr-only text-center font-Oswald text-lg sm:not-sr-only'>{text}</span>
+      <span className='sr-only text-center font-JetBrainsMono text-lg sm:not-sr-only'>{text}</span>
     </button>
   );
 }

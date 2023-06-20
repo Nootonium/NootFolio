@@ -21,7 +21,7 @@ function Projects() {
     <div
       className={`relative flex min-h-screen w-full snap-start justify-center ${projectsClasses[theme]}`}
     >
-      <h1 className={`z-20 mt-8 h-fit font-Oswald text-6xl sm:mt-16 `}>Projects</h1>
+      <h1 className={`z-20 mt-8 h-fit font-JetBrainsMono text-6xl sm:mt-16 `}>Projects</h1>
       <div className='carousel-center carousel absolute h-full w-full'>
         {projects.map((project, index) => (
           <div className='carousel-item relative w-full' key={index} id={`slide${index}`}>

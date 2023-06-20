@@ -9,7 +9,7 @@ function ThemeToggle() {
   toggleTheme(enabled ? 'dark' : 'light');
 
   return (
-    <div className='absolute right-6 top-6'>
+    <div data-tip='theme' className='tooltip tooltip-left tooltip-info absolute right-6 top-6'>
       <Switch
         checked={enabled}
         onChange={setEnabled}

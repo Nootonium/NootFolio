@@ -12,7 +12,7 @@ function About() {
       className={`bg-dark-100 flex min-h-screen snap-start justify-center bg-opacity-75 ${aboutClasses[theme]}`}
     >
       <div className='mx-4 max-w-xl py-24 lg:mx-auto'>
-        <h1 className='font-Oswald text-6xl'>About Me</h1>
+        <h1 className='font-JetBrainsMono text-6xl'>About Me</h1>
         <br />
         <div className='font-OpenSans text-lg'>
           <p>
