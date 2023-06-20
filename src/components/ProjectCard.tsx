@@ -36,7 +36,7 @@ function ProjectCard({ project }: { project: Project }) {
               <TechBadge key={index} tech={tech} />
             ))}
           </div>
-          <div className='row-span-1 grid grid-cols-2 '>
+          <div className='row-span-1 grid grid-cols-2'>
             <a
               href={project.link ? project.link : project.github}
               target='_blank'
@@ -49,7 +49,7 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.github}
               target='_blank'
               rel='noreferrer'
-              className='col-start-2 justify-self-end'
+              className='col-start-2 justify-self-end py-1'
             >
               <i className='fab fa-github fa-2x'></i>
             </a>

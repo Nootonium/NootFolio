@@ -1,7 +1,8 @@
 import { MessageData } from './types';
+import config from './config';
 
 export async function postMessage(data: MessageData) {
-  const response = await fetch('http://localhost:3000/contact', {
+  const response = await fetch(`${config.apiBaseUrl}/message`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
