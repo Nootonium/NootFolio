@@ -8,17 +8,23 @@ function ThemeToggle() {
   const [enabled, setEnabled] = useState(true);
   toggleTheme(enabled ? 'dark' : 'light');
 
+  const enabledClasses = {
+    light: 'ring-fuchsia-600',
+    dark: 'ring-teal-400',
+    rainbow: 'bg-rainbow-300',
+  };
+
   return (
     <div data-tip='theme' className='tooltip tooltip-left tooltip-info absolute right-6 top-6'>
       <Switch
         checked={enabled}
         onChange={setEnabled}
-        className='relative z-20 inline-flex h-6 w-12 items-center rounded-full ring-neutral-400 ui-checked:bg-neutral-600 ui-not-checked:bg-neutral-200 ui-not-checked:ring-2'
+        className={`relative z-20 inline-flex h-6 w-12 items-center rounded-full ui-checked:bg-neutral-600 ui-not-checked:bg-neutral-200 ui-not-checked:ring-1 ${enabledClasses[theme]}`}
       >
         <span className='sr-only'>Enable notifications</span>
         <span className='inline-block h-5 w-5 transform rounded-full bg-white transition ui-checked:translate-x-6 ui-not-checked:translate-x-1'>
           {enabled ? (
-            <MoonIcon className='h-5 w-5 text-neutral-500' />
+            <MoonIcon className='h-5 w-5 text-neutral-400' />
           ) : (
             <SunIcon className='h-5 w-5 text-yellow-500' />
           )}

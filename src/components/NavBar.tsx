@@ -20,8 +20,8 @@ function NavButton({
 }) {
   const { theme } = useTheme();
   const activeClasses = {
-    light: 'text-black',
-    dark: 'text-white',
+    light: 'text-fuchsia-600',
+    dark: 'text-teal-400',
     rainbow: 'bg-rainbow-300',
   };
 
@@ -34,7 +34,7 @@ function NavButton({
       className={`tooltip tooltip-info flex w-auto flex-row items-center justify-center rounded-md p-2 sm:w-32  ${activeSection}`}
     >
       <Icon className='h-8 flex-shrink-0 sm:mr-1' />
-      <span className='sr-only text-center font-JetBrainsMono text-lg sm:not-sr-only'>{text}</span>
+      <span className='sr-only font-JetBrainsMono text-lg sm:not-sr-only'>{text}</span>
     </button>
   );
 }
@@ -48,8 +48,8 @@ function NavBar({
 }) {
   const { theme } = useTheme();
   const navbarBGClasses = {
-    light: 'bg-neutral-100 text-neutral-600',
-    dark: 'bg-neutral-900 text-neutral-400',
+    light: 'bg-neutral-100 text-neutral-700',
+    dark: 'bg-neutral-900 text-neutral-300',
     rainbow: '',
   };
 

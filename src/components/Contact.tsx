@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react';
 import ContactForm from './ContactForm';
 import { postMessage } from '../api';
 import { MessageData } from '../types';
+import { useTheme } from '../hooks/ThemeContext';
 
 interface ContactProps {
   isContactOpen: boolean;
@@ -11,6 +12,7 @@ interface ContactProps {
 
 function Contact({ isContactOpen, onClose }: ContactProps) {
   const [messageStatus, setMessageStatus] = useState<'success' | 'error' | null>(null);
+  const { theme } = useTheme();
 
   const onSubmit = async (data: MessageData) => {
     try {
@@ -28,6 +30,11 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
         setMessageStatus(null);
       }, 2000);
     }
+  };
+  const headingClasses = {
+    light: 'text-fuchsia-600',
+    dark: 'text-teal-400',
+    rainbow: '',
   };
   return (
     <Transition show={isContactOpen} as={Fragment}>
@@ -57,7 +64,9 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
             as='div'
             className='absolute left-1/2 top-1/2 h-auto max-h-screen w-full max-w-xl -translate-x-1/2 -translate-y-1/2 rounded-md bg-gradient-to-b from-neutral-800 to-neutral-500 p-4 sm:p-8'
           >
-            <h3 className='py-2 font-JetBrainsMono text-3xl text-white'>Contact Me</h3>
+            <h3 className={`py-2 font-JetBrainsMono text-3xl ${headingClasses[theme]}`}>
+              Contact Me
+            </h3>
             <ContactForm onSubmit={onSubmit} />
             {messageStatus === 'success' && (
               <div className='alert alert-success rounded-md'>

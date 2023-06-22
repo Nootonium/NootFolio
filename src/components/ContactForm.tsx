@@ -3,8 +3,10 @@ import Alert from './Alert';
 import { XCircleIcon } from '@heroicons/react/24/outline';
 import { MessageData } from '../types';
 import { useState } from 'react';
+import { useTheme } from '../hooks/ThemeContext';
 
 function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
+  const { theme } = useTheme();
   const {
     register,
     handleSubmit,
@@ -24,19 +26,31 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
     }
   };
 
+  const inputClasses = {
+    light: 'bg-neutral-300 text-neutral-800',
+    dark: 'focus:outline-teal-400',
+    rainbow: 'bg-rainbow-300',
+  };
+
+  const buttonClasses = {
+    light: 'text-fuchsia-600 hover:text-fuchsia-700',
+    dark: 'text-teal-400 hover:text-teal-500',
+    rainbow: 'bg-rainbow-300',
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmitWithLoading)} className='flex flex-col font-OpenSans'>
       <input
         {...register('name', { required: true })}
         placeholder='Name'
-        className='input my-2 rounded border bg-neutral-300 p-2 text-neutral-800'
+        className={`input my-2 rounded border bg-neutral-300 p-2 text-neutral-800 ${inputClasses[theme]}`}
       />
       {errors.name && <Alert message='This field is required' Icon={XCircleIcon} type='error' />}
 
       <input
         {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
         placeholder='Email'
-        className='input my-2 rounded border bg-neutral-300 p-2 text-neutral-800'
+        className={`input my-2 rounded border bg-neutral-300 p-2 text-neutral-800 ${inputClasses[theme]}`}
       />
       {errors.email && (
         <Alert message='Please enter a valid email address' Icon={XCircleIcon} type='error' />
@@ -44,7 +58,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
       <textarea
         {...register('message', { required: true })}
         placeholder='Message'
-        className='textarea my-2 h-48 max-h-64 rounded border bg-neutral-300 p-2 text-neutral-800'
+        className={`textarea my-2 h-48 max-h-64 rounded border bg-neutral-300 p-2 text-neutral-800 ${inputClasses[theme]}`}
       />
       {errors.message && <Alert message='This field is required' Icon={XCircleIcon} type='error' />}
       {isLoading ? (
@@ -57,7 +71,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
       ) : (
         <input
           type='submit'
-          className='btn mt-2 cursor-pointer rounded border bg-neutral-700 p-2 hover:bg-neutral-800'
+          className={`btn mt-2 cursor-pointer rounded bg-neutral-600 p-2 hover:bg-neutral-700 ${buttonClasses[theme]}`}
         />
       )}
     </form>

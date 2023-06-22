@@ -10,18 +10,24 @@ function Projects() {
     dark: 'text-white',
     rainbow: 'bg-rainbow-300',
   };
-
   const carouselClasses = {
     light: 'bg-white bg-opacity-80',
     dark: 'bg-black bg-opacity-30',
     rainbow: 'bg-rainbow-300',
+  };
+  const headingClasses = {
+    light: 'text-fuchsia-600',
+    dark: 'text-teal-400',
+    rainbow: '',
   };
 
   return (
     <div
       className={`relative flex min-h-screen w-full snap-start justify-center ${projectsClasses[theme]}`}
     >
-      <h1 className={`z-20 mt-8 h-fit font-JetBrainsMono text-6xl sm:mt-16 `}>Projects</h1>
+      <h1 className={`z-20 mt-8 font-JetBrainsMono text-6xl sm:mt-16 ${headingClasses[theme]}`}>
+        Projects
+      </h1>
       <div className='carousel-center carousel absolute h-full w-full'>
         {projects.map((project, index) => (
           <div className='carousel-item relative w-full' key={index} id={`slide${index}`}>

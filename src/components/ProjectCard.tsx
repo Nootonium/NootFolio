@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '../hooks/ThemeContext';
 import { Project } from '../types';
 import TechBadge from './TechBadge';
@@ -10,6 +9,11 @@ function ProjectCard({ project }: { project: Project }) {
     light: 'bg-white text-black bg-opacity-80',
     dark: 'bg-black text-white bg-opacity-30',
     rainbow: 'bg-rainbow-500',
+  };
+  const headingClasses = {
+    light: 'text-blue-600',
+    dark: 'text-lime-300',
+    rainbow: '',
   };
 
   return (
@@ -23,14 +27,16 @@ function ProjectCard({ project }: { project: Project }) {
         className={`z-10 mx-4 mb-32 mt-4 w-full max-w-4xl rounded-md pb-2 pt-20 shadow-xl sm:mt-14 ${cardClasses[theme]}`}
       >
         <div className='grid h-full grid-rows-[min-content,auto,auto,min-content] gap-2 overflow-x-auto p-4 font-OpenSans text-base sm:px-12 sm:text-xl'>
-          <h2 className='row-span-1 flex items-end font-JetBrainsMono text-xl sm:text-4xl'>
+          <h2
+            className={`row-span-1 flex items-end font-JetBrainsMono text-xl sm:text-4xl ${headingClasses[theme]}`}
+          >
             {project.title}
           </h2>
-          <div className='row-span-1 rounded-sm px-2'>
+          <div className='row-span-1 rounded-sm'>
             <h3 className='font-JetBrainsMono text-xl sm:text-2xl'>Description:</h3>
             <p className='min-h-16 max-h-72 overflow-x-auto text-justify'>{project.description}</p>
           </div>
-          <div className='row-span-1 rounded-sm px-2 '>
+          <div className='row-span-1 rounded-sm'>
             <h3 className='font-JetBrainsMono text-xl sm:text-2xl'>Technologies used:</h3>
             {project.tech_stack.map((tech, index) => (
               <TechBadge key={index} tech={tech} />
