@@ -17,7 +17,6 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
   const onSubmit = async (data: MessageData) => {
     try {
       const response = await postMessage(data);
-      console.log(response);
       setMessageStatus('success');
       setTimeout(() => {
         onClose();
@@ -69,12 +68,12 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
             </h3>
             <ContactForm onSubmit={onSubmit} />
             {messageStatus === 'success' && (
-              <div className='alert alert-success rounded-md'>
+              <div className='alert alert-success mt-2 rounded-md'>
                 <span>Message sent successfully.</span>
               </div>
             )}
             {messageStatus === 'error' && (
-              <div className='alert alert-error rounded-md'>
+              <div className='alert alert-error mt-2 rounded-md'>
                 <span>Oups something went wrong. Try again later</span>
               </div>
             )}
