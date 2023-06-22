@@ -1,0 +1,17 @@
+.crawl {
+  transform: perspective(250px) rotateX(20deg);
+  animation: scrollCrawl 60s linear;
+}
+@keyframes scrollCrawl {
+  0% {
+    transform: perspective(250px) rotateX(20deg) translateY(500px);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(250px) rotateX(20deg) translateY(-3500px);
+    opacity: 0;
+  }
+}
