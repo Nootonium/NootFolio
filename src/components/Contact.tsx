@@ -17,6 +17,7 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
   const onSubmit = async (data: MessageData) => {
     try {
       const response = await postMessage(data);
+      if (!response.ok) throw new Error('Error');
       setMessageStatus('success');
       setTimeout(() => {
         onClose();
