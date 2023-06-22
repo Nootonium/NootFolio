@@ -23,7 +23,7 @@ function App() {
     <>
       <img
         className='absolute left-0 top-0 -z-10 h-full w-full object-cover'
-        src='src/assets/DRy1.gif'
+        src='public/pinguBackground.gif'
         alt='background'
       ></img>
       <div className='h-screen w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll'>
