@@ -18,8 +18,10 @@ function About() {
     <div
       className={`flex min-h-screen snap-start justify-center bg-opacity-75 ${aboutClasses[theme]}`}
     >
-      <div className='mx-4 max-w-xl py-24 lg:mx-auto'>
-        <h1 className={`font-JetBrainsMono text-6xl ${headingClasses[theme]}`}>About Me</h1>
+      <div className='mx-4 mt-4 max-w-xl py-16 lg:mx-auto'>
+        <h1 className={`font-JetBrainsMono text-5xl sm:text-6xl ${headingClasses[theme]}`}>
+          About Me
+        </h1>
         <br />
         <div className='font-OpenSans text-lg'>
           <p>
