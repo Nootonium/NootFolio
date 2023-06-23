@@ -10,11 +10,6 @@ function Projects() {
     dark: 'text-white',
     rainbow: 'bg-rainbow-300',
   };
-  const carouselClasses = {
-    light: 'bg-white bg-opacity-80',
-    dark: 'bg-black bg-opacity-30',
-    rainbow: 'bg-rainbow-300',
-  };
   const headingClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
