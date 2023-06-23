@@ -25,27 +25,18 @@ function Projects() {
     <div
       className={`relative flex min-h-screen w-full snap-start justify-center ${projectsClasses[theme]}`}
     >
-      <h1 className={`z-20 mt-8 font-JetBrainsMono text-6xl sm:mt-16 ${headingClasses[theme]}`}>
-        Projects
-      </h1>
       <div className='carousel-center carousel absolute h-full w-full'>
         {projects.map((project, index) => (
           <div className='carousel-item relative w-full' key={index} id={`slide${index}`}>
-            <ProjectCard project={project} />
+            <ProjectCard project={project} projectIndex={index} totalProjects={projects.length} />
           </div>
         ))}
       </div>
-      <div className='absolute bottom-20 z-10 flex w-full justify-center gap-2 py-2 '>
-        {projects.map((_, index) => (
-          <a
-            key={index}
-            href={`#slide${index}`}
-            className={`btn-ghost btn-sm btn text-xl ring-2 ring-neutral-500 ${carouselClasses[theme]}`}
-          >
-            {index + 1}
-          </a>
-        ))}
-      </div>
+      <h1
+        className={`absolute z-20 mt-8 font-JetBrainsMono text-5xl sm:mt-16 sm:text-6xl ${headingClasses[theme]}`}
+      >
+        Projects
+      </h1>
     </div>
   );
 }

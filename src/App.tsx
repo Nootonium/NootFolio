@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import useScrollSpy from './hooks/useScrollSpy';
 import { useRef, useState } from 'react';
 import ThemeToggle from './components/ThemeToggle';
+import background from './assets/pinguBackground.gif';
 
 function App() {
   const heroRef = useRef(null);
@@ -23,10 +24,10 @@ function App() {
     <>
       <img
         className='absolute left-0 top-0 -z-10 h-full w-full object-cover'
-        src='public/pinguBackground.gif'
+        src={background}
         alt='background'
       ></img>
-      <div className='h-screen w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll'>
+      <div className='h-screen w-screen snap-y snap-proximity overflow-x-hidden overflow-y-scroll'>
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>

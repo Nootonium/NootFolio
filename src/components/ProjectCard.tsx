@@ -1,8 +1,17 @@
 import { useTheme } from '../hooks/ThemeContext';
 import { Project } from '../types';
 import TechBadge from './TechBadge';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({
+  project,
+  projectIndex,
+  totalProjects,
+}: {
+  project: Project;
+  projectIndex: number;
+  totalProjects: number;
+}) {
   const { theme } = useTheme();
 
   const cardClasses = {
@@ -16,6 +25,9 @@ function ProjectCard({ project }: { project: Project }) {
     rainbow: '',
   };
 
+  const prevProjectIndex = projectIndex === 0 ? totalProjects - 1 : projectIndex - 1;
+  const nextProjectIndex = projectIndex === totalProjects - 1 ? 0 : projectIndex + 1;
+
   return (
     <div className={`relative flex w-full justify-center`}>
       <img
@@ -24,7 +36,7 @@ function ProjectCard({ project }: { project: Project }) {
         className='absolute h-full w-full object-cover'
       />
       <div
-        className={`z-10 mx-4 mb-32 mt-4 w-full max-w-4xl rounded-md pb-2 pt-20 shadow-xl sm:mt-14 ${cardClasses[theme]}`}
+        className={`z-20 mx-4 mb-24 mt-4 w-full max-w-4xl rounded-md pb-2 pt-20 shadow-xl sm:mt-14 ${cardClasses[theme]}`}
       >
         <div className='grid h-full grid-rows-[min-content,auto,auto,min-content] gap-2 overflow-x-auto p-4 font-OpenSans text-base sm:px-12 sm:text-xl'>
           <h2
@@ -34,7 +46,7 @@ function ProjectCard({ project }: { project: Project }) {
           </h2>
           <div className='row-span-1 rounded-sm'>
             <h3 className='font-JetBrainsMono text-xl sm:text-2xl'>Description:</h3>
-            <p className='min-h-16 max-h-72 overflow-x-auto text-justify'>{project.description}</p>
+            <p className='min-h-16 max-h-60 overflow-x-auto text-justify'>{project.description}</p>
           </div>
           <div className='row-span-1 rounded-sm'>
             <h3 className='font-JetBrainsMono text-xl sm:text-2xl'>Technologies used:</h3>
@@ -42,22 +54,29 @@ function ProjectCard({ project }: { project: Project }) {
               <TechBadge key={index} tech={tech} />
             ))}
           </div>
-          <div className='row-span-1 grid grid-cols-2'>
+          <div className='row-span-1 grid grid-cols-4 gap-2'>
+            <a
+              href={`#slide${prevProjectIndex}`}
+              className='btn-ghost btn col-start-1 rounded text-center shadow-md ring-2 ring-neutral-500'
+            >
+              <ChevronLeftIcon className='h-6 w-6' />
+            </a>
             <a
               href={project.link ? project.link : project.github}
               target='_blank'
               rel='noreferrer'
-              className='btn-ghost btn col-start-1 rounded text-center shadow-md ring-2 ring-neutral-500'
+              className='btn-ghost btn col-start-2 rounded text-center shadow-md ring-2 ring-neutral-500'
             >
               View Project
             </a>
-            <a
-              href={project.github}
-              target='_blank'
-              rel='noreferrer'
-              className='col-start-2 justify-self-end py-1'
-            >
+            <a href={project.github} target='_blank' rel='noreferrer' className='col-start-3 py-1'>
               <i className='fab fa-github fa-2x'></i>
+            </a>
+            <a
+              href={`#slide${nextProjectIndex}`}
+              className='btn-ghost btn col-start-4 rounded text-center shadow-md ring-2 ring-neutral-500'
+            >
+              <ChevronRightIcon className='h-6 w-6' />
             </a>
           </div>
         </div>
