@@ -2,7 +2,7 @@
   {
     "title": "AIPlayMaker",
     "description": "AIPlayMaker is a versatile board game AI service, capable of determining the best next moves for various board games. The service integrates algorithms such as Minimax and Monte Carlo Tree Search (MCTS) for games like Tic Tac Toe and Connect Four respectively. Future updates include the integration of Machine Learning models to provide more competitive gameplay across a wider array of board games. It offers a simple RESTful API to interact with, allowing it to be integrated into any application.",
-    "image_url": "/images/aipmprint.png",
+    "image_url": "https://raw.githubusercontent.com/Nootonium/NootFolio/main/public/aipmprint.png",
     "tech_stack": ["Python", "Flask", "Poetry"],
     "link": "<Link to the deployed application>",
     "github": "https://github.com/Nootonium/AIPlaymaker"
@@ -10,7 +10,7 @@
   {
     "title": "C.A.D.E. - Comprehensive Automated Digital E-butler",
     "description": "CADE is a comprehensive backend service designed to manage contact form messages for this web portfolio. The application employs Node.js, Express, and MongoDB to receive and store messages securely. It follows industry-standard production-level practices, including comprehensive testing with Jest, error handling, logging with Winston, and Continuous Integration via GitHub Actions. Future development plans include automated responses, data analytics, scheduling and calendar management, expense tracking, and task management.",
-    "image_url": "/images/cadeprint.png",
+    "image_url": "https://raw.githubusercontent.com/Nootonium/NootFolio/main/public/cadeprint.png",
     "tech_stack": ["Node", "Express", "MongoDB", "Jest", "Winston", "GitHub Actions", "TypeScript"],
     "link": "<Link to the deployed application>",
     "github": "https://github.com/Nootonium/CADEMK0"
@@ -19,13 +19,7 @@
     "title": "Interactive Web Portfolio",
     "description": "A dynamic and visually appealing web portfolio built with the latest technologies in the web development field. The portfolio is designed with a scroll spy effect, providing a smooth navigation experience. It features sections for showcasing skills, projects, and a dedicated contact form. The website is theme-switchable, supporting both light and dark themes.",
     "image_url": "<URL_TO_YOUR_PROJECT_IMAGE>",
-    "tech_stack": [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Vite",
-      "DaisyUI"
-    ],
+    "tech_stack": ["React", "TypeScript", "Tailwind CSS", "Vite", "DaisyUI"],
     "link": "<URL_TO_YOUR_LIVE_PROJECT>",
     "github": "<URL_TO_YOUR_GITHUB_REPOSITORY>"
   }
