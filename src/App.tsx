@@ -8,7 +8,7 @@ import NavBar from './components/NavBar';
 import useScrollSpy from './hooks/useScrollSpy';
 import { useRef, useState } from 'react';
 import ThemeToggle from './components/ThemeToggle';
-import background from './assets/pinguBackground.gif';
+import background from './assets/pinguBg.webm';
 
 function App() {
   const heroRef = useRef(null);
@@ -22,11 +22,17 @@ function App() {
 
   return (
     <>
-      <img
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
         className='absolute left-0 top-0 -z-10 h-full w-full object-cover'
-        src={background}
-        alt='background'
-      ></img>
+      >
+        <source src={background} type='video/webm' />
+        {`Sorry, your browser doesn't support embedded videos.`}
+      </video>
+      <NavBar activeSection={activeSection} openContact={onOpen} />
       <div className='h-screen w-screen snap-y snap-proximity overflow-x-hidden overflow-y-scroll'>
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
@@ -43,7 +49,6 @@ function App() {
       </div>
       <Contact isContactOpen={isContactOpen} onClose={onClose} />
       <ThemeToggle />
-      <NavBar activeSection={activeSection} openContact={onOpen} />
     </>
   );
 }

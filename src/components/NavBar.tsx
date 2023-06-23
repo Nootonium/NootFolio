@@ -28,8 +28,8 @@ function NavBar({
     element.scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <div
-      className={`fixed bottom-0 left-1/2 z-20 mb-6 flex -translate-x-1/2 flex-row rounded-md bg-opacity-70 pr-1 ${navbarBGClasses[theme]}`}
+    <nav
+      className={`fixed bottom-0 left-1/2 z-30 mb-6 flex -translate-x-1/2 flex-row rounded-md bg-opacity-70 pr-1 ${navbarBGClasses[theme]}`}
     >
       <NavButton
         Icon={HomeIcon}
@@ -61,7 +61,7 @@ function NavBar({
         isActive={activeSection == 'contact'}
         onClick={() => openContact()}
       />
-    </div>
+    </nav>
   );
 }
 

@@ -48,7 +48,7 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
           leaveFrom='opacity-100'
           leaveTo='opacity-0'
         >
-          <div className='absolute inset-0 z-20 bg-black/60 transition-opacity' />
+          <div className='absolute inset-0 z-30 bg-black/60 transition-opacity' />
         </Transition.Child>
         <Transition.Child
           as='div'
