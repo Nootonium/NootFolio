@@ -15,8 +15,8 @@ function ProjectCard({
   const { theme } = useTheme();
 
   const cardClasses = {
-    light: 'bg-white text-black bg-opacity-80',
-    dark: 'bg-black text-white bg-opacity-30',
+    light: 'bg-white text-black bg-opacity-90',
+    dark: 'bg-black text-white bg-opacity-60',
     rainbow: 'bg-rainbow-500',
   };
   const headingClasses = {
@@ -29,27 +29,25 @@ function ProjectCard({
   const nextProjectIndex = projectIndex === totalProjects - 1 ? 0 : projectIndex + 1;
 
   return (
-    <div className={`relative flex w-full justify-center`}>
-      <img
-        src={project.image_url}
-        alt={project.title}
-        className='absolute h-full w-full object-cover'
-      />
+    <div className={`relative flex w-screen justify-center`}>
+      <img src={project.image_url} alt={project.title} className='absolute h-screen object-cover' />
       <div
-        className={`z-20 mx-4 mb-24 mt-4 w-full max-w-4xl rounded-md pb-4 pt-20 shadow-xl sm:mt-14 ${cardClasses[theme]}`}
+        className={`z-20 mx-4 mb-24 mt-4 w-full max-w-3xl rounded-md pb-4 pt-20 shadow-xl sm:mt-14 ${cardClasses[theme]}`}
       >
         <div className='grid h-full grid-rows-[min-content,auto,auto,min-content] gap-2 overflow-x-auto p-4 font-OpenSans text-base sm:px-12 sm:text-xl'>
           <h2
-            className={`row-span-1 flex items-end font-JetBrainsMono text-xl sm:text-4xl ${headingClasses[theme]}`}
+            className={`row-span-1 flex items-end font-JetBrainsMono text-xl tracking-tighter sm:text-4xl ${headingClasses[theme]}`}
           >
             {project.title}
           </h2>
           <div className='row-span-1 rounded-sm'>
-            <h3 className='font-JetBrainsMono text-xl sm:text-2xl'>Description:</h3>
-            <p className='min-h-16 max-h-60 overflow-x-auto text-justify'>{project.description}</p>
+            <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>Description:</h3>
+            <p className='min-h-16 max-h-60 overflow-x-auto text-left'>{project.description}</p>
           </div>
           <div className='row-span-1 rounded-sm'>
-            <h3 className='font-JetBrainsMono text-xl sm:text-2xl'>Technologies used:</h3>
+            <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>
+              Technologies used:
+            </h3>
             {project.tech_stack.map((tech, index) => (
               <TechBadge key={index} tech={tech} />
             ))}
@@ -57,9 +55,10 @@ function ProjectCard({
           <div className='row-span-1 grid grid-cols-4 gap-2'>
             <a
               href={`#slide${prevProjectIndex}`}
-              className='btn-ghost btn col-start-1 rounded text-center shadow-md ring-2 ring-neutral-500'
+              className='btn-ghost btn col-start-1 rounded text-center'
             >
-              <ChevronLeftIcon className='h-6 w-6' />
+              <ChevronLeftIcon className='h-10 w-10 flex-shrink-0' />
+              <span className='text-md sr-only sm:not-sr-only'>{`Prev`}</span>
             </a>
             <a
               href={project.link ? project.link : project.github}
@@ -69,7 +68,12 @@ function ProjectCard({
             >
               View Project
             </a>
-            <a href={project.github} target='_blank' rel='noreferrer' className='col-start-3 py-1'>
+            <a
+              href={project.github}
+              target='_blank'
+              rel='noreferrer'
+              className='col-start-3 flex w-full justify-center py-1'
+            >
               <svg
                 className='h-10 w-10 fill-current'
                 xmlns='http://www.w3.org/2000/svg'
@@ -81,9 +85,10 @@ function ProjectCard({
             </a>
             <a
               href={`#slide${nextProjectIndex}`}
-              className='btn-ghost btn col-start-4 rounded text-center shadow-md ring-2 ring-neutral-500'
+              className='btn-ghost btn col-start-4 rounded text-center '
             >
-              <ChevronRightIcon className='h-6 w-6' />
+              <span className='text-md sr-only sm:not-sr-only'>{`next`}</span>
+              <ChevronRightIcon className='h-10 w-10 flex-shrink-0' />
             </a>
           </div>
         </div>

@@ -19,7 +19,7 @@
     "title": "Interactive Web Portfolio",
     "description": "A dynamic and visually appealing web portfolio built with the latest technologies in the web development field. The portfolio is designed with a scroll spy effect, providing a smooth navigation experience. It features sections for showcasing skills, projects, and a dedicated contact form. The website is theme-switchable, supporting both light and dark themes.",
     "image_url": "<URL_TO_YOUR_PROJECT_IMAGE>",
-    "tech_stack": ["React", "TypeScript", "Tailwind CSS", "Vite", "DaisyUI"],
+    "tech_stack": ["React", "TypeScript", "TailwindCSS", "Vite", "DaisyUI"],
     "link": "<URL_TO_YOUR_LIVE_PROJECT>",
     "github": "<URL_TO_YOUR_GITHUB_REPOSITORY>"
   }

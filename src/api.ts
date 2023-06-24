@@ -10,9 +10,11 @@ export async function postMessage(data: MessageData) {
     body: JSON.stringify(data),
   });
 
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
+  const responseData = await response.json();
 
-  return response.json();
+  if (response.ok) {
+    return responseData;
+  } else {
+    throw new Error(responseData.status.messages.join(' '));
+  }
 }

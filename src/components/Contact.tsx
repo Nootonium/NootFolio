@@ -11,24 +11,40 @@ interface ContactProps {
 }
 
 function Contact({ isContactOpen, onClose }: ContactProps) {
+  //const defaultErrorMessages = 'Oups something went wrong. Try again later.';
+
   const [messageStatus, setMessageStatus] = useState<'success' | 'error' | null>(null);
+  const [message, setMessage] = useState<string>('');
   const { theme } = useTheme();
+
+  const handleServerResponse = (response: any) => {
+    if (response.success) {
+      setMessageStatus('success');
+      setMessage('Message sent successfully! A reply will be sent to your email');
+    } else {
+      setMessageStatus('error');
+      setMessage(response.messages.join(' '));
+      // Here you can handle different error messages if you want
+      // For example, you could set a state variable for the error message
+      // and display it in your UI
+    }
+    // Close the contact form after a delay
+    setTimeout(
+      () => {
+        onClose();
+        setMessageStatus(null);
+      },
+      response.success ? 2000 : 3000,
+    );
+  };
 
   const onSubmit = async (data: MessageData) => {
     try {
-      const response = await postMessage(data);
-      if (!response.ok) throw new Error('Error');
-      setMessageStatus('success');
-      setTimeout(() => {
-        onClose();
-        setMessageStatus(null);
-      }, 2000);
+      const result = await postMessage(data);
+      handleServerResponse(result);
+      console.log(result);
     } catch (error) {
-      console.error('Error:', error);
-      setMessageStatus('error');
-      setTimeout(() => {
-        setMessageStatus(null);
-      }, 2000);
+      handleServerResponse({ success: false });
     }
   };
   const headingClasses = {
@@ -70,12 +86,12 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
             <ContactForm onSubmit={onSubmit} />
             {messageStatus === 'success' && (
               <div className='alert alert-success mt-2 rounded-md'>
-                <span>Message sent successfully.</span>
+                <span>{message}</span>
               </div>
             )}
             {messageStatus === 'error' && (
               <div className='alert alert-error mt-2 rounded-md'>
-                <span>Oups something went wrong. Try again later</span>
+                <span></span>
               </div>
             )}
           </Dialog.Panel>
