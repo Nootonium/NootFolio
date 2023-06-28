@@ -14,39 +14,20 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
   //const defaultErrorMessages = 'Oups something went wrong. Try again later.';
 
   const [messageStatus, setMessageStatus] = useState<'success' | 'error' | null>(null);
-  const [message, setMessage] = useState<string>('');
   const { theme } = useTheme();
 
-  const handleServerResponse = (response: any) => {
-    if (response.success) {
-      setMessageStatus('success');
-      setMessage('Message sent successfully! A reply will be sent to your email');
-    } else {
-      setMessageStatus('error');
-      setMessage(response.messages.join(' '));
-      // Here you can handle different error messages if you want
-      // For example, you could set a state variable for the error message
-      // and display it in your UI
-    }
-    // Close the contact form after a delay
+  const onSubmit = async (data: MessageData) => {
+    const messageSaved = await postMessage(data);
+    setMessageStatus(messageSaved ? 'success' : 'error');
     setTimeout(
       () => {
         onClose();
         setMessageStatus(null);
       },
-      response.success ? 2000 : 3000,
+      messageSaved ? 2000 : 3000,
     );
   };
 
-  const onSubmit = async (data: MessageData) => {
-    try {
-      const result = await postMessage(data);
-      handleServerResponse(result);
-      console.log(result);
-    } catch (error) {
-      handleServerResponse({ success: false });
-    }
-  };
   const headingClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
@@ -86,12 +67,12 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
             <ContactForm onSubmit={onSubmit} />
             {messageStatus === 'success' && (
               <div className='alert alert-success mt-2 rounded-md'>
-                <span>{message}</span>
+                <span>{`Message sent successfully! A reply will be sent to your email`}</span>
               </div>
             )}
             {messageStatus === 'error' && (
               <div className='alert alert-error mt-2 rounded-md'>
-                <span></span>
+                <span>{`Oups something went wrong. Try again later.`}</span>
               </div>
             )}
           </Dialog.Panel>
