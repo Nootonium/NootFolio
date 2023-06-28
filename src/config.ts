@@ -3,7 +3,7 @@ const config = {
     apiBaseUrl: 'http://localhost:3000',
   },
   production: {
-    apiBaseUrl: 'https://your-production-url.com',
+    apiBaseUrl: 'https://cade.fly.dev',
   },
 };
 const env = process.env.NODE_ENV as 'development' | 'production' | undefined;
