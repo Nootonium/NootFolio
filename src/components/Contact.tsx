@@ -11,26 +11,23 @@ interface ContactProps {
 }
 
 function Contact({ isContactOpen, onClose }: ContactProps) {
+  //const defaultErrorMessages = 'Oups something went wrong. Try again later.';
+
   const [messageStatus, setMessageStatus] = useState<'success' | 'error' | null>(null);
   const { theme } = useTheme();
 
   const onSubmit = async (data: MessageData) => {
-    try {
-      const response = await postMessage(data);
-      if (!response.ok) throw new Error('Error');
-      setMessageStatus('success');
-      setTimeout(() => {
+    const messageSaved = await postMessage(data);
+    setMessageStatus(messageSaved ? 'success' : 'error');
+    setTimeout(
+      () => {
         onClose();
         setMessageStatus(null);
-      }, 2000);
-    } catch (error) {
-      console.error('Error:', error);
-      setMessageStatus('error');
-      setTimeout(() => {
-        setMessageStatus(null);
-      }, 2000);
-    }
+      },
+      messageSaved ? 2000 : 3000,
+    );
   };
+
   const headingClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
@@ -70,12 +67,12 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
             <ContactForm onSubmit={onSubmit} />
             {messageStatus === 'success' && (
               <div className='alert alert-success mt-2 rounded-md'>
-                <span>Message sent successfully.</span>
+                <span>{`Message sent successfully! A reply will be sent to your email`}</span>
               </div>
             )}
             {messageStatus === 'error' && (
               <div className='alert alert-error mt-2 rounded-md'>
-                <span>Oups something went wrong. Try again later</span>
+                <span>{`Oups something went wrong. Try again later.`}</span>
               </div>
             )}
           </Dialog.Panel>

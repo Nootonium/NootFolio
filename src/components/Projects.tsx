@@ -18,17 +18,17 @@ function Projects() {
 
   return (
     <div
-      className={`relative flex min-h-screen w-full snap-start justify-center ${projectsClasses[theme]}`}
+      className={`relative flex h-screen w-screen snap-start justify-center ${projectsClasses[theme]}`}
     >
-      <div className='carousel-center carousel absolute h-full w-full'>
+      <div className='carousel-center carousel h-screen w-screen'>
         {projects.map((project, index) => (
-          <div className='carousel-item relative w-full' key={index} id={`slide${index}`}>
+          <div className='carousel-item relative w-screen' key={index} id={`slide${index}`}>
             <ProjectCard project={project} projectIndex={index} totalProjects={projects.length} />
           </div>
         ))}
       </div>
       <h1
-        className={`absolute z-20 mt-8 font-JetBrainsMono text-5xl sm:mt-16 sm:text-6xl ${headingClasses[theme]}`}
+        className={`absolute z-40 mt-8 font-JetBrainsMono text-5xl tracking-tighter sm:mt-16 sm:text-6xl ${headingClasses[theme]}`}
       >
         Projects
       </h1>

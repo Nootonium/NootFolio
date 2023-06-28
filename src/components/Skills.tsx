@@ -105,13 +105,15 @@ function Skills({ active }: { active: boolean }) {
         ref={textRef}
         className={`crawl max-w-xs px-8 font-JetBrainsMono text-lg sm:max-w-md sm:text-3xl ${skilltextClasses[theme]}`}
       >
-        <h1 className='text-center text-4xl sm:text-7xl'>Skills</h1>
+        <h1 className='text-center text-4xl tracking-tighter sm:text-7xl'>Skills</h1>
         <br />
         {Object.keys(skills).map((key: string) => {
           const skillKey = key as keyof typeof skills;
           return (
             <div key={key}>
-              <h1 className='text-center text-3xl capitalize sm:text-6xl'>{key}</h1>
+              <h1 className='text-center text-3xl capitalize tracking-tighter sm:text-6xl'>
+                {key}
+              </h1>
               <br />
               {skills[skillKey].map((skill, index) => (
                 <div key={index} className='flex flex-wrap font-OpenSans'>

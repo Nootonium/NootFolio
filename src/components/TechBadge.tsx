@@ -24,6 +24,9 @@ function TechBadge({ tech }: { tech: string }) {
     mongodb: 'bg-green-400 text-white',
     jest: 'bg-red-400 text-white',
     winston: 'bg-blue-400 text-white',
+    daisyui: 'bg-yellow-400 text-black',
+    vite: 'bg-gradient-to-br from-sky-400 to-purple-500 text-white',
+    tailwindcss: 'bg-sky-400 text-white',
   };
 
   let colorClasses = 'bg-neutral-300 text-neutral-800';
@@ -34,7 +37,7 @@ function TechBadge({ tech }: { tech: string }) {
   return (
     <span
       key={tech}
-      className={`m-1 inline-block rounded-full px-4 py-2 text-lg font-semibold ${colorClasses}`}
+      className={`bg-grad m-1 inline-block rounded-full px-4 py-2 text-lg font-semibold ${colorClasses}`}
     >
       {tech}
     </span>
