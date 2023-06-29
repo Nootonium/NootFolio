@@ -30,7 +30,13 @@ function ProjectCard({
 
   return (
     <div className={`relative flex w-screen justify-center`}>
-      <img src={project.image_url} alt={project.title} className='absolute h-screen object-cover' />
+      {project.image_url && (
+        <img
+          src={project.image_url}
+          alt={project.title}
+          className='absolute h-screen object-cover'
+        />
+      )}
       <div
         className={`z-20 mx-4 mb-24 mt-4 w-full max-w-3xl rounded-md pb-4 pt-20 shadow-xl sm:mt-14 ${cardClasses[theme]}`}
       >
@@ -40,9 +46,9 @@ function ProjectCard({
           >
             {project.title}
           </h2>
-          <div className='row-span-1 rounded-sm'>
+          <div className='row-span-1 rounded-sm leading-relaxed'>
             <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>Description:</h3>
-            <p className='min-h-16 max-h-60 overflow-x-auto text-left'>{project.description}</p>
+            <p className='min-h-16 max-h-72 overflow-x-auto text-left'>{project.description}</p>
           </div>
           <div className='row-span-1 rounded-sm'>
             <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>

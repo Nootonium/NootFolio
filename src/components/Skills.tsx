@@ -53,27 +53,21 @@ function Skills({ active }: { active: boolean }) {
   };
 
   const resetAnimation = () => {
+    console.log('resetting animation');
     if (textRef.current) {
       textRef.current.classList.remove('crawl');
       void textRef.current.offsetWidth;
       textRef.current.classList.add('crawl');
     }
   };
+
   useEffect(() => {
-    if (textRef.current) {
-      if (active) {
-        textRef.current.classList.add('crawl');
-      } else {
-        textRef.current.classList.remove('crawl');
-      }
-    }
+    resetAnimation();
   }, [active]);
 
   useEffect(() => {
     generateStars();
-
     window.addEventListener('resize', generateStars);
-
     return () => {
       window.removeEventListener('resize', generateStars);
     };
