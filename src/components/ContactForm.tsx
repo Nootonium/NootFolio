@@ -27,7 +27,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
   };
 
   const inputClasses = {
-    light: 'bg-neutral-300 text-neutral-800',
+    light: 'bg-neutral-300 text-neutral-800 focus:outline-fuchsia-600',
     dark: 'focus:outline-teal-400',
     rainbow: 'bg-rainbow-300',
   };

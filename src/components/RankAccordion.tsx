@@ -11,13 +11,15 @@ function RankAccordion() {
             <>
               <Disclosure.Button
                 as='div'
-                className='font-Oswald flex flex-wrap px-4 py-2 hover:text-lg'
+                className='flex flex-wrap px-4 py-2 font-JetBrainsMono tracking-tighter  hover:text-lg'
               >
                 {rank}
                 <div className='flex-grow'></div>
                 <ChevronDownIcon className={`w-5 ${open ? 'rotate-180' : ''}`} />
               </Disclosure.Button>
-              <Disclosure.Panel className='px-4 font-OpenSans'>{description}</Disclosure.Panel>
+              <Disclosure.Panel className='px-4 font-OpenSans text-white'>
+                {description}
+              </Disclosure.Panel>
             </>
           )}
         </Disclosure>

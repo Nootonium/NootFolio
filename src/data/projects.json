@@ -17,7 +17,7 @@
   },
   {
     "title": "Nootfolio",
-    "description": "A dynamic and visually appealing web portfolio built with the latest technologies in the web development field. The portfolio is designed with a scroll spy effect, providing a smooth navigation experience. It features sections for showcasing skills, projects, and a dedicated contact form. The website is theme-switchable, supporting both light and dark themes.",
+    "description": "Welcome to my meticulously crafted web portfolio. I've focused on balancing high interactivity with optimal loading time, providing a seamless, engaging user experience without compromise on performance. Dive into the different sections where I showcase my skills and projects, and feel free to connect with me through the dedicated contact form. This portfolio reflects my dedication to blending functionality with aesthetics in web development, a characteristic I bring to all my projects.",
     "tech_stack": ["React", "TypeScript", "TailwindCSS", "Vite", "DaisyUI"],
     "link": "/",
     "github": "https://github.com/Nootonium/NootFolio"
