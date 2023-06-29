@@ -8,7 +8,7 @@ export interface ThemeContextType {
 export interface Project {
   title: string;
   description: string;
-  image_url: string;
+  image_url?: string;
   tech_stack: string[];
   link: string;
   github: string;

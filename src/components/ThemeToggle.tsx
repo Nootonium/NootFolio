@@ -21,7 +21,7 @@ function ThemeToggle() {
         onChange={setEnabled}
         className={`relative z-20 inline-flex h-6 w-12 items-center rounded-full ui-checked:bg-neutral-600 ui-not-checked:bg-neutral-200 ui-not-checked:ring-1 ${enabledClasses[theme]}`}
       >
-        <span className='sr-only'>Enable notifications</span>
+        <span className='sr-only'>Theme</span>
         <span className='inline-block h-5 w-5 transform rounded-full bg-white transition ui-checked:translate-x-6 ui-not-checked:translate-x-1'>
           {enabled ? (
             <MoonIcon className='h-5 w-5 text-neutral-400' />

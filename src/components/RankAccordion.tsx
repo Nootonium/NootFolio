@@ -11,7 +11,7 @@ function RankAccordion() {
             <>
               <Disclosure.Button
                 as='div'
-                className='flex flex-wrap px-4 py-2 font-Oswald hover:text-lg'
+                className='font-Oswald flex flex-wrap px-4 py-2 hover:text-lg'
               >
                 {rank}
                 <div className='flex-grow'></div>

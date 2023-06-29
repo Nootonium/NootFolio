@@ -13,7 +13,7 @@ function Hero({ openContact }: { openContact: () => void }) {
     rainbow: 'text-syntax-rainbow',
   };
   const callToActionClasses = {
-    light: 'text-pink-600 tracking-wide',
+    light: 'text-pink-700 tracking-wide',
     dark: 'text-red-500 tracking-wide',
     rainbow: 'text-syntax-rainbow',
   };

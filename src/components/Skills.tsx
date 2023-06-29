@@ -17,6 +17,7 @@ function Skills({ active }: { active: boolean }) {
   const textRef = useRef<HTMLParagraphElement>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [stars, setStars] = useState<Star[]>([]);
+  const [resetIntervalId, setResetIntervalId] = useState<NodeJS.Timeout | null>(null);
   const { theme } = useTheme();
 
   const skillbgClasses = {
@@ -58,7 +59,15 @@ function Skills({ active }: { active: boolean }) {
       void textRef.current.offsetWidth;
       textRef.current.classList.add('crawl');
     }
+
+    if (resetIntervalId !== null) {
+      clearInterval(resetIntervalId);
+    }
+
+    const newResetIntervalId = setInterval(resetAnimation, 100000);
+    setResetIntervalId(newResetIntervalId);
   };
+
   useEffect(() => {
     if (textRef.current) {
       if (active) {
@@ -74,8 +83,12 @@ function Skills({ active }: { active: boolean }) {
 
     window.addEventListener('resize', generateStars);
 
+    const resetIntervalId = setInterval(resetAnimation, 100000);
+    setResetIntervalId(resetIntervalId);
+
     return () => {
       window.removeEventListener('resize', generateStars);
+      clearInterval(resetIntervalId);
     };
   }, []);
 
