@@ -38,7 +38,7 @@ export default function CustomPopover({ children }: CustomPopoverProps) {
         leaveTo='translate-x-full opacity-0'
       >
         <Popover.Panel
-          className={`absolute right-0 z-30 w-60 max-w-sm ${popoverPanelClasses[theme]}`}
+          className={`absolute right-0 z-30 w-64 max-w-sm ${popoverPanelClasses[theme]}`}
         >
           {children}
         </Popover.Panel>

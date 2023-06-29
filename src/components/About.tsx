@@ -23,20 +23,26 @@ function About() {
           About Me
         </h1>
         <br />
-        <div className='font-OpenSans text-lg'>
-          <p>
-            {`
-            I've found that the logic, problem-solving, and endless opportunities for learning really resonate with me. 
-            Right now, I'm at the start of this fascinating journey, but I've set my sights high. 
-            My goal? To become a lead developer where I can guide projects and foster creativity and problem-solving with my team. 
-            But that's not all. Once I've honed my leadership and coding skills, 
-            I'm aiming to delve into machine learning engineering. 
-            I'm thrilled about the challenges and breakthroughs that await me in this dynamic field.`}
+        <div className='font-OpenSans text-lg leading-loose'>
+          <p className='mb-2 '>
+            {`Over the years, I've developed a robust set of coding skills, coupled with an unyielding
+            passion for problem-solving and creativity. I firmly believe that with enough time and
+            dedication, there's no project or challenge that's insurmountable. It is this love for
+            learning and overcoming challenges that fuels my work and continues to drive my
+            professional development.`}
           </p>
-          <br />
-          <p>
-            {`When I'm not coding, you might find me exploring nature, tinkering with projects,
-            or getting lost in a good science fiction book.`}
+          <p className='mb-2'>
+            {`My interests extend beyond the realm of coding and into the exploration of nature,
+            engaging in various tinkering projects, and immersing myself in the exciting world of
+            science fiction books. These pursuits not only provide a well-rounded set of
+            inspirations for my work, but also serve as a testament to my belief that with curiosity
+            and dedication, one can venture into and master any sphere of interest.`}
+          </p>
+          <p className='mb-1'>
+            {`I invite you to join me on this journey of constant growth and learning. No matter the
+            complexity of the project at hand, my skills, drive, and boundless curiosity equip me
+            with the ability to conquer any challenge. Because in my world, a wall is not a
+            blockade, but a door waiting to be opened.`}
           </p>
         </div>
       </div>

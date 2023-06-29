@@ -46,9 +46,9 @@ function ProjectCard({
           >
             {project.title}
           </h2>
-          <div className='row-span-1 rounded-sm'>
+          <div className='row-span-1 rounded-sm leading-relaxed'>
             <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>Description:</h3>
-            <p className='min-h-16 max-h-60 overflow-x-auto text-left'>{project.description}</p>
+            <p className='min-h-16 max-h-72 overflow-x-auto text-left'>{project.description}</p>
           </div>
           <div className='row-span-1 rounded-sm'>
             <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>

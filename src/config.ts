@@ -1,3 +1,4 @@
+//TODO add comment about changing this manually
 const config = {
   development: {
     apiBaseUrl: 'http://localhost:3000',

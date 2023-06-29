@@ -4,7 +4,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 function RankAccordion() {
   return (
-    <div className='max-h-96 overflow-y-auto'>
+    <div className='max-h-96 w-full overflow-y-auto'>
       {Object.entries(ranks).map(([rank, description]) => (
         <Disclosure as='div' key={rank}>
           {({ open }) => (

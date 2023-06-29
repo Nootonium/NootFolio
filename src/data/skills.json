@@ -11,7 +11,7 @@
 
   "Frontend Skills": [
     { "name": "React", "level": 3 },
-    { "name": "Vue.js", "level": 2 },
+    { "name": "Vue", "level": 2 },
     { "name": "Bootstrap", "level": 2 },
     { "name": "TailwindCSS", "level": 3 }
   ],
