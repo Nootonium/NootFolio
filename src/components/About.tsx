@@ -38,7 +38,7 @@ function About() {
             inspirations for my work, but also serve as a testament to my belief that with curiosity
             and dedication, one can venture into and master any sphere of interest.`}
           </p>
-          <p className='mb-1'>
+          <p className='mb-2'>
             {`I invite you to join me on this journey of constant growth and learning. No matter the
             complexity of the project at hand, my skills, drive, and boundless curiosity equip me
             with the ability to conquer any challenge. Because in my world, a wall is not a
