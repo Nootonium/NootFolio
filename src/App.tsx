@@ -9,6 +9,7 @@ import useScrollSpy from './hooks/useScrollSpy';
 import { useRef, useState } from 'react';
 import ThemeToggle from './components/ThemeToggle';
 import background from './assets/pinguBg.webm';
+import LanguageSelector from './components/LanguageSelector';
 
 function App() {
   const heroRef = useRef(null);
@@ -49,6 +50,7 @@ function App() {
       </div>
       <Contact isContactOpen={isContactOpen} onClose={onClose} />
       <ThemeToggle />
+      <LanguageSelector />
     </>
   );
 }

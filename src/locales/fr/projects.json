@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "AIPlayMaker": {
+      "description": "AIPlayMaker est un agent AI dynamique pour les jeux de société, utilisant des algorithmes avancés comme Minimax et Monte Carlo Tree Search (MCTS) pour offrir un gameplay stimulant. Actuellement, le service dispose d'un modèle d'apprentissage automatique pour le jeu de morpion et devrait s'élargir avec des modèles d'apprentissage par renforcement, visant à rivaliser avec MCTS. AIPlayMaker propose une API REST conviviale et est en développement actif pour améliorer encore ses capacités d'IA et prendre en charge un plus grand nombre de jeux."
+    },
+    "CADE": {
+      "description": "CADE est un service de backend complet conçu pour l'enregistrement, le traitement et la gestion automatisée des messages provenant des formulaires de contact, y compris une réponse automatisée générée par GPT et l'envoi d'une réponse par e-mail. L'application utilise Node.js, Express et MongoDB pour recevoir et stocker les messages en toute sécurité. Elle suit les pratiques de niveau production standard de l'industrie, y compris des tests complets avec Jest, la gestion des erreurs, la journalisation avec Winston et l'intégration continue via GitHub Actions."
+    },
+    "Nootfolio": {
+      "description": "Bienvenue dans mon portfolio web méticuleusement conçu. Je me suis concentré sur l'équilibre entre une interactivité élevée et un temps de chargement optimal, offrant une expérience utilisateur fluide et engageante sans compromis sur les performances. Plongez dans les différentes sections où je présente mes compétences et mes projets, et n'hésitez pas à me contacter via le formulaire de contact dédié. Ce portfolio reflète mon dévouement à allier fonctionnalité et esthétique dans le développement web, une caractéristique que j'apporte à tous mes projets."
+    }
+  },
+  "title": "Projets"
+}

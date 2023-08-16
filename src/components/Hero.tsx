@@ -1,7 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/ThemeContext';
 
 function Hero({ openContact }: { openContact: () => void }) {
   const { theme } = useTheme();
+  const { t } = useTranslation('hero');
+
   const heroClasses = {
     light: 'text-black bg-neutral-300',
     dark: 'text-white bg-neutral-900',
@@ -26,20 +29,18 @@ function Hero({ openContact }: { openContact: () => void }) {
         className={`h-min max-w-5xl px-4 pb-4 font-JetBrainsMono text-2xl leading-tight lg:px-2`}
       >
         <span className={HTMLTagClasses[theme]}>{'<h1>'}</span>
-        <h1 className='pl-8 text-4xl tracking-tighter sm:text-5xl lg:text-6xl '>{`Hi there! I'm Dan,`}</h1>
+        <h1 className='pl-8 text-4xl tracking-tighter sm:text-5xl lg:text-6xl '>{t('title')}</h1>
         <span className={HTMLTagClasses[theme]}>{'</h1>'}</span>
         <br />
         <span className={HTMLTagClasses[theme]}>{'<p>'}</span>
-        <p className='pl-8 text-3xl tracking-tighter sm:text-4xl lg:text-5xl'>
-          {`Aspiring full\u2011stack web developer with a passion for creative problem solving.`}
-        </p>
+        <p className='pl-8 text-3xl tracking-tighter sm:text-4xl lg:text-5xl'>{t('text')}</p>
         <span className={HTMLTagClasses[theme]}>{'</p>'}</span>
         <br />
         <button
           onClick={() => openContact()}
-          className='btn-ghost btn p-0 text-2xl sm:text-3xl lg:text-4xl'
+          className='btn btn-ghost p-0 text-2xl sm:text-3xl lg:text-4xl'
         >
-          <span className={callToActionClasses[theme]}>{`<Contact Me />`}</span>
+          <span className={callToActionClasses[theme]}>{t('callToAction')}</span>
         </button>
       </div>
     </div>

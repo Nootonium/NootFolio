@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/ThemeContext';
 import { Project } from '../types';
 import TechBadge from './TechBadge';
@@ -13,7 +14,7 @@ function ProjectCard({
   totalProjects: number;
 }) {
   const { theme } = useTheme();
-
+  const { t } = useTranslation('projectCard');
   const cardClasses = {
     light: 'bg-white text-black bg-opacity-90',
     dark: 'bg-black text-white bg-opacity-60',
@@ -47,12 +48,14 @@ function ProjectCard({
             {project.title}
           </h2>
           <div className='row-span-1 rounded-sm leading-relaxed'>
-            <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>Description:</h3>
+            <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>
+              {t('description')}
+            </h3>
             <p className='min-h-16 max-h-72 overflow-x-auto text-left'>{project.description}</p>
           </div>
           <div className='row-span-1 rounded-sm'>
             <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>
-              Technologies used:
+              {t('techStack')}
             </h3>
             {project.tech_stack.map((tech, index) => (
               <TechBadge key={index} tech={tech} />
@@ -61,18 +64,18 @@ function ProjectCard({
           <div className='row-span-1 grid grid-cols-4 gap-2'>
             <a
               href={`#slide${prevProjectIndex}`}
-              className='btn-ghost btn col-start-1 rounded text-center'
+              className='btn btn-ghost col-start-1 rounded text-center'
             >
               <ChevronLeftIcon className='h-10 w-10 flex-shrink-0' />
-              <span className='text-md sr-only sm:not-sr-only'>{`Prev`}</span>
+              <span className='text-md sr-only sm:not-sr-only'>{t('prev')}</span>
             </a>
             <a
               href={project.link ? project.link : project.github}
               target='_blank'
               rel='noreferrer'
-              className='btn-ghost btn col-start-2 rounded text-center shadow-md ring-2 ring-neutral-500'
+              className='btn btn-ghost col-start-2 rounded text-center shadow-md ring-2 ring-neutral-500'
             >
-              View Project
+              {t('visit')}
             </a>
             <a
               href={project.github}
@@ -91,9 +94,9 @@ function ProjectCard({
             </a>
             <a
               href={`#slide${nextProjectIndex}`}
-              className='btn-ghost btn col-start-4 rounded text-center '
+              className='btn btn-ghost col-start-4 rounded text-center '
             >
-              <span className='text-md sr-only sm:not-sr-only'>{`next`}</span>
+              <span className='text-md sr-only sm:not-sr-only'>{t('next')}</span>
               <ChevronRightIcon className='h-10 w-10 flex-shrink-0' />
             </a>
           </div>

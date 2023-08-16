@@ -7,6 +7,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useTheme } from '../hooks/ThemeContext';
 import { NavButton } from './NavButton';
+import { useTranslation } from 'react-i18next';
 
 function NavBar({
   activeSection,
@@ -16,6 +17,7 @@ function NavBar({
   openContact: () => void;
 }) {
   const { theme } = useTheme();
+  const { t } = useTranslation('navbar');
   const navbarBGClasses = {
     light: 'bg-neutral-100 text-neutral-700',
     dark: 'bg-neutral-900 text-neutral-300',
@@ -33,31 +35,31 @@ function NavBar({
     >
       <NavButton
         Icon={HomeIcon}
-        text='Home'
+        text={t('home')}
         isActive={activeSection == 'home'}
         onClick={() => scrollToSection('home')}
       />
       <NavButton
         Icon={IdentificationIcon}
-        text='About'
+        text={t('about')}
         isActive={activeSection == 'about'}
         onClick={() => scrollToSection('about')}
       />
       <NavButton
         Icon={BriefcaseIcon}
-        text='Projects'
+        text={t('projects')}
         isActive={activeSection == 'projects'}
         onClick={() => scrollToSection('projects')}
       />
       <NavButton
         Icon={CommandLineIcon}
-        text='Skills'
+        text={t('skills')}
         isActive={activeSection == 'skills'}
         onClick={() => scrollToSection('skills')}
       />
       <NavButton
         Icon={EnvelopeIcon}
-        text='Contact'
+        text={t('contact')}
         isActive={activeSection == 'contact'}
         onClick={() => openContact()}
       />
