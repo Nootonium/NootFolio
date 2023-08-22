@@ -1,55 +1,52 @@
 {
-  "Programming Languages": [
-    { "name": "Python", "level": 3 },
-    { "name": "Javascript", "level": 2 },
-    { "name": "TypeScript", "level": 2 },
-    { "name": "Java", "level": 2 },
-    { "name": "HTML", "level": 2 },
-    { "name": "CSS", "level": 2 },
-    { "name": "SQL", "level": 2 }
+  "programming_languages": [
+    { "id": "python", "level": 3 },
+    { "id": "javascript", "level": 2 },
+    { "id": "typescript", "level": 2 },
+    { "id": "java", "level": 2 },
+    { "id": "html", "level": 2 },
+    { "id": "css", "level": 2 },
+    { "id": "sql", "level": 2 }
   ],
 
-  "Frontend Skills": [
-    { "name": "React", "level": 3 },
-    { "name": "Vue", "level": 2 },
-    { "name": "Bootstrap", "level": 2 },
-    { "name": "TailwindCSS", "level": 3 }
+  "frontend_skills": [
+    { "id": "react", "level": 3 },
+    { "id": "vue", "level": 2 },
+    { "id": "bootstrap", "level": 2 },
+    { "id": "tailwindcss", "level": 3 }
   ],
 
-  "Backend Skills": [
-    { "name": "Django", "level": 3 },
-    { "name": "Flask", "level": 3 },
-    { "name": "Node", "level": 3 },
-    { "name": "Express", "level": 2 },
-    { "name": "Spring", "level": 3 }
+  "backend_skills": [
+    { "id": "django", "level": 3 },
+    { "id": "flask", "level": 3 },
+    { "id": "node", "level": 3 },
+    { "id": "express", "level": 2 },
+    { "id": "spring", "level": 3 }
   ],
 
-  "Database Skills": [
-    { "name": "PostgreSQL", "level": 3 },
-    { "name": "MySQL", "level": 3 },
-    { "name": "MongoDB", "level": 2 }
+  "database_skills": [
+    { "id": "postgresql", "level": 3 },
+    { "id": "mysql", "level": 3 },
+    { "id": "mongodb", "level": 2 }
   ],
 
-  "DevOps/Tools": [
-    { "name": "Git", "level": 3 },
-    { "name": "Docker", "level": 2 }
+  "soft_skills": [
+    { "id": "problem-solving", "level": 3 },
+    { "id": "communication", "level": 3 },
+    { "id": "teamwork", "level": 3 },
+    { "id": "autonomy", "level": 3 }
   ],
 
-  "Soft Skills": [
-    { "name": "Problem-solving", "level": 3 },
-    { "name": "Communication", "level": 3 },
-    { "name": "Teamwork", "level": 3 },
-    { "name": "Leadership", "level": 1 },
-    { "name": "Time management", "level": 2 }
+  "other_skills": [
+    { "id": "git", "level": 3 },
+    { "id": "docker", "level": 2 },
+    { "id": "linux", "level": 3 },
+    { "id": "pytorch", "level": 2 }
   ],
 
-  "Data Science Skills": [
-    { "name": "PyTorch", "level": 1 }
-  ],
-
-  "Languages": [
-    { "name": "English", "level": 4 },
-    { "name": "Spanish", "level": 3 },
-    { "name": "French", "level": 5 }
+  "languages": [
+    { "id": "english", "level": 4 },
+    { "id": "spanish", "level": 3 },
+    { "id": "french", "level": 5 }
   ]
 }

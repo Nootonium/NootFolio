@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import '../assets/starwars.css';
 import skills from '../data/skills.json';
 import { useTheme } from '../hooks/ThemeContext';
@@ -18,6 +19,7 @@ function Skills({ active }: { active: boolean }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [stars, setStars] = useState<Star[]>([]);
   const { theme } = useTheme();
+  const { t } = useTranslation('skills');
 
   const skillbgClasses = {
     // spaces at the end are important dunnow why
@@ -99,22 +101,21 @@ function Skills({ active }: { active: boolean }) {
         ref={textRef}
         className={`crawl max-w-xs px-8 font-JetBrainsMono text-lg sm:max-w-md sm:text-3xl ${skilltextClasses[theme]}`}
       >
-        <h1 className='text-center text-4xl tracking-tighter sm:text-7xl'>Skills</h1>
+        <h1 className='text-center text-4xl tracking-tighter sm:text-7xl'>{t('title')}</h1>
         <br />
         {Object.keys(skills).map((key: string) => {
           const skillKey = key as keyof typeof skills;
           return (
             <div key={key}>
-              <h1 className='text-center text-3xl capitalize tracking-tighter sm:text-6xl'>
-                {key}
+              <h1 className='text-center text-3xl tracking-tighter sm:text-6xl'>
+                {t(`categories.${skillKey}`)}
               </h1>
               <br />
               {skills[skillKey].map((skill, index) => (
                 <div key={index} className='flex flex-wrap font-OpenSans'>
-                  <span className='text-left'>{skill.name}</span>
+                  <span className='text-left'>{t(`skills.${skill.id}`)}</span>
                   <span className='flex-grow' />
-                  <span className='text-right'>{jediRanks[skill.level]}</span>
-                  <br />
+                  <span className='text-right'>{t(`ranks.${skill.level}`)}</span>
                 </div>
               ))}
               <br />
