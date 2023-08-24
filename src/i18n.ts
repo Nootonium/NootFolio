@@ -12,6 +12,8 @@ import enProjectCard from './locales/en/projectCard.json';
 import frProjectCard from './locales/fr/projectCard.json';
 import enSkills from './locales/en/skills.json';
 import frSkills from './locales/fr/skills.json';
+import enRanks from './locales/en/ranks.json';
+import frRanks from './locales/fr/ranks.json';
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -22,6 +24,7 @@ i18n.use(initReactI18next).init({
       projects: enProjects,
       projectCard: enProjectCard,
       skills: enSkills,
+      ranks: enRanks,
     },
     fr: {
       navbar: frNavbar,
@@ -30,6 +33,7 @@ i18n.use(initReactI18next).init({
       projects: frProjects,
       projectCard: frProjectCard,
       skills: frSkills,
+      ranks: frRanks,
     },
   },
   lng: 'en',

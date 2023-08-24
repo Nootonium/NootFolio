@@ -75,16 +75,6 @@ function Skills({ active }: { active: boolean }) {
     };
   }, []);
 
-  const jediRanks = [
-    'Youngling',
-    'Padawan',
-    'Knight',
-    'Master',
-    'Council Member',
-    'Master of the Order',
-    'Grand Master',
-  ];
-
   return (
     <div
       ref={containerRef}
@@ -99,18 +89,18 @@ function Skills({ active }: { active: boolean }) {
       ))}
       <div
         ref={textRef}
-        className={`crawl max-w-xs px-8 font-JetBrainsMono text-lg sm:max-w-md sm:text-3xl ${skilltextClasses[theme]}`}
+        className={`crawl max-w-xs px-8 font-JetBrainsMono text-lg sm:max-w-md sm:text-2xl ${skilltextClasses[theme]}`}
       >
-        <h1 className='text-center text-4xl tracking-tighter sm:text-7xl'>{t('title')}</h1>
+        <h1 className='text-center text-4xl tracking-tighter sm:text-6xl'>{t('title')}</h1>
         <br />
         {Object.keys(skills).map((key: string) => {
           const skillKey = key as keyof typeof skills;
           return (
             <div key={key}>
-              <h1 className='text-center text-3xl tracking-tighter sm:text-6xl'>
+              <h1 className='text-center text-3xl tracking-tighter sm:text-5xl'>
                 {t(`categories.${skillKey}`)}
               </h1>
-              <br />
+              <div className='h-2' />
               {skills[skillKey].map((skill, index) => (
                 <div key={index} className='flex flex-wrap font-OpenSans'>
                   <span className='text-left'>{t(`skills.${skill.id}`)}</span>
@@ -118,7 +108,7 @@ function Skills({ active }: { active: boolean }) {
                   <span className='text-right'>{t(`ranks.${skill.level}`)}</span>
                 </div>
               ))}
-              <br />
+              <div className='h-4' />
             </div>
           );
         })}
