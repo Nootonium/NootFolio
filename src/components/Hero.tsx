@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/ThemeContext';
+import Typewriter from './Typewriter';
 
 function Hero({ openContact }: { openContact: () => void }) {
   const { theme } = useTheme();
@@ -21,6 +22,10 @@ function Hero({ openContact }: { openContact: () => void }) {
     rainbow: 'text-syntax-rainbow',
   };
 
+  const titleText = t('title');
+  const bodyText = t('text');
+  const callToActionText = t('callToAction');
+
   return (
     <div
       className={`flex h-screen w-full snap-start items-center justify-center bg-opacity-20 ${heroClasses[theme]}`}
@@ -29,7 +34,9 @@ function Hero({ openContact }: { openContact: () => void }) {
         className={`h-min max-w-5xl px-4 pb-4 font-JetBrainsMono text-2xl leading-tight lg:px-2`}
       >
         <span className={HTMLTagClasses[theme]}>{'<h1>'}</span>
-        <h1 className='pl-8 text-4xl tracking-tighter sm:text-5xl lg:text-6xl '>{t('title')}</h1>
+        <h1 className='pl-8 text-4xl tracking-tighter sm:text-5xl lg:text-6xl '>
+          <Typewriter text={titleText} />
+        </h1>
         <span className={HTMLTagClasses[theme]}>{'</h1>'}</span>
         <br />
         <span className={HTMLTagClasses[theme]}>{'<p>'}</span>
