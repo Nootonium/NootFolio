@@ -11,8 +11,6 @@ interface ContactProps {
 }
 
 function Contact({ isContactOpen, onClose }: ContactProps) {
-  //const defaultErrorMessages = 'Oups something went wrong. Try again later.';
-
   const [messageStatus, setMessageStatus] = useState<'success' | 'error' | null>(null);
   const { theme } = useTheme();
 

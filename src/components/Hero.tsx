@@ -7,8 +7,8 @@ function Hero({ openContact }: { openContact: () => void }) {
   const { t } = useTranslation('hero');
 
   const heroClasses = {
-    light: 'text-black bg-neutral-300',
-    dark: 'text-white bg-neutral-900',
+    light: 'text-black bg-white',
+    dark: 'text-white bg-black',
     rainbow: 'bg-rainbow-300',
   };
   const HTMLTagClasses = {
@@ -17,7 +17,7 @@ function Hero({ openContact }: { openContact: () => void }) {
     rainbow: 'text-syntax-rainbow',
   };
   const callToActionClasses = {
-    light: 'text-pink-700 tracking-wide',
+    light: 'text-pink-800 tracking-wide',
     dark: 'text-red-500 tracking-wide',
     rainbow: 'text-syntax-rainbow',
   };
@@ -40,14 +40,14 @@ function Hero({ openContact }: { openContact: () => void }) {
         <span className={HTMLTagClasses[theme]}>{'</h1>'}</span>
         <br />
         <span className={HTMLTagClasses[theme]}>{'<p>'}</span>
-        <p className='pl-8 text-3xl tracking-tighter sm:text-4xl lg:text-5xl'>{t('text')}</p>
+        <p className='pl-8 text-3xl tracking-tighter sm:text-4xl lg:text-5xl'>{bodyText}</p>
         <span className={HTMLTagClasses[theme]}>{'</p>'}</span>
         <br />
         <button
           onClick={() => openContact()}
           className='btn btn-ghost p-0 text-2xl sm:text-3xl lg:text-4xl'
         >
-          <span className={callToActionClasses[theme]}>{t('callToAction')}</span>
+          <span className={callToActionClasses[theme]}>{callToActionText}</span>
         </button>
       </div>
     </div>
