@@ -3,7 +3,6 @@ import { useTheme } from '../hooks/ThemeContext';
 import { Project } from '../types';
 import TechBadge from './TechBadge';
 import ProjectCardButtons from './ProjectCardButtons';
-import { Disclosure } from '@headlessui/react';
 
 function ProjectCard({
   project,
@@ -16,7 +15,7 @@ function ProjectCard({
   const { t } = useTranslation('projectCard');
   const cardClasses = {
     light: 'bg-white text-black bg-opacity-90',
-    dark: 'bg-black text-white bg-opacity-60',
+    dark: 'bg-black text-white bg-opacity-75',
     rainbow: 'bg-rainbow-500',
   };
 
