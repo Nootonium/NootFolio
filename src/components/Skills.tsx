@@ -55,7 +55,7 @@ function Skills({ active }: { active: boolean }) {
   };
 
   const resetAnimation = () => {
-    console.log('resetting animation');
+    //console.log('resetting animation');
     if (textRef.current) {
       textRef.current.classList.remove('crawl');
       void textRef.current.offsetWidth;

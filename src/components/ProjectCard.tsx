@@ -20,13 +20,13 @@ function ProjectCard({
   };
 
   return (
-    <div className={`z-20 flex w-full rounded-md shadow-xl  ${cardClasses[theme]}`}>
-      <div className='grid h-full grid-rows-[min-content,auto,auto,min-content] gap-2 overflow-x-auto p-4 font-OpenSans text-base sm:px-12 sm:text-xl'>
-        <div className='row-span-1 rounded-sm leading-relaxed'>
-          <h3 className='font-JetBrainsMono text-lg tracking-tight sm:text-2xl'>
+    <div className={`z-20 flex w-full rounded-md shadow-xl ${cardClasses[theme]}`}>
+      <div className='grid grid-rows-[min-content,auto,auto,min-content] gap-2 overflow-x-auto p-4 font-OpenSans text-base sm:px-12 sm:text-xl'>
+        <div className='row-span-1 rounded-sm leading-relaxed sm:max-h-72'>
+          <h3 className=' font-JetBrainsMono text-lg tracking-tight sm:text-2xl'>
             {t('description')}
           </h3>
-          <p className='min-h-16 max-h-72 overflow-x-auto'>{project.description}</p>
+          <p className='min-h-16 max-h-72 overflow-y-auto'>{project.description}</p>
         </div>
         <div className='row-span-1 rounded-sm'>
           <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>
