@@ -41,7 +41,9 @@
     { "id": "git", "level": 3 },
     { "id": "docker", "level": 2 },
     { "id": "linux", "level": 3 },
-    { "id": "pytorch", "level": 2 }
+    { "id": "pytorch", "level": 2 },
+    { "id": "aws", "level": 2 }
+
   ],
 
   "languages": [

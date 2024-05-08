@@ -42,6 +42,7 @@
     "docker": "Docker",
     "linux": "Linux",
     "pytorch": "PyTorch",
+    "aws": "AWS",
 
     "english": "English",
     "spanish": "Spanish",
