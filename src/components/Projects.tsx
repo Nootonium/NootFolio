@@ -47,58 +47,56 @@ function Projects() {
   return (
     <div className='relative min-h-screen w-screen snap-start'>
       <ProjectBackground backgroundImageUrl={backgroundImageUrl} />
-      <div className='absolute inset-0 flex h-full w-full justify-center px-2 pb-16 pt-4 sm:pt-12'>
-        <div className='flex w-full max-w-3xl flex-col'>
-          <h1
-            className={`font-JetBrainsMono text-5xl tracking-tighter sm:text-6xl ${headingClasses[theme]}`}
-          >
-            {t('title')}
-          </h1>
-          <Tab.Group onChange={setSelectedTabIndex}>
-            <Tab.List className='flex flex-none space-x-2 overflow-x-auto whitespace-nowrap rounded-md bg-opacity-20 pb-1 pt-2'>
-              {projects.map((project, index) => (
-                <Tab
-                  key={index}
-                  className={`flex rounded-lg px-4 py-2 text-base font-medium transition-transform hover:scale-105 hover:transform
+      <div className='absolute inset-0 flex h-full w-full max-w-7xl flex-col px-6 pb-16 pt-4 sm:pt-12'>
+        <h1
+          className={`font-JetBrainsMono text-5xl tracking-tighter sm:text-6xl ${headingClasses[theme]}`}
+        >
+          {t('title')}
+        </h1>
+        <Tab.Group onChange={setSelectedTabIndex}>
+          <Tab.List className='flex flex-none space-x-2 overflow-x-auto whitespace-nowrap rounded-sm bg-opacity-20 pb-1 pt-2'>
+            {projects.map((project, index) => (
+              <Tab
+                key={index}
+                className={`flex rounded-sm px-4 py-2 text-base font-medium transition-transform hover:scale-105 hover:transform
               ${
                 selectedTabIndex === index
                   ? currentTabColors.selectedBg + ' ' + currentTabColors.selectedText
                   : currentTabColors.notSelectedBg + ' ' + currentTabColors.notSelectedText
               }
               `}
-                  title={project.title}
+                title={project.title}
+              >
+                {project.title}
+              </Tab>
+            ))}
+          </Tab.List>
+          <Tab.Panels>
+            {projects.map((project, index) => (
+              <Tab.Panel key={index}>
+                <Transition
+                  appear
+                  show={selectedTabIndex == index}
+                  enter='transition-opacity duration-500'
+                  enterFrom='opacity-0'
+                  enterTo='opacity-100'
+                  leave='transition-opacity duration-500'
+                  leaveFrom='opacity-100'
+                  leaveTo='opacity-0'
                 >
-                  {project.title}
-                </Tab>
-              ))}
-            </Tab.List>
-            <Tab.Panels>
-              {projects.map((project, index) => (
-                <Tab.Panel key={index}>
-                  <Transition
-                    appear
-                    show={selectedTabIndex == index}
-                    enter='transition-opacity duration-500'
-                    enterFrom='opacity-0'
-                    enterTo='opacity-100'
-                    leave='transition-opacity duration-500'
-                    leaveFrom='opacity-100'
-                    leaveTo='opacity-0'
-                  >
-                    <ProjectCard
-                      project={{
-                        ...project,
-                        description: t(`projects.${project.id}.description`),
-                      }}
-                      projectIndex={index}
-                      totalProjects={projects.length}
-                    />
-                  </Transition>
-                </Tab.Panel>
-              ))}
-            </Tab.Panels>
-          </Tab.Group>
-        </div>
+                  <ProjectCard
+                    project={{
+                      ...project,
+                      description: t(`projects.${project.id}.description`),
+                    }}
+                    projectIndex={index}
+                    totalProjects={projects.length}
+                  />
+                </Transition>
+              </Tab.Panel>
+            ))}
+          </Tab.Panels>
+        </Tab.Group>
       </div>
     </div>
   );

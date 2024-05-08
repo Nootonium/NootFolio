@@ -8,6 +8,9 @@
     },
     "Nootfolio": {
       "description": "Welcome to my meticulously crafted web portfolio. I've focused on balancing high interactivity with optimal loading time, providing a seamless, engaging user experience without compromise on performance. Dive into the different sections where I showcase my skills and projects, and feel free to connect with me through the dedicated contact form. This portfolio reflects my dedication to blending functionality with aesthetics in web development, a characteristic I bring to all my projects."
+    },
+    "Ugram":{
+      "description": "Ugram is a clone of Instagram, built with the MERN stack. It features a user-friendly interface for uploading, sharing, and liking photos. Ugram also includes a search functionality to find users and photos, and a profile page to view and edit user information. The service is designed to be responsive and accessible, with a focus on user experience and performance."
     }
   },
   "title": "Projects"

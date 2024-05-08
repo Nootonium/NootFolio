@@ -1,0 +1,59 @@
+{
+    "title": "Habilidades",
+    "categories": {
+      "programming_languages": "Lenguajes de Programación",
+      "frontend_skills": "Habilidades de Frontend",
+      "backend_skills": "Habilidades de Backend",
+      "database_skills": "Habilidades de Bases de Datos",
+      "soft_skills": "Habilidades Blandas",
+      "other_skills": "Otras Habilidades",
+      "languages": "Idiomas"
+    },
+    "skills": {
+      "python": "Python",
+      "javascript": "JavaScript",
+      "typescript": "TypeScript",
+      "java": "Java",
+      "html": "HTML",
+      "css": "CSS",
+      "sql": "SQL",
+  
+      "react": "React",
+      "vue": "Vue",
+      "bootstrap": "Bootstrap",
+      "tailwindcss": "TailwindCSS",
+  
+      "django": "Django",
+      "flask": "Flask",
+      "node": "Node",
+      "express": "Express",
+      "spring": "Spring",
+  
+      "postgresql": "PostgreSQL",
+      "mysql": "MySQL",
+      "mongodb": "MongoDB",
+  
+      "problem-solving": "Resolución de Problemas",
+      "communication": "Comunicación",
+      "teamwork": "Trabajo en Equipo",
+      "autonomy": "Autonomía",
+  
+      "git": "Git",
+      "docker": "Docker",
+      "linux": "Linux",
+      "pytorch": "PyTorch",
+  
+      "english": "Inglés",
+      "spanish": "Español",
+      "french": "Francés"
+    },
+    "ranks": [
+      "iniciado",
+      "padawan",
+      "caballero",
+      "maestro",
+      "miembro_del_consejo",
+      "maestro_de_la_orden",
+      "gran_maestro"
+    ]
+}  

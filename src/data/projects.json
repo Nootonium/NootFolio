@@ -8,6 +8,14 @@
     "github": "https://github.com/Nootonium/AIPlaymaker"
   },
   {
+    "id":"Ugram",
+    "title": "Ugram",
+    "image_url": "ugram.png",
+    "tech_stack": ["React", "Node", "Express", "MongoDB", "Jest", "GitHub Actions", "TypeScript", "AWS", "Docker", "tRPC"],
+    "link": "https://d1scz8xo84js7t.cloudfront.net",
+    "github": "https://github.com/GLO4002UL/projet2023-eq17"
+  },
+  {
     "id":"CADE",
     "title": "C.A.D.E. - Comprehensive Automated Digital E-butler",
     "image_url": "cade.png",

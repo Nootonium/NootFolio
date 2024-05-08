@@ -26,6 +26,12 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
     );
   };
 
+  const bgClasses = {
+    light: 'bg-gradient-to-tl from-white to-neutral-200',
+    dark: 'bg-gradient-to-tl from-black to-neutral-900',
+    rainbow: 'bg-rainbow-300',
+  };
+
   const headingClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
@@ -57,7 +63,7 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
         >
           <Dialog.Panel
             as='div'
-            className='absolute left-1/2 top-1/2 h-auto max-h-screen w-full max-w-xl -translate-x-1/2 -translate-y-1/2 rounded-md bg-gradient-to-b from-neutral-800 to-neutral-500 p-4 sm:p-8'
+            className={`absolute left-1/2 top-1/2 h-auto max-h-screen w-full max-w-xl -translate-x-1/2 -translate-y-1/2 rounded-md p-4 sm:p-8 ${bgClasses[theme]}`}
           >
             <h3 className={`py-2 font-JetBrainsMono text-3xl ${headingClasses[theme]}`}>
               Contact Me

@@ -9,7 +9,7 @@ function ProjectCardButtons({ project }: { project: Project }) {
         href={project.link ? project.link : project.github}
         target='_blank'
         rel='noreferrer'
-        className='btn btn-ghost col-start-1 rounded text-center shadow-md ring-2 ring-neutral-500'
+        className='btn btn-ghost col-start-1 rounded-sm text-center shadow-md ring-2 ring-neutral-500'
       >
         {t('visit')}
       </a>

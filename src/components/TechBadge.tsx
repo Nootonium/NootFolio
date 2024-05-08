@@ -28,6 +28,10 @@ function TechBadge({ tech }: { tech: string }) {
     vite: 'bg-gradient-to-br from-sky-400 to-purple-500 text-white',
     tailwindcss: 'bg-sky-400 text-white',
     pytorch: 'bg-orange-400 text-white',
+    aws: 'bg-yellow-600 text-black',
+    docker: 'bg-blue-500 text-white',
+    trpc: 'bg-gradient-to-br from-blue-400 to-blue-600 text-white',
+    'github actions': 'bg-gray-400 text-white',
   };
 
   let colorClasses = 'bg-neutral-300 text-neutral-800';
@@ -35,10 +39,11 @@ function TechBadge({ tech }: { tech: string }) {
   if (techColors[tech.toLowerCase()]) {
     colorClasses = techColors[tech.toLowerCase()];
   }
+  console.log(tech);
   return (
     <span
       key={tech}
-      className={`bg-grad m-1 inline-block rounded-full px-2 py-1 text-lg font-semibold sm:px-4 sm:py-2 ${colorClasses}`}
+      className={`bg-grad m-1 inline-block rounded-full px-2 py-1 text-base font-semibold sm:px-4 sm:py-2 sm:text-lg ${colorClasses}`}
     >
       {tech}
     </span>

@@ -19,25 +19,35 @@ function ProjectCard({
     rainbow: 'bg-rainbow-500',
   };
 
+  const headingClasses = {
+    light: 'text-fuchsia-600',
+    dark: 'text-teal-400',
+    rainbow: '',
+  };
+
   return (
-    <div className={`z-20 flex w-full rounded-md shadow-xl ${cardClasses[theme]}`}>
-      <div className='grid grid-rows-[min-content,auto,auto,min-content] gap-2 overflow-x-auto p-4 font-OpenSans text-base sm:px-12 sm:text-xl'>
-        <div className='row-span-1 rounded-sm leading-relaxed sm:max-h-72'>
-          <h3 className=' font-JetBrainsMono text-lg tracking-tight sm:text-2xl'>
-            {t('description')}
-          </h3>
-          <p className='min-h-16 max-h-72 overflow-y-auto'>{project.description}</p>
-        </div>
-        <div className='row-span-1 rounded-sm'>
-          <h3 className='font-JetBrainsMono text-xl tracking-tight sm:text-2xl'>
-            {t('techStack')}
-          </h3>
-          {project.tech_stack.map((tech, index) => (
-            <TechBadge key={index} tech={tech} />
-          ))}
-        </div>
-        <ProjectCardButtons project={project} />
+    <div
+      className={`z-20 flex h-full w-full flex-col gap-4 rounded-sm p-4 font-OpenSans shadow-xl sm:px-12 sm:text-xl ${cardClasses[theme]}`}
+    >
+      <div className=''>
+        <h3
+          className={`font-JetBrainsMono text-lg tracking-tight sm:text-2xl ${headingClasses[theme]}`}
+        >
+          {t('description')}
+        </h3>
+        <p className='min-h-16 max-h-72 overflow-y-auto leading-relaxed'>{project.description}</p>
       </div>
+      <div className=''>
+        <h3
+          className={`font-JetBrainsMono text-lg tracking-tight sm:text-2xl ${headingClasses[theme]}`}
+        >
+          {t('techStack')}
+        </h3>
+        {project.tech_stack.map((tech, index) => (
+          <TechBadge key={index} tech={tech} />
+        ))}
+      </div>
+      <ProjectCardButtons project={project} />
     </div>
   );
 }

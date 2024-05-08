@@ -1,0 +1,20 @@
+{
+    "ranks": {
+      "youngling": "Iniciado",
+      "padawan": "Padawan",
+      "knight": "Caballero",
+      "master": "Maestro",
+      "council_member": "Miembro del Consejo",
+      "master_of_the_order": "Maestro de la Orden",
+      "grand_master": "Gran Maestro"
+    },
+    "rankDescription": {
+      "youngling_description": "Apenas comenzando con esta habilidad o tecnología. Aunque aún no soy competente, estoy aprendiendo y mejorando activamente.",
+      "padawan_description": "Tengo un buen entendimiento de esta habilidad o tecnología. La he utilizado en algunos proyectos y me siento cómodo con los conceptos básicos.",
+      "knight_description": "Me siento cómodo usando esta habilidad o tecnología en un contexto profesional. La he utilizado en varios proyectos y puedo trabajar de forma independiente con ella.",
+      "master_description": "Muy cómodo y experimentado con esta habilidad o tecnología. Puedo asesorar a otros y ayudarlos a aprender esta habilidad.",
+      "council_member_description": "Profundamente experimentado con esta habilidad o tecnología. Puedo tomar decisiones de alto nivel, crear proyectos avanzados y proporcionar un liderazgo sólido.",
+      "master_of_the_order_description": "Excepcionalmente conocedor en esta habilidad o tecnología. Soy un líder de opinión, establezco estrategias y me aseguro de que otros sigan las mejores prácticas.",
+      "grand_master_description": "Uno de los principales expertos en esta habilidad o tecnología. Mi experiencia es reconocida por mis pares, y se me llama para resolver los problemas más desafiantes."
+    }
+}

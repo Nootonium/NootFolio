@@ -17,8 +17,8 @@ export default function CustomPopover({ children }: CustomPopoverProps) {
   };
 
   const popoverPanelClasses = {
-    light: 'bg-white text-black border-black border-2 border-dashed border-inset rounded-sm',
-    dark: 'bg-black text-yellow-500 border-yellow-500 border-2 border-dashed border-inset rounded-sm',
+    light: 'bg-white text-black border-black border-2 border-inset rounded-sm',
+    dark: 'bg-black text-yellow-500 border-yellow-500 border-2 border-inset rounded-sm',
     rainbow: 'bg-rainbow-300',
   };
 

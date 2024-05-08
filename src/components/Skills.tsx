@@ -20,6 +20,7 @@ function Skills({ active }: { active: boolean }) {
   const [stars, setStars] = useState<Star[]>([]);
   const { theme } = useTheme();
   const { t } = useTranslation('skills');
+  const [speed, setSpeed] = useState(60);
 
   const skillbgClasses = {
     // spaces at the end are important dunnow why
@@ -64,6 +65,12 @@ function Skills({ active }: { active: boolean }) {
   };
 
   useEffect(() => {
+    if (textRef.current) {
+      textRef.current.style.setProperty('--crawl-duration', `${speed}s`);
+    }
+  }, [speed]);
+
+  useEffect(() => {
     resetAnimation();
   }, [active]);
 
@@ -87,6 +94,15 @@ function Skills({ active }: { active: boolean }) {
           style={{ top: `${star.top}px`, left: `${star.left}px` }}
         />
       ))}
+      <input
+        type='range'
+        min='10'
+        max='120'
+        value={speed}
+        data-tip='speed'
+        onChange={e => setSpeed(parseInt(e.target.value, 10))}
+        className={`slider range tooltip range-info absolute right-10 top-36 h-8 w-32`}
+      />
       <div
         ref={textRef}
         className={`crawl max-w-xs px-8 font-JetBrainsMono text-lg sm:max-w-md sm:text-2xl ${skilltextClasses[theme]}`}

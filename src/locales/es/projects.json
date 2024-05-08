@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "AIPlayMaker": {
+      "description": "AIPlayMaker es un agente de IA dinámico para juegos de mesa que aprovecha algoritmos avanzados como Minimax y Monte Carlo Tree Search (MCTS) para ofrecer un juego desafiante. Actualmente, el servicio cuenta con un modelo de aprendizaje automático para Tic Tac Toe y Conecta Cuatro. AIPlayMaker ofrece una API RESTful fácil de usar y está en desarrollo activo para mejorar sus capacidades de IA y admitir una gama más amplia de juegos."
+    },
+    "CADE": {
+      "description": "CADE es un servicio backend versátil diseñado para registrar, procesar y automatizar la gestión de mensajes de formularios de contacto. Ahora se integra con Discord para funcionar como un bot, permitiendo que eventos del repositorio de GitHub, como pull requests, se publiquen directamente en los canales de Discord. El servicio también ofrece respuestas automáticas impulsadas por GPT, enviando respuestas por correo electrónico a los usuarios. CADE se adhiere a las prácticas estándar de la industria, incluidas las pruebas integrales con Jest, el manejo de errores, el registro con Winston y el CI/CD con GitHub Actions."
+    },
+    "Nootfolio": {
+      "description": "Bienvenido a mi portafolio web meticulosamente elaborado. Me he centrado en equilibrar una alta interactividad con un tiempo de carga óptimo, brindando una experiencia de usuario fluida y atractiva sin comprometer el rendimiento. Sumérgete en las diferentes secciones donde muestro mis habilidades y proyectos, y no dudes en conectarte conmigo a través del formulario de contacto dedicado. Este portafolio refleja mi dedicación a combinar funcionalidad con estética en el desarrollo web, una característica que aporto a todos mis proyectos."
+    },
+    "Ugram":{
+      "description": "Ugram es un clon de Instagram, construido con la pila MERN. Ofrece una interfaz amigable para subir, compartir y dar 'me gusta' a fotos. Ugram también incluye una funcionalidad de búsqueda para encontrar usuarios y fotos, y una página de perfil para ver y editar información del usuario. El servicio está diseñado para ser responsivo y accesible, con un enfoque en la experiencia del usuario y el rendimiento."
+    }
+  },
+  "title": "Proyectos"
+}
