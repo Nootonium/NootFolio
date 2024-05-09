@@ -1,9 +1,9 @@
 import { MessageData } from './types';
-import config from './config';
+import { getEnvironmentVariables } from './config';
 
 export async function postMessage(data: MessageData) {
   try {
-    const response = await fetch(`${config.apiBaseUrl}/message`, {
+    const response = await fetch(`${getEnvironmentVariables().API_URL}/message`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -1,11 +1,5 @@
-//TODO add comment about changing this manually
-const config = {
-  development: {
-    apiBaseUrl: 'http://localhost:3000',
-  },
-  production: {
-    apiBaseUrl: 'https://cade.fly.dev',
-  },
+export const getEnvironmentVariables = () => {
+  return {
+    API_URL: import.meta.env.VITE_API_URL || 'http://localhost:3000',
+  };
 };
-const env = process.env.NODE_ENV as 'development' | 'production' | undefined;
-export default config[env ?? 'development'];

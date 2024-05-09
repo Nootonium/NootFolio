@@ -1,0 +1,20 @@
+{
+  "ranks": {
+    "youngling": "Jeune padawan",
+    "padawan": "Padawan",
+    "knight": "Chevalier",
+    "master": "Maître",
+    "council_member": "Membre du Conseil",
+    "master_of_the_order": "Maître de l'Ordre",
+    "grand_master": "Grand Maître"
+  },
+  "rankDescription": {
+    "youngling_description": "Je commence tout juste avec cette compétence ou technologie. Bien que je ne sois pas encore compétent, j'apprends activement et je m'améliore.",
+    "padawan_description": "J'ai une bonne compréhension de cette compétence ou technologie. Je l'ai utilisée dans certains projets et je suis à l'aise avec les bases.",
+    "knight_description": "À l'aise d'utiliser cette compétence ou technologie dans un contexte professionnel. Je l'ai utilisée dans divers projets et je peux travailler de manière autonome avec.",
+    "master_description": "Très à l'aise et expérimenté avec cette compétence ou technologie. Je peux guider les autres et les aider à apprendre cette compétence.",
+    "council_member_description": "Profondément expérimenté avec cette compétence ou technologie. Je peux prendre des décisions de haut niveau, créer des projets avancés et fournir un leadership solide.",
+    "master_of_the_order_description": "Exceptionnellement compétent dans cette compétence ou technologie. Je suis un leader d'opinion, définissant la stratégie et veillant à ce que les autres suivent les meilleures pratiques.",
+    "grand_master_description": "Parmi les plus grands experts de cette compétence ou technologie. Mon expertise est reconnue par mes pairs, et on fait appel à moi pour résoudre les problèmes les plus complexes."
+  }
+}

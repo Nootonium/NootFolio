@@ -1,0 +1,12 @@
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 5px; /* Adjust as needed */
+  opacity: 1;
+  animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}

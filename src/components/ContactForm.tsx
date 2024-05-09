@@ -2,11 +2,12 @@ import { useForm } from 'react-hook-form';
 import Alert from './Alert';
 import { XCircleIcon } from '@heroicons/react/24/outline';
 import { MessageData } from '../types';
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { useTheme } from '../hooks/ThemeContext';
 
 function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
   const { theme } = useTheme();
+  const [messageLength, setMessageLength] = useState(0);
   const {
     register,
     handleSubmit,
@@ -17,13 +18,17 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
   const onSubmitWithLoading = async (data: MessageData) => {
     setIsLoading(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 3000));
       await onSubmit(data);
+      await new Promise(resolve => setTimeout(resolve, 3000));
     } catch (e) {
       console.error(e);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setMessageLength(e.target.value.length);
   };
 
   const inputClasses = {
@@ -33,8 +38,8 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
   };
 
   const buttonClasses = {
-    light: 'text-fuchsia-600 hover:text-fuchsia-700',
-    dark: 'text-teal-400 hover:text-teal-500',
+    light: 'text-fuchsia-600 hover:text-black bg-neutral-200 hover:bg-fuchsia-600',
+    dark: 'text-teal-400 hover:text-black bg-neutral-900 hover:bg-teal-500',
     rainbow: 'bg-rainbow-300',
   };
 
@@ -43,24 +48,33 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
       <input
         {...register('name', { required: true })}
         placeholder='Name'
-        className={`input my-2 rounded border bg-neutral-300 p-2 text-neutral-800 ${inputClasses[theme]}`}
+        className={`input my-2 rounded border p-2 ${inputClasses[theme]}`}
       />
       {errors.name && <Alert message='This field is required' Icon={XCircleIcon} type='error' />}
-
       <input
         {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
         placeholder='Email'
-        className={`input my-2 rounded border bg-neutral-300 p-2 text-neutral-800 ${inputClasses[theme]}`}
+        className={`input my-2 rounded border p-2 ${inputClasses[theme]}`}
       />
       {errors.email && (
         <Alert message='Please enter a valid email address' Icon={XCircleIcon} type='error' />
       )}
       <textarea
-        {...register('message', { required: true })}
+        {...register('message', {
+          required: 'This field is required',
+          maxLength: {
+            value: 500,
+            message: 'Your message cannot exceed 500 characters',
+          },
+        })}
         placeholder='Message'
-        className={`textarea my-2 h-48 max-h-64 rounded border bg-neutral-300 p-2 text-neutral-800 ${inputClasses[theme]}`}
+        className={`textarea my-2 h-48 max-h-64 rounded border p-2 ${inputClasses[theme]}`}
+        onChange={handleMessageChange}
       />
-      {errors.message && <Alert message='This field is required' Icon={XCircleIcon} type='error' />}
+      <div className='text-right text-sm text-gray-500'>{messageLength} / 500 characters</div>
+      {errors.message && (
+        <Alert message={errors.message?.message || ''} Icon={XCircleIcon} type='error' />
+      )}
       {isLoading ? (
         <div className='flex w-full justify-center p-2'>
           <div
@@ -71,7 +85,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
       ) : (
         <input
           type='submit'
-          className={`btn mt-2 cursor-pointer rounded bg-neutral-600 p-2 hover:bg-neutral-700 ${buttonClasses[theme]}`}
+          className={`btn mt-2 cursor-pointer rounded p-2 font-JetBrainsMono text-lg tracking-wider ${buttonClasses[theme]}`}
         />
       )}
     </form>

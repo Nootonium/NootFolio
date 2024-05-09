@@ -24,7 +24,7 @@ export function NavButton({
     <button
       data-tip={text}
       onClick={onClick}
-      className={`tooltip tooltip-info  flex w-auto flex-row items-center justify-center rounded-md p-2 sm:w-32  ${activeSection}`}
+      className={`tooltip tooltip-info flex w-auto flex-col items-center justify-center rounded-md p-2 sm:w-32 sm:p-1  ${activeSection}`}
     >
       <Icon className='h-8 flex-shrink-0 sm:mr-1' />
       <span className='sr-only font-JetBrainsMono text-lg tracking-tighter sm:not-sr-only'>

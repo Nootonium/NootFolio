@@ -1,37 +1,103 @@
 import projects from '../data/projects.json';
+import { Tab, Transition } from '@headlessui/react';
 import ProjectCard from './ProjectCard';
 import { useTheme } from '../hooks/ThemeContext';
+import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import ProjectBackground from './ProjectBackground';
 
 function Projects() {
   const { theme } = useTheme();
+  const { t } = useTranslation('projects');
+  const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
-  const projectsClasses = {
-    light: 'text-black',
-    dark: 'text-white',
-    rainbow: 'bg-rainbow-300',
-  };
   const headingClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
     rainbow: '',
   };
 
+  const tabListColors = {
+    light: {
+      selectedBg: 'bg-blue-600',
+      selectedText: 'text-white',
+      notSelectedBg: 'bg-white bg-opacity-90',
+      notSelectedText: 'text-black',
+    },
+    dark: {
+      selectedBg: 'bg-lime-400',
+      selectedText: 'text-black',
+      notSelectedBg: 'bg-black bg-opacity-75',
+      notSelectedText: 'text-white',
+    },
+    rainbow: {
+      selectedBg: 'bg-purple-500',
+      selectedText: 'text-white',
+      notSelectedBg: 'bg-indigo-500',
+      notSelectedText: 'text-pink-500',
+    },
+  };
+
+  const currentTabColors = tabListColors[theme] || tabListColors.light;
+  const backgroundImageUrl = new URL(
+    `../assets/${projects[selectedTabIndex].image_url}`,
+    import.meta.url,
+  ).href;
+
   return (
-    <div
-      className={`relative flex h-screen w-screen snap-start justify-center ${projectsClasses[theme]}`}
-    >
-      <div className='carousel-center carousel h-screen w-screen'>
-        {projects.map((project, index) => (
-          <div className='carousel-item relative w-screen' key={index} id={`slide${index}`}>
-            <ProjectCard project={project} projectIndex={index} totalProjects={projects.length} />
-          </div>
-        ))}
+    <div className='relative min-h-screen w-screen snap-start'>
+      <ProjectBackground backgroundImageUrl={backgroundImageUrl} />
+      <div className='absolute inset-0 flex h-full w-full max-w-7xl flex-col px-6 pb-16 pt-4 sm:pt-12'>
+        <h1
+          className={`font-JetBrainsMono text-5xl tracking-tighter sm:text-6xl ${headingClasses[theme]}`}
+        >
+          {t('title')}
+        </h1>
+        <Tab.Group onChange={setSelectedTabIndex}>
+          <Tab.List className='flex flex-none space-x-2 overflow-x-auto whitespace-nowrap rounded-sm bg-opacity-20 pb-1 pt-2'>
+            {projects.map((project, index) => (
+              <Tab
+                key={index}
+                className={`flex rounded-sm px-4 py-2 text-base font-medium transition-transform hover:scale-105 hover:transform
+              ${
+                selectedTabIndex === index
+                  ? currentTabColors.selectedBg + ' ' + currentTabColors.selectedText
+                  : currentTabColors.notSelectedBg + ' ' + currentTabColors.notSelectedText
+              }
+              `}
+                title={project.title}
+              >
+                {project.title}
+              </Tab>
+            ))}
+          </Tab.List>
+          <Tab.Panels>
+            {projects.map((project, index) => (
+              <Tab.Panel key={index}>
+                <Transition
+                  appear
+                  show={selectedTabIndex == index}
+                  enter='transition-opacity duration-500'
+                  enterFrom='opacity-0'
+                  enterTo='opacity-100'
+                  leave='transition-opacity duration-500'
+                  leaveFrom='opacity-100'
+                  leaveTo='opacity-0'
+                >
+                  <ProjectCard
+                    project={{
+                      ...project,
+                      description: t(`projects.${project.id}.description`),
+                    }}
+                    projectIndex={index}
+                    totalProjects={projects.length}
+                  />
+                </Transition>
+              </Tab.Panel>
+            ))}
+          </Tab.Panels>
+        </Tab.Group>
       </div>
-      <h1
-        className={`absolute z-40 mt-8 font-JetBrainsMono text-5xl tracking-tighter sm:mt-16 sm:text-6xl ${headingClasses[theme]}`}
-      >
-        Projects
-      </h1>
     </div>
   );
 }

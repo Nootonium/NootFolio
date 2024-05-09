@@ -1,0 +1,60 @@
+{
+  "title": "Compétences",
+  "categories": {
+    "programming_languages": "Langages de programmation",
+    "frontend_skills": "Compétences frontend",
+    "backend_skills": "Compétences backend",
+    "database_skills": "Compétences en base de données",
+    "soft_skills": "Qualités personnelles",
+    "other_skills": "Autres compétences",
+    "languages": "Langues"
+  },
+  "skills": {
+    "python": "Python",
+    "javascript": "Javascript",
+    "typescript": "TypeScript",
+    "java": "Java",
+    "html": "HTML",
+    "css": "CSS",
+    "sql": "SQL",
+
+    "react": "React",
+    "vue": "Vue",
+    "bootstrap": "Bootstrap",
+    "tailwindcss": "TailwindCSS",
+
+    "django": "Django",
+    "flask": "Flask",
+    "node": "Node",
+    "express": "Express",
+    "spring": "Spring",
+
+    "postgresql": "PostgreSQL",
+    "mysql": "MySQL",
+    "mongodb": "MongoDB",
+
+    "problem-solving": "Résolution de problèmes",
+    "communication": "Communication",
+    "teamwork": "Travail d'équipe",
+    "autonomy": "Autonomie",
+
+    "git": "Git",
+    "docker": "Docker",
+    "linux": "Linux",
+    "pytorch": "PyTorch",
+    "aws": "AWS",
+
+    "english": "Anglais",
+    "spanish": "Espagnol",
+    "french": "Français"
+  },
+  "ranks": [
+    "Jeune padawan",
+    "Padawan",
+    "Chevalier",
+    "Maître",
+    "Membre du Conseil",
+    "Maître de l'Ordre",
+    "Grand Maître"
+  ]
+}

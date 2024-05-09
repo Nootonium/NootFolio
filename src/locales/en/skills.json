@@ -1,0 +1,60 @@
+{
+  "title": "Skills",
+  "categories": {
+    "programming_languages": "Programming Languages",
+    "frontend_skills": "Frontend Skills",
+    "backend_skills": "Backend Skills",
+    "database_skills": "Database Skills",
+    "soft_skills": "Soft Skills",
+    "other_skills": "Other Skills",
+    "languages": "Languages"
+  },
+  "skills": {
+    "python": "Python",
+    "javascript": "Javascript",
+    "typescript": "TypeScript",
+    "java": "Java",
+    "html": "HTML",
+    "css": "CSS",
+    "sql": "SQL",
+
+    "react": "React",
+    "vue": "Vue",
+    "bootstrap": "Bootstrap",
+    "tailwindcss": "TailwindCSS",
+
+    "django": "Django",
+    "flask": "Flask",
+    "node": "Node",
+    "express": "Express",
+    "spring": "Spring",
+
+    "postgresql": "PostgreSQL",
+    "mysql": "MySQL",
+    "mongodb": "MongoDB",
+
+    "problem-solving": "Problem-Solving",
+    "communication": "Communication",
+    "teamwork": "Teamwork",
+    "autonomy": "Autonomy",
+
+    "git": "Git",
+    "docker": "Docker",
+    "linux": "Linux",
+    "pytorch": "PyTorch",
+    "aws": "AWS",
+
+    "english": "English",
+    "spanish": "Spanish",
+    "french": "French"
+  },
+  "ranks": [
+    "youngling",
+    "padawan",
+    "knight",
+    "master",
+    "council_member",
+    "master_of_the_order",
+    "grand_master"
+  ]
+}

@@ -1,6 +1,6 @@
 .crawl {
   transform: perspective(250px) rotateX(20deg);
-  animation: scrollCrawl 100s linear infinite;
+  animation: scrollCrawl  var(--crawl-duration, 90s) linear infinite;
 }
 @keyframes scrollCrawl {
   0% {

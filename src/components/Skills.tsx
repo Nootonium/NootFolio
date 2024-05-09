@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import '../assets/starwars.css';
 import skills from '../data/skills.json';
 import { useTheme } from '../hooks/ThemeContext';
@@ -18,6 +19,8 @@ function Skills({ active }: { active: boolean }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [stars, setStars] = useState<Star[]>([]);
   const { theme } = useTheme();
+  const { t } = useTranslation('skills');
+  const [speed, setSpeed] = useState(60);
 
   const skillbgClasses = {
     // spaces at the end are important dunnow why
@@ -53,13 +56,19 @@ function Skills({ active }: { active: boolean }) {
   };
 
   const resetAnimation = () => {
-    console.log('resetting animation');
+    //console.log('resetting animation');
     if (textRef.current) {
       textRef.current.classList.remove('crawl');
       void textRef.current.offsetWidth;
       textRef.current.classList.add('crawl');
     }
   };
+
+  useEffect(() => {
+    if (textRef.current) {
+      textRef.current.style.setProperty('--crawl-duration', `${speed}s`);
+    }
+  }, [speed]);
 
   useEffect(() => {
     resetAnimation();
@@ -73,16 +82,6 @@ function Skills({ active }: { active: boolean }) {
     };
   }, []);
 
-  const jediRanks = [
-    'Youngling',
-    'Padawan',
-    'Knight',
-    'Master',
-    'Council Member',
-    'Master of the Order',
-    'Grand Master',
-  ];
-
   return (
     <div
       ref={containerRef}
@@ -95,29 +94,37 @@ function Skills({ active }: { active: boolean }) {
           style={{ top: `${star.top}px`, left: `${star.left}px` }}
         />
       ))}
+      <input
+        type='range'
+        min='10'
+        max='120'
+        value={speed}
+        data-tip='speed'
+        onChange={e => setSpeed(parseInt(e.target.value, 10))}
+        className={`slider range tooltip range-info absolute right-10 top-36 h-8 w-32`}
+      />
       <div
         ref={textRef}
-        className={`crawl max-w-xs px-8 font-JetBrainsMono text-lg sm:max-w-md sm:text-3xl ${skilltextClasses[theme]}`}
+        className={`crawl max-w-xs px-8 font-JetBrainsMono text-lg sm:max-w-md sm:text-2xl ${skilltextClasses[theme]}`}
       >
-        <h1 className='text-center text-4xl tracking-tighter sm:text-7xl'>Skills</h1>
+        <h1 className='text-center text-4xl tracking-tighter sm:text-6xl'>{t('title')}</h1>
         <br />
         {Object.keys(skills).map((key: string) => {
           const skillKey = key as keyof typeof skills;
           return (
             <div key={key}>
-              <h1 className='text-center text-3xl capitalize tracking-tighter sm:text-6xl'>
-                {key}
+              <h1 className='text-center text-3xl tracking-tighter sm:text-5xl'>
+                {t(`categories.${skillKey}`)}
               </h1>
-              <br />
+              <div className='h-2' />
               {skills[skillKey].map((skill, index) => (
                 <div key={index} className='flex flex-wrap font-OpenSans'>
-                  <span className='text-left'>{skill.name}</span>
+                  <span className='text-left'>{t(`skills.${skill.id}`)}</span>
                   <span className='flex-grow' />
-                  <span className='text-right'>{jediRanks[skill.level]}</span>
-                  <br />
+                  <span className='text-right'>{t(`ranks.${skill.level}`)}</span>
                 </div>
               ))}
-              <br />
+              <div className='h-4' />
             </div>
           );
         })}
