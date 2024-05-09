@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import './assets/rainbow-theme.css';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -6,7 +7,6 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import NavBar from './components/NavBar';
 import useScrollSpy from './hooks/useScrollSpy';
-import { useRef, useState } from 'react';
 import ThemeToggle from './components/ThemeToggle';
 import background from './assets/pinguBg.webm';
 import LanguageSelector from './components/LanguageSelector';
