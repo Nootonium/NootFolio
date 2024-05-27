@@ -34,7 +34,7 @@ function App() {
         {`Sorry, your browser doesn't support embedded videos.`}
       </video>
       <NavBar activeSection={activeSection} openContact={onOpen} />
-      <div className='h-screen w-screen snap-y snap-proximity overflow-x-hidden overflow-y-scroll'>
+      <div className='h-screen w-screen overflow-x-hidden overflow-y-scroll md:snap-y md:snap-proximity'>
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>
