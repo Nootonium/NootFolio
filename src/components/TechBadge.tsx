@@ -39,7 +39,6 @@ function TechBadge({ tech }: { tech: string }) {
   if (techColors[tech.toLowerCase()]) {
     colorClasses = techColors[tech.toLowerCase()];
   }
-  console.log(tech);
   return (
     <span
       key={tech}
