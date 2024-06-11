@@ -48,7 +48,7 @@ function App() {
         openContact={onOpen}
         scrollToSection={scrollToSection}
       />
-      <div className='h-screen w-screen snap-y snap-proximity overflow-x-hidden'>
+      <div className='h-screen w-screen snap-none overflow-x-hidden md:snap-y md:snap-proximity'>
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>
