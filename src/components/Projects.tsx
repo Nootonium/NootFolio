@@ -45,7 +45,7 @@ function Projects() {
   ).href;
 
   return (
-    <div className='relative min-h-screen w-screen snap-start'>
+    <div className='relative h-screen w-screen snap-start'>
       <ProjectBackground backgroundImageUrl={backgroundImageUrl} />
       <div className='absolute inset-0 flex h-full w-full max-w-7xl flex-col px-6 pb-16 pt-4 sm:pt-12'>
         <h1
