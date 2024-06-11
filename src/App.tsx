@@ -24,6 +24,11 @@ function App() {
   const scrollToRef = (ref: RefObject<HTMLElement>) => {
     const element = ref.current;
     if (element) {
+      console.log(`Scrolling to element: ${element.id}`);
+      console.log(`Element offsetTop: ${element.offsetTop}`);
+      console.log(`Element offsetHeight: ${element.offsetHeight}`);
+      console.log(`Element clientHeight: ${element.clientHeight}`);
+      console.log(`Element bounding box:`, element.getBoundingClientRect());
       element.scrollIntoView({ behavior: 'smooth' });
     } else {
       console.error('Element not found');
