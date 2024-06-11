@@ -22,7 +22,7 @@ function ThemeToggle() {
   };
 
   return (
-    <div data-tip='theme' className='tooltip tooltip-left tooltip-info absolute right-6 top-6'>
+    <div data-tip='theme' className='tooltip tooltip-left tooltip-info fixed right-6 top-6'>
       <Switch
         checked={enabled}
         onChange={handleSwitchChange}
