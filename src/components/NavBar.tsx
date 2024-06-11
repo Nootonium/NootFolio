@@ -12,9 +12,11 @@ import { useTranslation } from 'react-i18next';
 function NavBar({
   activeSection,
   openContact,
+  scrollToSection,
 }: {
   activeSection: string;
   openContact: () => void;
+  scrollToSection: (section: string) => void;
 }) {
   const { theme } = useTheme();
   const { t } = useTranslation('navbar');
@@ -22,12 +24,6 @@ function NavBar({
     light: 'bg-white text-black',
     dark: 'bg-black text-white',
     rainbow: '',
-  };
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (!element) return;
-    element.scrollIntoView({ behavior: 'smooth' });
   };
   return (
     <nav

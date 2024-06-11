@@ -21,6 +21,16 @@ function App() {
   const onOpen = () => setIsContactOpen(true);
   const onClose = () => setIsContactOpen(false);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (!element) {
+      console.error(`Element with id ${id} not found`);
+    }
+  };
+
   return (
     <>
       <video
@@ -33,8 +43,12 @@ function App() {
         <source src={background} type='video/webm' />
         {`Sorry, your browser doesn't support embedded videos.`}
       </video>
-      <NavBar activeSection={activeSection} openContact={onOpen} />
-      <div className='h-screen w-screen snap-y snap-proximity overflow-x-hidden overflow-y-scroll'>
+      <NavBar
+        activeSection={activeSection}
+        openContact={onOpen}
+        scrollToSection={scrollToSection}
+      />
+      <div className='h-screen w-screen snap-y snap-proximity overflow-x-hidden'>
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>

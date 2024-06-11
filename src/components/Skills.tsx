@@ -71,7 +71,17 @@ function Skills({ active }: { active: boolean }) {
   }, [speed]);
 
   useEffect(() => {
-    resetAnimation();
+    let timeoutId = 0;
+
+    if (active) {
+      timeoutId = setTimeout(() => {
+        resetAnimation();
+      }, 100);
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [active]);
 
   useEffect(() => {
