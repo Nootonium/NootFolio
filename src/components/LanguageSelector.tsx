@@ -51,7 +51,7 @@ function LanguageSelector() {
   return (
     <div
       data-tip='Language'
-      className='tooltip tooltip-left tooltip-info absolute right-20 top-5 font-JetBrainsMono '
+      className='tooltip tooltip-left tooltip-info fixed right-20 top-5 font-JetBrainsMono '
     >
       <Listbox value={selectedLanguage} onChange={changeLanguage}>
         <Listbox.Button className={`rounded-md px-2 py-1 ${buttonClasses[theme]}`}>

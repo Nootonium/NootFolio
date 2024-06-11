@@ -24,11 +24,6 @@ function App() {
   const scrollToRef = (ref: RefObject<HTMLElement>) => {
     const element = ref.current;
     if (element) {
-      console.log(`Scrolling to element: ${element.id}`);
-      console.log(`Element offsetTop: ${element.offsetTop}`);
-      console.log(`Element offsetHeight: ${element.offsetHeight}`);
-      console.log(`Element clientHeight: ${element.clientHeight}`);
-      console.log(`Element bounding box:`, element.getBoundingClientRect());
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
       console.error('Element not found');
@@ -42,18 +37,18 @@ function App() {
         loop
         muted
         playsInline
-        className='absolute left-0 top-0 -z-10 h-full w-full object-cover'
+        className='fixed inset-0 -z-10 h-full w-full object-cover'
       >
         <source src={background} type='video/webm' />
         {`Sorry, your browser doesn't support embedded videos.`}
       </video>
-      <NavBar
-        activeSection={activeSection}
-        openContact={onOpen}
-        scrollToRef={scrollToRef}
-        refs={{ heroRef, aboutRef, projectsRef, skillsRef }}
-      />
-      <div className='h-screen w-screen snap-none overflow-x-hidden md:snap-y md:snap-proximity'>
+      <div className='relative z-10 min-h-screen'>
+        <NavBar
+          activeSection={activeSection}
+          openContact={onOpen}
+          scrollToRef={scrollToRef}
+          refs={{ heroRef, aboutRef, projectsRef, skillsRef }}
+        />
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>
@@ -66,10 +61,10 @@ function App() {
         <section ref={skillsRef} id='skills'>
           <Skills active={activeSection == 'skills'} />
         </section>
+        <Contact isContactOpen={isContactOpen} onClose={onClose} />
+        <ThemeToggle />
+        <LanguageSelector />
       </div>
-      <Contact isContactOpen={isContactOpen} onClose={onClose} />
-      <ThemeToggle />
-      <LanguageSelector />
     </>
   );
 }
