@@ -30,10 +30,6 @@ function App() {
       console.log(`Element clientHeight: ${element.clientHeight}`);
       console.log(`Element bounding box:`, element.getBoundingClientRect());
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      const elementBottom = element.getBoundingClientRect().bottom;
-      if (elementBottom > window.innerHeight) {
-        window.scrollBy({ top: elementBottom - window.innerHeight });
-      }
     } else {
       console.error('Element not found');
     }
