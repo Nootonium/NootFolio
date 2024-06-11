@@ -43,17 +43,12 @@ function App() {
         <source src={background} type='video/webm' />
         {`Sorry, your browser doesn't support embedded videos.`}
       </video>
-<<<<<<< HEAD
       <NavBar
         activeSection={activeSection}
         openContact={onOpen}
         scrollToSection={scrollToSection}
       />
       <div className='h-screen w-screen snap-y snap-proximity overflow-x-hidden'>
-=======
-      <NavBar activeSection={activeSection} openContact={onOpen} />
-      <div className='h-screen w-screen overflow-x-hidden overflow-y-scroll md:snap-y md:snap-proximity'>
->>>>>>> 645a0c1b4845fabd1f524fd72398598d9a18a644
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>
