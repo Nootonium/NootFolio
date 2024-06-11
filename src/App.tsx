@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { RefObject, useRef, useState } from 'react';
 import './assets/rainbow-theme.css';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -21,13 +21,12 @@ function App() {
   const onOpen = () => setIsContactOpen(true);
   const onClose = () => setIsContactOpen(false);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
+  const scrollToRef = (ref: RefObject<HTMLElement>) => {
+    const element = ref.current;
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-    }
-    if (!element) {
-      console.error(`Element with id ${id} not found`);
+    } else {
+      console.error('Element not found');
     }
   };
 
@@ -46,7 +45,8 @@ function App() {
       <NavBar
         activeSection={activeSection}
         openContact={onOpen}
-        scrollToSection={scrollToSection}
+        scrollToRef={scrollToRef}
+        refs={{ heroRef, aboutRef, projectsRef, skillsRef }}
       />
       <div className='h-screen w-screen snap-none overflow-x-hidden md:snap-y md:snap-proximity'>
         <section ref={heroRef} id='home'>

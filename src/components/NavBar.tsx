@@ -12,11 +12,18 @@ import { useTranslation } from 'react-i18next';
 function NavBar({
   activeSection,
   openContact,
-  scrollToSection,
+  scrollToRef,
+  refs,
 }: {
   activeSection: string;
   openContact: () => void;
-  scrollToSection: (section: string) => void;
+  scrollToRef: (ref: React.RefObject<HTMLElement>) => void;
+  refs: {
+    heroRef: React.RefObject<HTMLElement>;
+    aboutRef: React.RefObject<HTMLElement>;
+    projectsRef: React.RefObject<HTMLElement>;
+    skillsRef: React.RefObject<HTMLElement>;
+  };
 }) {
   const { theme } = useTheme();
   const { t } = useTranslation('navbar');
@@ -33,25 +40,25 @@ function NavBar({
         Icon={HomeIcon}
         text={t('home')}
         isActive={activeSection == 'home'}
-        onClick={() => scrollToSection('home')}
+        onClick={() => scrollToRef(refs.heroRef)}
       />
       <NavButton
         Icon={IdentificationIcon}
         text={t('about')}
         isActive={activeSection == 'about'}
-        onClick={() => scrollToSection('about')}
+        onClick={() => scrollToRef(refs.aboutRef)}
       />
       <NavButton
         Icon={BriefcaseIcon}
         text={t('projects')}
         isActive={activeSection == 'projects'}
-        onClick={() => scrollToSection('projects')}
+        onClick={() => scrollToRef(refs.projectsRef)}
       />
       <NavButton
         Icon={CommandLineIcon}
         text={t('skills')}
         isActive={activeSection == 'skills'}
-        onClick={() => scrollToSection('skills')}
+        onClick={() => scrollToRef(refs.skillsRef)}
       />
       <NavButton
         Icon={EnvelopeIcon}

@@ -28,7 +28,7 @@ function Hero({ openContact }: { openContact: () => void }) {
 
   return (
     <div
-      className={`flex h-screen w-full snap-start items-center justify-center bg-opacity-20 ${heroClasses[theme]}`}
+      className={`flex h-screen w-screen snap-start items-center justify-center bg-opacity-20 ${heroClasses[theme]}`}
     >
       <div
         className={`h-min max-w-5xl px-4 pb-4 font-JetBrainsMono text-2xl leading-tight lg:px-2`}
