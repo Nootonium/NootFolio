@@ -1,39 +1,40 @@
 import { useEffect, useState } from 'react';
 
-function ProjectBackground({ backgroundImageUrl }: { backgroundImageUrl: string }) {
-  const [currentImage, setCurrentImage] = useState(backgroundImageUrl);
-  const [previousImage, setPreviousImage] = useState('');
+interface ProjectBackgroundProps {
+  imageUrls: string[];
+  currentIndex: number;
+}
+function ProjectBackground({ imageUrls, currentIndex }: ProjectBackgroundProps) {
+  const [activeIndex, setActiveIndex] = useState(currentIndex);
+
   useEffect(() => {
-    if (backgroundImageUrl !== currentImage) {
-      setPreviousImage(currentImage);
-      setCurrentImage(backgroundImageUrl);
-    }
-  }, [backgroundImageUrl, currentImage]);
+    setActiveIndex(currentIndex);
+  }, [currentIndex]);
 
   return (
-    <div className='static h-full w-full'>
-      {previousImage && (
-        <div
-          style={{
-            backgroundImage: `url(${previousImage})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-          className='absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out'
-        ></div>
-      )}
+    <div className='relative h-screen w-screen overflow-hidden'>
       <div
+        className='absolute inset-0 flex h-full w-full transition-transform duration-1000 ease-in-out'
         style={{
-          backgroundImage: `url(${currentImage})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
+          transform: `translateX(-${activeIndex * 100}%)`,
         }}
-        className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-          previousImage ? 'delay-100' : ''
-        } opacity-100`}
-      ></div>
+      >
+        {imageUrls.length > 0 ? (
+          imageUrls.map((url, index) => (
+            <div
+              key={index}
+              className='h-full w-full flex-shrink-0'
+              style={{
+                backgroundImage: `url(${url})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            ></div>
+          ))
+        ) : (
+          <div className='h-full w-full flex-shrink-0 bg-gray-200'></div>
+        )}
+      </div>
     </div>
   );
 }

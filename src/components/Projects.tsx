@@ -3,13 +3,14 @@ import { Tab, Transition } from '@headlessui/react';
 import ProjectCard from './ProjectCard';
 import { useTheme } from '../hooks/ThemeContext';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProjectBackground from './ProjectBackground';
 
 function Projects() {
   const { theme } = useTheme();
   const { t } = useTranslation('projects');
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+  const [imageUrls, setImageUrls] = useState<string[]>([]);
 
   const headingClasses = {
     light: 'text-fuchsia-600',
@@ -38,15 +39,18 @@ function Projects() {
     },
   };
 
+  useEffect(() => {
+    const urls = projects.map(project =>
+      project.image_url ? new URL(`../assets/${project.image_url}`, import.meta.url).href : ''
+    );
+    setImageUrls(urls);
+  }, []);
+
   const currentTabColors = tabListColors[theme] || tabListColors.light;
-  const backgroundImageUrl = new URL(
-    `../assets/${projects[selectedTabIndex].image_url}`,
-    import.meta.url,
-  ).href;
 
   return (
     <div className='relative flex h-screen w-screen snap-start'>
-      <ProjectBackground backgroundImageUrl={backgroundImageUrl} />
+      <ProjectBackground imageUrls={imageUrls} currentIndex={selectedTabIndex} />
       <div className='absolute inset-0 flex h-full w-full max-w-7xl flex-col px-6 pb-16 pt-4 sm:pt-12'>
         <h1
           className={`font-JetBrainsMono text-5xl tracking-tighter sm:text-6xl ${headingClasses[theme]}`}
