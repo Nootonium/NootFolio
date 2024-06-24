@@ -41,7 +41,7 @@ function Projects() {
 
   useEffect(() => {
     const urls = projects.map(project =>
-      project.image_url ? new URL(`../assets/${project.image_url}`, import.meta.url).href : ''
+      project.image_url ? new URL(`../assets/${project.image_url}`, import.meta.url).href : '',
     );
     setImageUrls(urls);
   }, []);
