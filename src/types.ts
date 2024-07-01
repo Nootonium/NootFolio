@@ -13,6 +13,7 @@ export interface Project {
   tech_stack: string[];
   link: string;
   github: string;
+  motivation: string;
 }
 
 export interface MessageData {

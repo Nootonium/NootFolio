@@ -58,11 +58,11 @@ function Projects() {
           {t('title')}
         </h1>
         <Tab.Group onChange={setSelectedTabIndex}>
-          <Tab.List className='flex flex-none space-x-2 overflow-x-auto whitespace-nowrap rounded-sm bg-opacity-20 pb-1 pt-2'>
+          <Tab.List className='flex space-x-1 overflow-x-auto whitespace-nowrap rounded-sm bg-opacity-20 pb-1 pt-2'>
             {projects.map((project, index) => (
               <Tab
                 key={index}
-                className={`flex rounded-sm px-4 py-2 text-base font-medium transition-transform hover:scale-105 hover:transform
+                className={`flex rounded-sm px-4 py-2 text-lg font-medium focus:outline-none
               ${
                 selectedTabIndex === index
                   ? currentTabColors.selectedBg + ' ' + currentTabColors.selectedText
@@ -92,6 +92,7 @@ function Projects() {
                     project={{
                       ...project,
                       description: t(`projects.${project.id}.description`),
+                      motivation: t(`projects.${project.id}.motivation`),
                     }}
                     projectIndex={index}
                     totalProjects={projects.length}

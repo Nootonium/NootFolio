@@ -1,0 +1,1 @@
+Intends to use Markdown files for content management in their portfolio, incorporating metadata and multi-language descriptions. They plan to set up a workflow that converts Markdown to JSON for use in their React application, but will implement this at a later time.
