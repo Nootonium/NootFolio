@@ -8,7 +8,7 @@ function TechBadge({ tech }: { tech: string }) {
     react: 'bg-blue-500 text-white', // React - Blue
     vue: 'bg-green-400 text-white', // Vue.js - Green
     angular: 'bg-red-600 text-white', // Angular - Red
-    python: 'bg-blue-300 text-white', // Python - Light Blue
+    python: 'bg-blue-400 text-white', // Python - Light Blue
     java: 'bg-red-500 text-white', // Java - Red
     ruby: 'bg-red-700 text-white', // Ruby - Dark Red
     rust: 'bg-orange-600 text-white', // Rust - Orange

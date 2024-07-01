@@ -1,7 +1,8 @@
 {
-    "description": "Descripción:",
-    "techStack": "Tecnologías utilizadas:",
+    "description": "Descripción",
+    "techStack": "Tecnologías utilizadas",
     "prev": "anterior",
     "visit": "VER PROYECTO",
-    "next": "siguiente"
+    "next": "siguiente",
+    "motivation": "Motivación"
 }
