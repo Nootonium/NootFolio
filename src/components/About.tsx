@@ -52,7 +52,7 @@ function About() {
             </svg>
           </a>
           <a
-            href='https://linkedin.com/in/dan-lazer-253867247'
+            href='https://linkedin.com/in/nootonium'
             target='_blank'
             rel='noopener noreferrer'
             className={`rounded px-4 py-2 ${linksClasses[theme]} `}
