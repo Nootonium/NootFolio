@@ -1,5 +1,5 @@
 import projects from '../data/projects.json';
-import { Tab, Transition } from '@headlessui/react';
+import { Tab, TabGroup, TabList, TabPanel, TabPanels, Transition } from '@headlessui/react';
 import ProjectCard from './ProjectCard';
 import { useTheme } from '../hooks/ThemeContext';
 import { useTranslation } from 'react-i18next';
@@ -57,8 +57,8 @@ function Projects() {
         >
           {t('title')}
         </h1>
-        <Tab.Group onChange={setSelectedTabIndex}>
-          <Tab.List className='flex space-x-1 overflow-x-auto whitespace-nowrap rounded-sm bg-opacity-20 pb-1 pt-2'>
+        <TabGroup onChange={setSelectedTabIndex}>
+          <TabList className='flex space-x-1 overflow-x-auto whitespace-nowrap rounded-sm bg-opacity-20 pb-1 pt-2'>
             {projects.map((project, index) => (
               <Tab
                 key={index}
@@ -74,10 +74,10 @@ function Projects() {
                 {project.title}
               </Tab>
             ))}
-          </Tab.List>
-          <Tab.Panels>
+          </TabList>
+          <TabPanels>
             {projects.map((project, index) => (
-              <Tab.Panel key={index}>
+              <TabPanel key={index}>
                 <Transition
                   appear
                   show={selectedTabIndex == index}
@@ -94,14 +94,12 @@ function Projects() {
                       description: t(`projects.${project.id}.description`),
                       motivation: t(`projects.${project.id}.motivation`),
                     }}
-                    projectIndex={index}
-                    totalProjects={projects.length}
                   />
                 </Transition>
-              </Tab.Panel>
+              </TabPanel>
             ))}
-          </Tab.Panels>
-        </Tab.Group>
+          </TabPanels>
+        </TabGroup>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/ThemeContext';
 import { Project } from '../types';
-import { Tab } from '@headlessui/react';
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import TechBadge from './TechBadge';
 import ProjectCardButtons from './ProjectCardButtons';
-import { Fragment } from 'react';
+import { forwardRef, Fragment } from 'react';
 
 function ProjectCartTab({ label }: { label: string }) {
   const { theme } = useTheme();
@@ -35,15 +35,10 @@ function ProjectCartTab({ label }: { label: string }) {
   );
 }
 
-function ProjectCard({
-  project,
-}: {
-  project: Project;
-  projectIndex: number;
-  totalProjects: number;
-}) {
+const ProjectCard = forwardRef<HTMLDivElement, { project: Project }>(({ project }, ref) => {
   const { theme } = useTheme();
   const { t } = useTranslation('projectCard');
+
   const cardClasses = {
     light: 'bg-white text-black bg-opacity-90',
     dark: 'bg-black text-white bg-opacity-75',
@@ -52,30 +47,35 @@ function ProjectCard({
 
   return (
     <div
+      ref={ref}
       className={`z-20 flex h-full w-full flex-col rounded-sm pb-4 font-OpenSans ${cardClasses[theme]}`}
     >
-      <Tab.Group>
-        <Tab.List className='flex flex-wrap'>
+      <TabGroup>
+        <TabList className='flex flex-wrap'>
           <ProjectCartTab label={t('description')} />
           <ProjectCartTab label={t('motivation')} />
           <ProjectCartTab label={t('techStack')} />
-        </Tab.List>
-        <Tab.Panels className={`text-md max-w-2xl px-4`}>
-          <Tab.Panel>
+        </TabList>
+        <TabPanels className={`text-md max-w-2xl px-4`}>
+          <TabPanel>
             <p className='min-h-16 overflow-y-auto leading-relaxed'>{project.description}</p>
-          </Tab.Panel>
-          <Tab.Panel>
-            <p className='min-h-16  overflow-y-auto leading-relaxed'>{project.motivation}</p>
-          </Tab.Panel>
-          <Tab.Panel>
-            {project.tech_stack.map((tech, index) => (
+          </TabPanel>
+          <TabPanel>
+            <p className='min-h-16 overflow-y-auto leading-relaxed'>{project.motivation}</p>
+          </TabPanel>
+          <TabPanel>
+            {project.tech_stack.map((tech: string, index: any) => (
               <TechBadge key={index} tech={tech} />
             ))}
-          </Tab.Panel>
+          </TabPanel>
           <ProjectCardButtons project={project} />
-        </Tab.Panels>
-      </Tab.Group>
+        </TabPanels>
+      </TabGroup>
     </div>
   );
-}
+});
+
+// Set the display name to avoid the ESLint warning
+ProjectCard.displayName = 'ProjectCard';
+
 export default ProjectCard;
