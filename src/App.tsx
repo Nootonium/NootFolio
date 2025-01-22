@@ -3,6 +3,7 @@ import './assets/rainbow-theme.css';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import NavBar from './components/NavBar';
@@ -14,9 +15,10 @@ import LanguageSelector from './components/LanguageSelector';
 function App() {
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
+  const experienceRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
-  const activeSection = useScrollSpy([heroRef, aboutRef, projectsRef, skillsRef]);
+  const activeSection = useScrollSpy([heroRef, aboutRef, experienceRef, projectsRef, skillsRef]);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const onOpen = () => setIsContactOpen(true);
   const onClose = () => setIsContactOpen(false);
@@ -42,18 +44,21 @@ function App() {
         <source src={background} type='video/webm' />
         {`Sorry, your browser doesn't support embedded videos.`}
       </video>
+      <NavBar
+        activeSection={activeSection}
+        openContact={onOpen}
+        scrollToRef={scrollToRef}
+        refs={{ heroRef, aboutRef, experienceRef, projectsRef, skillsRef }}
+      />
       <div className='relative z-10 min-h-screen'>
-        <NavBar
-          activeSection={activeSection}
-          openContact={onOpen}
-          scrollToRef={scrollToRef}
-          refs={{ heroRef, aboutRef, projectsRef, skillsRef }}
-        />
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>
         <section ref={aboutRef} id='about'>
           <About />
+        </section>
+        <section ref={experienceRef} id='experience'>
+          <Experience />
         </section>
         <section ref={projectsRef} id='projects'>
           <Projects />

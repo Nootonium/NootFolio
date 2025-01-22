@@ -4,6 +4,7 @@ import {
   CommandLineIcon,
   BriefcaseIcon,
   EnvelopeIcon,
+  FolderIcon
 } from '@heroicons/react/24/solid';
 import { useTheme } from '../hooks/ThemeContext';
 import { NavButton } from './NavButton';
@@ -21,6 +22,7 @@ function NavBar({
   refs: {
     heroRef: React.RefObject<HTMLElement>;
     aboutRef: React.RefObject<HTMLElement>;
+    experienceRef: React.RefObject<HTMLElement>;
     projectsRef: React.RefObject<HTMLElement>;
     skillsRef: React.RefObject<HTMLElement>;
   };
@@ -50,6 +52,12 @@ function NavBar({
       />
       <NavButton
         Icon={BriefcaseIcon}
+        text={t('experience')}
+        isActive={activeSection == 'experience'}
+        onClick={() => scrollToRef(refs.experienceRef)}
+      />
+      <NavButton
+        Icon={FolderIcon}
         text={t('projects')}
         isActive={activeSection == 'projects'}
         onClick={() => scrollToRef(refs.projectsRef)}
