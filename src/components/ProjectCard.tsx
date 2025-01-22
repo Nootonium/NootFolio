@@ -6,7 +6,7 @@ import TechBadge from './TechBadge';
 import ProjectCardButtons from './ProjectCardButtons';
 import { forwardRef, Fragment } from 'react';
 
-function ProjectCartTab({ label }: { label: string }) {
+function ProjectCardTab({ label }: { label: string }) {
   const { theme } = useTheme();
 
   const tabClasses = {
@@ -45,6 +45,12 @@ const ProjectCard = forwardRef<HTMLDivElement, { project: Project }>(({ project 
     rainbow: 'bg-rainbow-500',
   };
 
+  const separatorClasses = {
+    light: 'border-black opacity-50',
+    dark: 'border-white opacity-50',
+    rainbow: 'border-rainbow-500',
+  };
+
   return (
     <div
       ref={ref}
@@ -52,10 +58,11 @@ const ProjectCard = forwardRef<HTMLDivElement, { project: Project }>(({ project 
     >
       <TabGroup>
         <TabList className='flex flex-wrap'>
-          <ProjectCartTab label={t('description')} />
-          <ProjectCartTab label={t('motivation')} />
-          <ProjectCartTab label={t('techStack')} />
+          <ProjectCardTab label={t('description')} />
+          <ProjectCardTab label={t('motivation')} />
+          <ProjectCardTab label={t('techStack')} />
         </TabList>
+        <div className={`border-b mb-4 ${separatorClasses[theme]}`}></div>
         <TabPanels className={`text-md max-w-2xl px-4`}>
           <TabPanel>
             <p className='min-h-16 overflow-y-auto leading-relaxed'>{project.description}</p>
@@ -68,8 +75,9 @@ const ProjectCard = forwardRef<HTMLDivElement, { project: Project }>(({ project 
               <TechBadge key={index} tech={tech} />
             ))}
           </TabPanel>
-          <ProjectCardButtons project={project} />
         </TabPanels>
+        <div className={`border-b my-4 ${separatorClasses[theme]}`}></div>
+        <ProjectCardButtons project={project} />
       </TabGroup>
     </div>
   );
