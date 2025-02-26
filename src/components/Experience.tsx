@@ -4,6 +4,7 @@ import { useTheme } from '../hooks/ThemeContext';
 function Experience() {
   const { theme } = useTheme();
   const { t } = useTranslation('Experience');
+
   const experienceClasses = {
     light: 'bg-white bg-opacity-80 text-black',
     dark: 'bg-black bg-opacity-70 text-white',

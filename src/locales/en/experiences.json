@@ -1,0 +1,40 @@
+{
+    "title": "Analyste Fonctionnel",
+    "company": "Desjardins",
+    "duration": "9 septembre 2024 - 20 décembre 2024",
+    "location": "Montréal (déplacements à Lévis)",
+    "supervisor": "Richard Pineault, Chef d’équipe",
+    "project": {
+      "description": "Projet de gestion des fonds Desjardins, axé sur l'investissement et le réinvestissement web.",
+      "responsibilities": [
+        "Analyser les besoins fonctionnels et produire une documentation détaillée.",
+        "Soutenir les développeurs dans la mise en œuvre des solutions techniques.",
+        "Valider et tester les fonctionnalités en environnement QA pour assurer leur conformité.",
+        "Participer à la livraison des fonctionnalités pour les demandes de réinvestissement."
+      ],
+      "achievements": [
+        "Livraison en production des fonctionnalités du parcours court.",
+        "Maintien et évolutions des investissement et réinvestissement web."
+      ],
+      "skills": {
+        "technical": [
+          "Analyse fonctionnelle",
+          "Documentation des processus",
+          "Validation en environnement QA",
+          "Support aux équipes de développement"
+        ],
+        "soft": [
+          "Collaboration et partage des connaissances",
+          "Organisation et respect des échéances",
+          "Communication avec divers intervenants"
+        ]
+      },
+        "technologies": [
+        "React",
+        "Node.js",
+        "Flask",
+        "MongoDB",
+        "Docker"
+      ]
+    }
+}

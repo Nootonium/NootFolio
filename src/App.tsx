@@ -3,9 +3,8 @@ import './assets/rainbow-theme.css';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Journey from './components/Journey';
 import NavBar from './components/NavBar';
 import useScrollSpy from './hooks/useScrollSpy';
 import ThemeToggle from './components/ThemeToggle';
@@ -15,10 +14,9 @@ import LanguageSelector from './components/LanguageSelector';
 function App() {
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
-  const experienceRef = useRef(null);
-  const projectsRef = useRef(null);
+  const journeyRef = useRef(null);
   const skillsRef = useRef(null);
-  const activeSection = useScrollSpy([heroRef, aboutRef, experienceRef, projectsRef, skillsRef]);
+  const activeSection = useScrollSpy([heroRef, aboutRef, journeyRef, skillsRef]);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const onOpen = () => setIsContactOpen(true);
   const onClose = () => setIsContactOpen(false);
@@ -48,7 +46,7 @@ function App() {
         activeSection={activeSection}
         openContact={onOpen}
         scrollToRef={scrollToRef}
-        refs={{ heroRef, aboutRef, experienceRef, projectsRef, skillsRef }}
+        refs={{ heroRef, aboutRef, journeyRef, skillsRef }}
       />
       <div className='relative z-10 min-h-screen'>
         <section ref={heroRef} id='home'>
@@ -57,11 +55,8 @@ function App() {
         <section ref={aboutRef} id='about'>
           <About />
         </section>
-        <section ref={experienceRef} id='experience'>
-          <Experience />
-        </section>
-        <section ref={projectsRef} id='projects'>
-          <Projects />
+        <section ref={journeyRef} id='journey'>
+          <Journey />
         </section>
         <section ref={skillsRef} id='skills'>
           <Skills active={activeSection == 'skills'} />

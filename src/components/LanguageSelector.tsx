@@ -1,4 +1,4 @@
-import { Listbox } from '@headlessui/react';
+import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from '@headlessui/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/ThemeContext';
@@ -54,14 +54,14 @@ function LanguageSelector() {
       className='tooltip tooltip-left tooltip-info fixed right-20 top-5 font-JetBrainsMono '
     >
       <Listbox value={selectedLanguage} onChange={changeLanguage}>
-        <Listbox.Button className={`rounded-md px-2 py-1 ${buttonClasses[theme]}`}>
+        <ListboxButton className={`rounded-md px-2 py-1 ${buttonClasses[theme]}`}>
           {selectedLanguage.name}
-        </Listbox.Button>
-        <Listbox.Options
+        </ListboxButton>
+        <ListboxOptions
           className={`absolute mt-1 rounded-md border shadow-lg ${optionsClasses[theme]}`}
         >
           {languages.map(language => (
-            <Listbox.Option
+            <ListboxOption
               key={language.id}
               value={language}
               className={({ active }) =>
@@ -71,9 +71,9 @@ function LanguageSelector() {
               }
             >
               {language.name}
-            </Listbox.Option>
+            </ListboxOption>
           ))}
-        </Listbox.Options>
+        </ListboxOptions>
       </Listbox>
     </div>
   );
