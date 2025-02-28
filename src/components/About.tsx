@@ -31,8 +31,8 @@ function About() {
           {t('title')}
         </h1>
         <div className='text-justify font-OpenSans text-lg leading-normal tracking-tight'>
-          <p className='mb-2 '>{t('intro')}</p>
-          <p className='mb-2 '>{t('body')}</p>
+          <p className='mb-2'>{t('intro')}</p>
+          <p className='mb-2'>{t('body')}</p>
           <p className=''>{t('conclusion')}</p>
         </div>
         <div className='flex space-x-4 pt-2'>

@@ -4,7 +4,7 @@ import { Project } from '../types';
 function ProjectCardButtons({ project }: { project: Project }) {
   const { t } = useTranslation('projectCard');
   return (
-    <div className='row-span-1 grid grid-cols-2 gap-2 mx-4'>
+    <div className='row-span-1 mx-4 grid grid-cols-2 gap-2'>
       <a
         href={project.link ? project.link : project.github}
         target='_blank'

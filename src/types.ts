@@ -43,4 +43,3 @@ export interface JourneyItem {
 export interface JourneyInterface {
   items: JourneyItem[];
 }
-

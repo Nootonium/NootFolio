@@ -62,7 +62,7 @@ const ProjectCard = forwardRef<HTMLDivElement, { project: Project }>(({ project 
           <ProjectCardTab label={t('motivation')} />
           <ProjectCardTab label={t('techStack')} />
         </TabList>
-        <div className={`border-b mb-4 ${separatorClasses[theme]}`}></div>
+        <div className={`mb-4 border-b ${separatorClasses[theme]}`}></div>
         <TabPanels className={`text-md max-w-2xl px-4`}>
           <TabPanel>
             <p className='min-h-16 overflow-y-auto leading-relaxed'>{project.description}</p>
@@ -76,7 +76,7 @@ const ProjectCard = forwardRef<HTMLDivElement, { project: Project }>(({ project 
             ))}
           </TabPanel>
         </TabPanels>
-        <div className={`border-b my-4 ${separatorClasses[theme]}`}></div>
+        <div className={`my-4 border-b ${separatorClasses[theme]}`}></div>
         <ProjectCardButtons project={project} />
       </TabGroup>
     </div>

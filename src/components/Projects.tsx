@@ -62,13 +62,11 @@ function Projects() {
             {projects.map((project, index) => (
               <Tab
                 key={index}
-                className={`flex rounded-sm px-4 py-2 text-lg font-medium focus:outline-none
-              ${
-                selectedTabIndex === index
-                  ? currentTabColors.selectedBg + ' ' + currentTabColors.selectedText
-                  : currentTabColors.notSelectedBg + ' ' + currentTabColors.notSelectedText
-              }
-              `}
+                className={`flex rounded-sm px-4 py-2 text-lg font-medium focus:outline-none ${
+                  selectedTabIndex === index
+                    ? currentTabColors.selectedBg + ' ' + currentTabColors.selectedText
+                    : currentTabColors.notSelectedBg + ' ' + currentTabColors.notSelectedText
+                } `}
                 title={project.title}
               >
                 {project.title}

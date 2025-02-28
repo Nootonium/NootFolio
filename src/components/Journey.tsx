@@ -3,8 +3,9 @@ import { JourneyItem } from '../types';
 import { useJourneyHelper } from '../hooks/useJourneyHelper';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/ThemeContext';
+import JourneyCard from './JourneyCard';
 
-const JourneyCard = lazy(() => import('./JourneyCard'));
+const JourneyModal = lazy(() => import('./JourneyModal'));
 
 const Journey = () => {
   const { theme } = useTheme();
@@ -13,41 +14,38 @@ const Journey = () => {
 
   const { selectedItem, setJourneyById, clearJourney } = useJourneyHelper(timelineData);
 
+  const headingClasses = { light: 'text-fuchsia-600', dark: 'text-teal-400', rainbow: '' };
+
+  const dotsClasses = { light: 'bg-fuchsia-600', dark: 'bg-teal-400', rainbow: '' };
+
   return (
-    <div className='relative flex flex-col items-center min-h-screen py-10 bg-neutral-900 text-white opacity-90'>
-      <h1 className='text-4xl font-bold mb-10 font-JetBrainsMono'>Journey</h1>
+    <div className='relative flex min-h-screen flex-col items-center bg-neutral-900 py-10 text-white opacity-90'>
+      <h1
+        className={`mb-8 font-JetBrainsMono text-4xl font-bold sm:text-6xl ${headingClasses[theme]}`}
+      >
+        Journey
+      </h1>
       {/* Timeline Line */}
-      <div className='w-1 bg-gray-300 h-full absolute left-1/2 transform -translate-x-1/2'></div>
+      <div className='absolute left-1/2 top-28 h-full w-1 -translate-x-1/2 transform bg-neutral-300'></div>
       {/* Timeline Items */}
-      <div className='w-full max-w-4xl'>
+      <div className='h-3 w-full max-w-2xl'>
         {timelineData.map((item, index) => (
           <div
             key={item.id}
-            className={`relative flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center mb-8`}
+            className={`relative flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} mb-4 items-center`}
           >
             {/* Dots */}
-            <div className='absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-500 rounded-full'></div>
-
+            <div
+              className={`absolute left-1/2 h-5 w-5 -translate-x-1/2 transform rounded-full ${dotsClasses[theme]}`}
+            ></div>
             {/* Card */}
-            <div className={`w-5/12 p-5 rounded-lg shadow-lg`}>
-              <h2 className='text-xl font-bold'>{item.title}</h2>
-              <h3 className='text-lg font-semibold'>{item.type}</h3>
-              <p className='mt-2 text-xs'>
-                {item.start_date} → {item.end_date || 'Present'}
-              </p>
-              <button
-                onClick={() => setJourneyById(item.id)}
-                className='mt-3 bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600'
-              >
-                View Details
-              </button>
-            </div>
+            <JourneyCard journeyItem={item} onClick={() => setJourneyById(item.id)} />
           </div>
         ))}
       </div>
       {selectedItem && (
         <Suspense fallback={<div>Loading...</div>}>
-          <JourneyCard journeyItem={selectedItem} onClose={clearJourney} />
+          <JourneyModal journeyItem={selectedItem} onClose={clearJourney} />
         </Suspense>
       )}
     </div>
