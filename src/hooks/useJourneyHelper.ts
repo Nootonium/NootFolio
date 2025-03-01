@@ -3,20 +3,25 @@ import { JourneyItem } from '../types';
 
 export const useJourneyHelper = (timelineData: JourneyItem[]) => {
   const [selectedItem, setSelectedItem] = useState<JourneyItem | null>(null);
+  const [isShowingModal, setIsShowingModal] = useState(false);
 
   const getJourneyById = (id: string) => timelineData.find(item => item.id === id) || null;
 
   const setJourneyById = (id: string) => {
     const journey = getJourneyById(id);
     setSelectedItem(journey);
+    setIsShowingModal(!!journey);
     if (journey) {
       window.history.pushState(null, '', `?journey=${journey.id}`);
     }
   };
 
   const clearJourney = () => {
-    setSelectedItem(null);
-    window.history.pushState(null, '', window.location.pathname);
+    setIsShowingModal(false);
+    setTimeout(() => {
+      setSelectedItem(null);
+      window.history.pushState(null, '', window.location.pathname);
+    }, 500);
   };
 
   useEffect(() => {
@@ -26,7 +31,8 @@ export const useJourneyHelper = (timelineData: JourneyItem[]) => {
       const journey = getJourneyById(journeyId);
       if (journey) setSelectedItem(journey);
     }
+    setIsShowingModal(!!journeyId);
   }, []);
 
-  return { selectedItem, setJourneyById, clearJourney };
+  return { selectedItem, setJourneyById, clearJourney, isShowingModal };
 };

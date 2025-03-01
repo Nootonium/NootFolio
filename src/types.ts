@@ -22,23 +22,39 @@ export interface MessageData {
   message: string;
 }
 
-export type JourneyType = 'experience' | 'project' | 'current' | 'planned';
-
-export interface JourneyItem {
+interface BaseJourneyItem {
   id: string;
-  type: JourneyType;
   title: string;
   description: string;
-  technologies: string[];
   status: 'completed' | 'active' | 'in-progress' | 'planned';
-  links: {
+  technologies: string[];
+  start_date: string; // ISO 8601
+  end_date?: string;
+  backdrop?: string;
+}
+
+export interface ExperienceItem extends BaseJourneyItem {
+  type: 'experience';
+  experienceType: 'full-time' | 'internship' | 'contract' | 'volunteer';
+  company: string;
+  location?: string;
+  links?: {
     company?: string;
+    linkedin?: string;
+  };
+}
+
+export interface ProjectItem extends BaseJourneyItem {
+  type: 'project';
+  projectType: 'personal' | 'open-source' | 'freelance' | 'client' | 'hackathon';
+  links?: {
     repo?: string;
     live?: string;
   };
-  start_date: string; // ISO 8601
-  end_date?: string;
+  images?: string[]; // Screenshots, previews, etc.
 }
+
+export type JourneyItem = ExperienceItem | ProjectItem;
 
 export interface JourneyInterface {
   items: JourneyItem[];

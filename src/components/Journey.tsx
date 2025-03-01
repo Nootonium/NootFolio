@@ -1,18 +1,17 @@
-import { Suspense, lazy, useState } from 'react';
 import { JourneyItem } from '../types';
+import { useTheme } from '../hooks/ThemeContext';
 import { useJourneyHelper } from '../hooks/useJourneyHelper';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from '../hooks/ThemeContext';
 import JourneyCard from './JourneyCard';
-
-const JourneyModal = lazy(() => import('./JourneyModal'));
+import JourneyModal from './JourneyModal';
 
 const Journey = () => {
   const { theme } = useTheme();
   const { t } = useTranslation('journey');
   const timelineData = t('items', { returnObjects: true }) as JourneyItem[];
 
-  const { selectedItem, setJourneyById, clearJourney } = useJourneyHelper(timelineData);
+  const { selectedItem, setJourneyById, clearJourney, isShowingModal } =
+    useJourneyHelper(timelineData);
 
   const headingClasses = { light: 'text-fuchsia-600', dark: 'text-teal-400', rainbow: '' };
 
@@ -28,7 +27,7 @@ const Journey = () => {
       {/* Timeline Line */}
       <div className='absolute left-1/2 top-28 h-full w-1 -translate-x-1/2 transform bg-neutral-300'></div>
       {/* Timeline Items */}
-      <div className='h-3 w-full max-w-2xl'>
+      <div className='w-full max-w-2xl'>
         {timelineData.map((item, index) => (
           <div
             key={item.id}
@@ -43,11 +42,7 @@ const Journey = () => {
           </div>
         ))}
       </div>
-      {selectedItem && (
-        <Suspense fallback={<div>Loading...</div>}>
-          <JourneyModal journeyItem={selectedItem} onClose={clearJourney} />
-        </Suspense>
-      )}
+      <JourneyModal isOpen={isShowingModal} journeyItem={selectedItem} onClose={clearJourney} />
     </div>
   );
 };

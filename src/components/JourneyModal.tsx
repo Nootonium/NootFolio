@@ -1,60 +1,56 @@
-// src/components/JourneyCard.tsx
-import { Dialog, Transition, TransitionChild, DialogTitle, DialogPanel } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Dialog, DialogPanel, DialogTitle, DialogBackdrop } from '@headlessui/react';
 import { JourneyItem } from '../types';
+import Experience from './Experience';
+import Project from './Project';
 
-interface JourneyCardProps {
-  journeyItem: JourneyItem;
+interface JourneyModalProps {
+  journeyItem: JourneyItem | null;
   onClose: () => void;
+  isOpen: boolean;
 }
 
-const JourneyCard = ({ journeyItem, onClose }: JourneyCardProps) => {
+const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
+  let Content = null;
+  if (journeyItem) {
+    Content =
+      journeyItem.type === 'experience' ? (
+        <Experience experience={journeyItem} />
+      ) : (
+        <Project project={journeyItem} />
+      );
+  }
   return (
-    <Transition appear show={!!journeyItem} as={Fragment}>
-      <Dialog as='div' className='relative z-50' onClose={onClose}>
-        {/* Backdrop */}
-        <TransitionChild
-          as={Fragment}
-          enter='ease-out duration-300'
-          enterFrom='opacity-0'
-          enterTo='opacity-100'
-          leave='ease-in duration-200'
-          leaveFrom='opacity-100'
-          leaveTo='opacity-0'
+    <Dialog
+      open={isOpen}
+      onClose={onClose}
+      className='fixed inset-0 z-50 flex items-center justify-center p-4'
+    >
+      {/* Backdrop Animation */}
+      <DialogBackdrop
+        transition
+        className='duration-800 fixed inset-0 bg-black/70 ease-out data-[closed]:opacity-0'
+      />
+      {/* Dialog Container */}
+      <div className='fixed inset-0 flex w-screen items-center justify-center p-4'>
+        {/* Dialog Panel with Enter/Exit Animation */}
+        <DialogPanel
+          transition
+          className='w-full max-w-lg transform overflow-hidden rounded-lg bg-white p-6 shadow-xl duration-500 ease-out data-[closed]:scale-95 data-[closed]:opacity-0'
         >
-          <div className='fixed inset-0 bg-black bg-opacity-70' />
-        </TransitionChild>
-
-        {/* Dialog Panel */}
-        <div className='fixed inset-0 overflow-y-auto'>
-          <div className='flex min-h-full items-center justify-center p-4'>
-            <TransitionChild
-              as={Fragment}
-              enter='ease-out duration-300'
-              enterFrom='opacity-0 scale-95'
-              enterTo='opacity-100 scale-100'
-              leave='ease-in duration-200'
-              leaveFrom='opacity-100 scale-100'
-              leaveTo='opacity-0 scale-95'
+          <DialogTitle className='text-2xl font-bold'>{journeyItem?.title}</DialogTitle>
+          {Content}
+          <div className='mt-6 flex justify-end'>
+            <button
+              onClick={onClose}
+              className='rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600'
             >
-              <DialogPanel className='w-full max-w-lg transform overflow-hidden rounded-lg bg-white p-6 shadow-xl transition-all'>
-                <DialogTitle className='text-2xl font-bold'>{journeyItem.title}</DialogTitle>
-                <p className='mt-2 text-gray-600'>{journeyItem.description}</p>
-                <div className='mt-6 flex justify-end'>
-                  <button
-                    onClick={onClose}
-                    className='rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600'
-                  >
-                    Close
-                  </button>
-                </div>
-              </DialogPanel>
-            </TransitionChild>
+              Close
+            </button>
           </div>
-        </div>
-      </Dialog>
-    </Transition>
+        </DialogPanel>
+      </div>
+    </Dialog>
   );
 };
 
-export default JourneyCard;
+export default JourneyModal;

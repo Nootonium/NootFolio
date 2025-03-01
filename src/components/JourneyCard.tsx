@@ -22,10 +22,10 @@ const JourneyCard = ({ journeyItem, onClick }: JourneyCardProps) => {
 
   return (
     <div
-      className='w-5/12 cursor-pointer rounded-lg bg-neutral-700 p-4 shadow-lg font-OpenSans hover:bg-neutral-600'
+      className='w-5/12 cursor-pointer rounded-lg bg-neutral-700 p-4 font-OpenSans shadow-lg hover:bg-neutral-600'
       onClick={onClick}
     >
-      <h2 className='text-xl font-bold '>{journeyItem.title}</h2>
+      <h2 className='text-xl font-bold'>{journeyItem.title}</h2>
       <h3 className={`text-lg font-semibold ${typeClasses[theme]}`}>
         {journeyItem.type.charAt(0).toUpperCase() + journeyItem.type.slice(1)}
       </h3>
