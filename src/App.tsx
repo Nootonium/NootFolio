@@ -38,6 +38,7 @@ function App() {
         muted
         playsInline
         className='fixed inset-0 -z-10 h-full w-full object-cover'
+        aria-hidden='true'
       >
         <source src={background} type='video/webm' />
         {`Sorry, your browser doesn't support embedded videos.`}
