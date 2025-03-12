@@ -95,7 +95,7 @@ function Skills({ active }: { active: boolean }) {
   return (
     <div
       ref={containerRef}
-      className={`relative flex h-screen w-screen snap-start justify-center overflow-hidden ${skillbgClasses[theme]}}`}
+      className={`relative flex h-screen snap-start justify-center overflow-hidden ${skillbgClasses[theme]}}`}
     >
       {stars.map((star, index) => (
         <div

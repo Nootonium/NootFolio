@@ -16,4 +16,7 @@ export default {
     },
   },
   plugins: [require('daisyui'), require('@headlessui/tailwindcss')],
+  daisyui: {
+    themes: ['light', 'dark', 'black'],
+  },
 };

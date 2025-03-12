@@ -1,17 +1,27 @@
 import { ProjectItem } from '../types';
+import { useTranslation } from 'react-i18next';
+import TechBadge from './TechBadge';
 
 const Project = ({ project }: { project: ProjectItem }) => {
+  const { t } = useTranslation('project');
+
   return (
     <div>
-      <p className='text-gray-600'>{project.description}</p>
-      <p className='mt-2'>Technologies: {project.technologies.join(', ')}</p>
-      {project.images && project.images.length > 0 && (
-        <div className='mt-4 flex space-x-2 overflow-x-auto'>
-          {project.images.map((img, idx) => (
-            <img key={idx} src={img} className='h-20 w-20 rounded-lg shadow-md' />
-          ))}
-        </div>
-      )}
+      <p className='text-sm'>
+        {new Date(project.start_date).toLocaleDateString()} -
+        {project.end_date ? new Date(project.end_date).toLocaleDateString() : 'Present'}
+      </p>
+      <p className='text-sm font-semibold capitalize text-blue-500'>{project.status}</p>
+      <p className='mt-2'>
+        {t('description')}: {project.description}
+      </p>
+      <p className='mt-2'>
+        Technologies:{' '}
+        {project.technologies.map((tech: string, index: any) => (
+          <TechBadge key={index} tech={tech} />
+        ))}{' '}
+      </p>
+
       <div className='mt-4 flex space-x-4'>
         {project.links?.repo && (
           <a

@@ -50,8 +50,9 @@ export interface ProjectItem extends BaseJourneyItem {
   links?: {
     repo?: string;
     live?: string;
+    privateRepo?: boolean;
+    coldStorage?: boolean;
   };
-  images?: string[]; // Screenshots, previews, etc.
 }
 
 export type JourneyItem = ExperienceItem | ProjectItem;

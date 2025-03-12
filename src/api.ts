@@ -1,7 +1,7 @@
 import { MessageData } from './types';
 import { getEnvironmentVariables } from './config';
 
-export async function postMessage(data: MessageData) {
+async function postMessage(data: MessageData) {
   try {
     const response = await fetch(`${getEnvironmentVariables().API_URL}/message`, {
       method: 'POST',
@@ -19,3 +19,5 @@ export async function postMessage(data: MessageData) {
     return false;
   }
 }
+
+export { postMessage };

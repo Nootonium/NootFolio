@@ -10,7 +10,9 @@
       "links": {
         "repo": "https://github.com/Nootonium/AIPlaymaker"
       },
-      "start_date": "2024-01-01"
+      "start_date": "2023-05-01",
+      "projectType": "personal",
+      "backdrop": "aiplaymaker.webp"
     },
     {
       "id": "Ugram",
@@ -23,8 +25,9 @@
         "live": "https://d1scz8xo84js7t.cloudfront.net",
         "repo": "https://github.com/GLO4002UL/projet2023-eq17"
       },
-      "start_date": "2023-09-01",
-      "end_date": "2023-12-15"
+      "start_date": "2024-01-25",
+      "end_date": "2024-04-21",
+      "backdrop": "ugram.png"
     },
     {
       "id": "CADE",
@@ -36,7 +39,7 @@
       "links": {
         "repo": "https://github.com/Nootonium/CADEMK0"
       },
-      "start_date": "2024-02-01",
+      "start_date": "2023-06-09",
       "backdrop": "cade.png"
     },
     {
@@ -50,13 +53,14 @@
         "live": "/",
         "repo": "https://github.com/Nootonium/NootFolio"
       },
-      "start_date": "2024-01-10"
+      "start_date": "2023-05-19"
     },
     {
       "id": "Desjardins-Internship",
       "type": "experience",
       "title": "Analyste Fonctionnel",
-      "description": "Internship at Desjardins for investment and reinvestment web projects. Responsibilities included functional analysis, developer support, QA testing, and delivery of features for short investment journeys.",
+      "company": "Desjardins",
+      "description": "Internship at Desjardins for investment and reinvestment web projects. Responsibilities included functional analysis, developer support, QA testing, and delivery of features for investment journeys.",
       "technologies": ["React", "Node.js", "Flask", "MongoDB", "Docker"],
       "status": "completed",
       "links": {

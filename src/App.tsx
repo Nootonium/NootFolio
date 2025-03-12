@@ -43,13 +43,19 @@ function App() {
         <source src={background} type='video/webm' />
         {`Sorry, your browser doesn't support embedded videos.`}
       </video>
-      <NavBar
-        activeSection={activeSection}
-        openContact={onOpen}
-        scrollToRef={scrollToRef}
-        refs={{ heroRef, aboutRef, journeyRef, skillsRef }}
-      />
-      <div className='relative z-10 min-h-screen'>
+      <header className='relative z-20'>
+        <NavBar
+          activeSection={activeSection}
+          openContact={onOpen}
+          scrollToRef={scrollToRef}
+          refs={{ heroRef, aboutRef, journeyRef, skillsRef }}
+        />
+        <div className='absolute right-4 top-4 flex gap-2'>
+          <ThemeToggle />
+          <LanguageSelector />
+        </div>
+      </header>
+      <main className='relative z-10'>
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>
@@ -60,12 +66,10 @@ function App() {
           <Journey />
         </section>
         <section ref={skillsRef} id='skills'>
-          <Skills active={activeSection == 'skills'} />
+          <Skills active={activeSection === 'skills'} />
         </section>
-        <Contact isContactOpen={isContactOpen} onClose={onClose} />
-        <ThemeToggle />
-        <LanguageSelector />
-      </div>
+      </main>
+      <Contact isContactOpen={isContactOpen} onClose={onClose} />
     </>
   );
 }
