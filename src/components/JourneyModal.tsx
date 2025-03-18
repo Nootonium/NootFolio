@@ -1,8 +1,13 @@
 import { Dialog, DialogPanel, DialogTitle, DialogBackdrop } from '@headlessui/react';
-import { JourneyItem } from '../types';
+import { JourneyItem, ExperienceItem, ProjectItem } from '../types';
 import Experience from './Experience';
 import Project from './Project';
 import { useTheme } from '../hooks/ThemeContext';
+import { useTranslation } from 'react-i18next';
+
+const isExperience = (item: JourneyItem): item is ExperienceItem => {
+  return item.type === 'experience';
+};
 
 interface JourneyModalProps {
   journeyItem: JourneyItem | null;
@@ -12,6 +17,8 @@ interface JourneyModalProps {
 
 const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
   const { theme } = useTheme();
+  const { t } = useTranslation('descriptions');
+
   let Content = null;
   let Backdrop = (
     <DialogBackdrop
@@ -21,12 +28,20 @@ const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
   );
 
   if (journeyItem) {
-    Content =
-      journeyItem.type === 'experience' ? (
-        <Experience experience={journeyItem} />
-      ) : (
-        <Project project={journeyItem} />
-      );
+    const descriptionKey = journeyItem.id;
+
+    const journeyplusDescription = {
+      ...journeyItem,
+      description: t(`${descriptionKey}.description`),
+      keyContributions: isExperience(journeyItem)
+        ? t(`${descriptionKey}.keyContributions`, { returnObjects: true }) || []
+        : undefined,
+    };
+    if (isExperience(journeyItem)) {
+      Content = <Experience experience={journeyplusDescription as ExperienceItem} />;
+    } else {
+      Content = <Project project={journeyplusDescription as ProjectItem} />;
+    }
 
     if (journeyItem.backdrop) {
       let url = new URL(`../assets/${journeyItem.backdrop}`, import.meta.url).href;
@@ -75,10 +90,7 @@ const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
           </DialogTitle>
           {Content}
           <div className='mt-6 flex justify-end'>
-            <button
-              onClick={onClose}
-              className='rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600'
-            >
+            <button onClick={onClose} className='btn rounded-full bg-blue-500 px-4 py-2 text-white'>
               Close
             </button>
           </div>

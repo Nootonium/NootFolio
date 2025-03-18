@@ -24,7 +24,7 @@ function About() {
 
   return (
     <div className={`flex min-h-screen snap-start justify-center ${aboutClasses[theme]}`}>
-      <div className='mx-4 mt-4 max-w-xl py-16 lg:mx-auto'>
+      <div className='mx-4 max-w-xl py-16 lg:mx-auto'>
         <h1
           className={`mb-1 font-JetBrainsMono text-4xl tracking-tighter sm:text-6xl ${headingClasses[theme]}`}
         >

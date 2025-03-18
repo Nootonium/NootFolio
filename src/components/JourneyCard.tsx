@@ -1,10 +1,6 @@
 import { JourneyItem } from '../types';
 import { useTheme } from '../hooks/ThemeContext';
-import { format, formatDistanceStrict, parseISO } from 'date-fns';
-
-const formatDate = (date: string) => format(parseISO(date), 'MMM yyyy');
-const humanizeDate = (date: string) =>
-  formatDistanceStrict(parseISO(date), new Date(), { addSuffix: true });
+import { formatDate, humanizeDate, capitalizeFirstLetter } from '../utils.ts';
 
 interface JourneyCardProps {
   journeyItem: JourneyItem;
@@ -25,10 +21,6 @@ const JourneyCard = ({ journeyItem, onClick }: JourneyCardProps) => {
     dark: 'bg-neutral-700 focus:bg-neutral-600 text-white',
     rainbow: 'bg-rainbow-300',
   };
-
-  function capitalizeFirstLetter(string: string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
 
   return (
     <div

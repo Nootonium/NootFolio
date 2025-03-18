@@ -42,6 +42,7 @@ export interface ExperienceItem extends BaseJourneyItem {
     company?: string;
     linkedin?: string;
   };
+  keyContributions?: string[];
 }
 
 export interface ProjectItem extends BaseJourneyItem {

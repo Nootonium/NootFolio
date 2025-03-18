@@ -4,7 +4,6 @@
       "id": "AIPlayMaker",
       "type": "project",
       "title": "AIPlayMaker",
-      "description": "JSON RESTFUL API for board game AIs, built with Flask and PyTorch. It implements the Minimax algorithm with alpha-beta pruning and Monte Carlo Tree Search for optimal move generation. The codebase is well-documented with unit tests for all endpoints.",
       "technologies": ["Python", "Flask", "Poetry", "PyTorch"],
       "status": "active",
       "links": {
@@ -18,12 +17,13 @@
       "id": "Ugram",
       "type": "project",
       "title": "Ugram",
-      "description": "An Instagram clone built with the MERN stack. It allows users to upload, share, and like photos, with search functionality, user profiles, and responsive design.",
       "technologies": ["React", "Node.js", "Express", "MongoDB", "Jest", "GitHub Actions", "TypeScript", "AWS", "Docker", "tRPC"],
       "status": "completed",
       "links": {
         "live": "https://d1scz8xo84js7t.cloudfront.net",
-        "repo": "https://github.com/GLO4002UL/projet2023-eq17"
+        "repo": "https://github.com/GLO4002UL/projet2023-eq17",
+        "privateRepo": true,
+        "coldStorage": true
       },
       "start_date": "2024-01-25",
       "end_date": "2024-04-21",
@@ -33,7 +33,6 @@
       "id": "CADE",
       "type": "project",
       "title": "C.A.D.E. - Comprehensive Automated Digital E-butler",
-      "description": "A backend service for processing and automating contact form messages. It integrates with Discord for GitHub events and uses GPT for automated email responses. CADE includes Jest testing, Winston logging, and GitHub Actions for CI/CD.",
       "technologies": ["Node.js", "Express", "MongoDB", "Jest", "Winston", "GitHub Actions", "TypeScript"],
       "status": "active",
       "links": {
@@ -46,7 +45,6 @@
       "id": "Nootfolio",
       "type": "project",
       "title": "Nootfolio",
-      "description": "A modern, responsive, and performant web portfolio built with React and TypeScript. It highlights projects, skills, and a contact form, focusing on user experience and accessibility.",
       "technologies": ["React", "TypeScript", "TailwindCSS", "Vite", "DaisyUI"],
       "status": "active",
       "links": {
@@ -60,14 +58,24 @@
       "type": "experience",
       "title": "Analyste Fonctionnel",
       "company": "Desjardins",
-      "description": "Internship at Desjardins for investment and reinvestment web projects. Responsibilities included functional analysis, developer support, QA testing, and delivery of features for investment journeys.",
-      "technologies": ["React", "Node.js", "Flask", "MongoDB", "Docker"],
+      "technologies": ["Angular", "Node.js", "Flask", "MongoDB", "Docker", "Camunda", "Jira", "Confluence", "Java", "Spring Boot"],
       "status": "completed",
+      "experienceType": "internship",
       "links": {
         "company": "https://www.desjardins.com"
       },
       "start_date": "2024-09-09",
       "end_date": "2024-12-20"
+    },
+    {
+      "id": "Nootflix",
+      "type": "project",
+      "title": "Nootflix",
+      "technologies": ["Python", "Flask", "Poetry", "Docker", "ffmpeg"],
+      "status": "in-progress",
+      "links": {
+      },
+      "start_date": "2025-01-28"
     }
   ]
 }

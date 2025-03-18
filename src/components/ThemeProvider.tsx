@@ -8,8 +8,7 @@ function ThemeProvider({ children }: { children: ReactNode }) {
   });
 
   useEffect(() => {
-    const transtheme = theme === 'dark' ? 'black' : 'light';
-    document.documentElement.setAttribute('data-theme', transtheme);
+    document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
 

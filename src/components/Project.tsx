@@ -1,49 +1,27 @@
 import { ProjectItem } from '../types';
-import { useTranslation } from 'react-i18next';
 import TechBadge from './TechBadge';
+import { humanizeDate, formatDate } from '../utils';
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import Status from './Status';
+import ProjectButtons from './ProjectButtons';
 
 const Project = ({ project }: { project: ProjectItem }) => {
-  const { t } = useTranslation('project');
-
   return (
-    <div>
-      <p className='text-sm'>
-        {new Date(project.start_date).toLocaleDateString()} -
-        {project.end_date ? new Date(project.end_date).toLocaleDateString() : 'Present'}
+    <div className='font-OpenSans'>
+      <p className=''>
+        {formatDate(project.start_date)} <ArrowRightIcon className='inline h-4 w-4' />
+        {project.end_date
+          ? ` ${formatDate(project.end_date)} (${humanizeDate(project.end_date)})`
+          : ' Present'}
       </p>
-      <p className='text-sm font-semibold capitalize text-blue-500'>{project.status}</p>
-      <p className='mt-2'>
-        {t('description')}: {project.description}
-      </p>
-      <p className='mt-2'>
-        Technologies:{' '}
+      <Status status={project.status} />
+      <p className='mt-4 text-lg leading-relaxed tracking-normal'>{project.description}</p>
+      <p className='mt-4'>
         {project.technologies.map((tech: string, index: any) => (
           <TechBadge key={index} tech={tech} />
         ))}{' '}
       </p>
-
-      <div className='mt-4 flex space-x-4'>
-        {project.links?.repo && (
-          <a
-            href={project.links.repo}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='rounded bg-gray-900 px-4 py-2 text-white hover:bg-gray-700'
-          >
-            GitHub
-          </a>
-        )}
-        {project.links?.live && (
-          <a
-            href={project.links.live}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600'
-          >
-            Live Demo
-          </a>
-        )}
-      </div>
+      <ProjectButtons links={project.links} />
     </div>
   );
 };

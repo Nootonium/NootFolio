@@ -1,19 +1,17 @@
 import { JourneyItem } from '../types';
 import { useTheme } from '../hooks/ThemeContext';
 import { useJourneyHelper } from '../hooks/useJourneyHelper';
-import { useTranslation } from 'react-i18next';
 import JourneyCard from './JourneyCard';
 import JourneyModal from './JourneyModal';
+import journeyData from '../data/journey.json';
 
 const Journey = () => {
   const { theme } = useTheme();
-  const { t } = useTranslation('journey');
-  const timelineData = t('items', { returnObjects: true }) as JourneyItem[];
+  const timelineData = journeyData.items as JourneyItem[];
 
   const sortedTimelineData = [...timelineData].sort(
     (a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime(),
   );
-
   const { selectedItem, setJourneyById, clearJourney, isShowingModal } =
     useJourneyHelper(timelineData);
 
@@ -25,10 +23,9 @@ const Journey = () => {
     dark: 'bg-white',
     rainbow: 'border-rainbow-500',
   };
-
   return (
     <div
-      className={`relative flex min-h-screen flex-col items-center py-10 text-white opacity-90 ${bgClasses[theme]}`}
+      className={`relative flex min-h-screen flex-col items-center py-16 text-white opacity-90 ${bgClasses[theme]}`}
     >
       <h1
         className={`mb-8 font-JetBrainsMono text-4xl font-bold sm:text-6xl ${headingClasses[theme]}`}

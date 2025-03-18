@@ -6,7 +6,7 @@ export function NavButton({
   isActive,
   onClick,
 }: {
-  Icon: any; // TODO: Fix any
+  Icon: React.ComponentType<{ className?: string }>;
   text: string;
   isActive: boolean;
   onClick: () => void;
