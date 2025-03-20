@@ -1,0 +1,26 @@
+{
+    "AIPlayMaker": {
+        "description": "API RESTFUL JSON pour les IA de jeux de société, développée avec Flask et PyTorch. Elle implémente l'algorithme Minimax avec élagage alpha-bêta ainsi que la recherche d'arbres de Monte-Carlo pour la génération de coups optimaux. Le code est bien documenté et comprend des tests unitaires pour tous les endpoints."
+    },
+    "Ugram": {
+        "description": "Un clone d'Instagram développé avec la stack MERN. Il permet aux utilisateurs de téléverser, partager et aimer des photos, avec des fonctionnalités de recherche, des profils utilisateurs et un design réactif."
+    },
+    "CADE": {
+        "description": "Un service backend pour le traitement et l'automatisation des messages de formulaires de contact. Il s'intègre à Discord pour les événements GitHub et utilise GPT pour les réponses automatisées aux e-mails. CADE inclut des tests avec Jest, une journalisation avec Winston et un CI/CD avec GitHub Actions."
+    },
+    "Nootfolio": {
+        "description": "Un portfolio web moderne, réactif et performant développé avec React et TypeScript. Il met en avant les projets, les compétences et un formulaire de contact, en mettant l'accent sur l'expérience utilisateur et l'accessibilité."
+    },
+    "Desjardins-Internship": {
+        "description": "Stage chez Desjardins sur des projets web liés à l’investissement et au réinvestissement. Responsabilités incluant l’analyse fonctionnelle, le support aux développeurs, les tests de qualité et la livraison de fonctionnalités pour les parcours d’investissement.",
+        "keyContributions": [
+            "J'ai réalisé une analyse fonctionnelle et collaboré avec les développeurs pour affiner la logique métier.",
+            "J'ai amélioré la documentation et aidé à optimiser la communication entre les équipes.",
+            "J'ai contribué à la livraison d'une fonctionnalité majeure qui a réduit les étapes du processus de réinvestissement.",
+            "J'ai travaillé dans un environnement Agile, m'adaptant à des exigences changeantes et à des délais serrés."
+        ]
+    },
+    "Nootflix": {
+        "description": "Travail sur un remplacement pour des services de streaming comme Netflix, Disney+ et Amazon Prime Video qui sera utilisé par un petit groupe d'amis. Actuellement en train de travailler sur les APIs backend."
+    }
+}

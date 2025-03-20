@@ -1,0 +1,81 @@
+{
+  "items": [
+    {
+      "id": "AIPlayMaker",
+      "type": "project",
+      "title": "AIPlayMaker",
+      "technologies": ["Python", "Flask", "Poetry", "PyTorch"],
+      "status": "active",
+      "links": {
+        "repo": "https://github.com/Nootonium/AIPlaymaker"
+      },
+      "start_date": "2023-05-01",
+      "projectType": "personal",
+      "backdrop": "aiplaymaker.webp"
+    },
+    {
+      "id": "Ugram",
+      "type": "project",
+      "title": "Ugram",
+      "technologies": ["React", "Node.js", "Express", "MongoDB", "Jest", "GitHub Actions", "TypeScript", "AWS", "Docker", "tRPC"],
+      "status": "completed",
+      "links": {
+        "live": "https://d1scz8xo84js7t.cloudfront.net",
+        "repo": "https://github.com/GLO4002UL/projet2023-eq17",
+        "privateRepo": true,
+        "coldStorage": true
+      },
+      "start_date": "2024-01-25",
+      "end_date": "2024-04-21",
+      "backdrop": "ugram.png"
+    },
+    {
+      "id": "CADE",
+      "type": "project",
+      "title": "C.A.D.E. - Comprehensive Automated Digital E-butler",
+      "technologies": ["Node.js", "Express", "MongoDB", "Jest", "Winston", "GitHub Actions", "TypeScript"],
+      "status": "active",
+      "links": {
+        "repo": "https://github.com/Nootonium/CADEMK0"
+      },
+      "start_date": "2023-06-09",
+      "backdrop": "cade.png"
+    },
+    {
+      "id": "Nootfolio",
+      "type": "project",
+      "title": "Nootfolio",
+      "technologies": ["React", "TypeScript", "TailwindCSS", "Vite", "DaisyUI"],
+      "status": "active",
+      "links": {
+        "live": "/",
+        "repo": "https://github.com/Nootonium/NootFolio"
+      },
+      "start_date": "2023-05-19"
+    },
+    {
+      "id": "Desjardins-Internship",
+      "type": "experience",
+      "title": "Analyste Fonctionnel",
+      "company": "Desjardins",
+      "technologies": ["Angular", "Node.js", "Flask", "MongoDB", "Docker", "Camunda", "Jira", "Confluence", "Java", "Spring Boot"],
+      "status": "completed",
+      "experienceType": "internship",
+      "links": {
+        "company": "https://www.desjardins.com"
+      },
+      "start_date": "2024-09-09",
+      "end_date": "2024-12-20"
+    },
+    {
+      "id": "Nootflix",
+      "type": "project",
+      "title": "Nootflix",
+      "technologies": ["Python", "Flask", "Poetry", "Docker", "ffmpeg"],
+      "status": "in-progress",
+      "links": {
+      },
+      "start_date": "2025-01-28"
+    }
+  ]
+}

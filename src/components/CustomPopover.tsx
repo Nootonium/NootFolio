@@ -1,4 +1,4 @@
-import { Popover, Transition } from '@headlessui/react';
+import { Popover, Transition, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import { ReactNode } from 'react';
 import { useTheme } from '../hooks/ThemeContext';
@@ -24,11 +24,11 @@ export default function CustomPopover({ children }: CustomPopoverProps) {
 
   return (
     <Popover className='absolute right-8 top-16'>
-      <Popover.Button data-tip='info' className='tooltip tooltip-left tooltip-info'>
+      <PopoverButton data-tip='info' className='tooltip tooltip-left tooltip-info'>
         <InformationCircleIcon
           className={`tooltip tooltip-left tooltip-info w-8 ${popoverIconClasses[theme]}`}
         ></InformationCircleIcon>
-      </Popover.Button>
+      </PopoverButton>
       <Transition
         enter='transition transform duration-200'
         enterFrom='translate-x-full opacity-0'
@@ -37,11 +37,11 @@ export default function CustomPopover({ children }: CustomPopoverProps) {
         leaveFrom='translate-x-0 opacity-100'
         leaveTo='translate-x-full opacity-0'
       >
-        <Popover.Panel
+        <PopoverPanel
           className={`absolute right-0 z-30 w-64 max-w-sm ${popoverPanelClasses[theme]}`}
         >
           {children}
-        </Popover.Panel>
+        </PopoverPanel>
       </Transition>
     </Popover>
   );

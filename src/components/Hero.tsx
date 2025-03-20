@@ -28,13 +28,11 @@ function Hero({ openContact }: { openContact: () => void }) {
 
   return (
     <div
-      className={`relative flex h-screen w-screen snap-start items-center justify-center bg-opacity-20 ${heroClasses[theme]}`}
+      className={`relative flex h-screen items-center justify-center bg-opacity-20 ${heroClasses[theme]}`}
     >
-      <div
-        className={`h-min max-w-5xl px-4 pb-4 font-JetBrainsMono text-2xl leading-tight lg:px-2`}
-      >
+      <div className={`max-w-5xl px-4 pb-4 font-JetBrainsMono text-2xl leading-tight lg:px-2`}>
         <span className={HTMLTagClasses[theme]}>{'<h1>'}</span>
-        <h1 className='pl-8 text-4xl tracking-tighter sm:text-5xl lg:text-6xl '>
+        <h1 className='pl-8 text-4xl tracking-tighter sm:text-5xl lg:text-6xl'>
           <Typewriter text={titleText} />
         </h1>
         <span className={HTMLTagClasses[theme]}>{'</h1>'}</span>

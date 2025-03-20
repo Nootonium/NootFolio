@@ -31,12 +31,6 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
     setMessageLength(e.target.value.length);
   };
 
-  const inputClasses = {
-    light: 'bg-neutral-300 text-neutral-800 focus:outline-fuchsia-600',
-    dark: 'focus:outline-teal-400',
-    rainbow: 'bg-rainbow-300',
-  };
-
   const buttonClasses = {
     light: 'text-fuchsia-600 hover:text-black bg-neutral-200 hover:bg-fuchsia-600',
     dark: 'text-teal-400 hover:text-black bg-neutral-900 hover:bg-teal-500',
@@ -44,17 +38,17 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmitWithLoading)} className='flex flex-col font-OpenSans'>
+    <form onSubmit={handleSubmit(onSubmitWithLoading)} className={`flex flex-col font-OpenSans`}>
       <input
         {...register('name', { required: true })}
         placeholder='Name'
-        className={`input my-2 rounded border p-2 ${inputClasses[theme]}`}
+        className={`input my-2 rounded border p-2`}
       />
       {errors.name && <Alert message='This field is required' Icon={XCircleIcon} type='error' />}
       <input
         {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
         placeholder='Email'
-        className={`input my-2 rounded border p-2 ${inputClasses[theme]}`}
+        className={`input my-2 rounded border p-2`}
       />
       {errors.email && (
         <Alert message='Please enter a valid email address' Icon={XCircleIcon} type='error' />
@@ -68,7 +62,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
           },
         })}
         placeholder='Message'
-        className={`textarea my-2 h-48 max-h-64 rounded border p-2 ${inputClasses[theme]}`}
+        className={`textarea my-2 h-48 max-h-64 rounded border p-2`}
         onChange={handleMessageChange}
       />
       <div className='text-right text-sm text-gray-500'>{messageLength} / 500 characters</div>
@@ -78,7 +72,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
       {isLoading ? (
         <div className='flex w-full justify-center p-2'>
           <div
-            className=' h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-green-500 motion-reduce:animate-[spin_1.5s_linear_infinite]'
+            className='h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-green-500 motion-reduce:animate-[spin_1.5s_linear_infinite]'
             role='status'
           ></div>
         </div>

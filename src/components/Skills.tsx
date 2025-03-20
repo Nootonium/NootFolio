@@ -95,7 +95,7 @@ function Skills({ active }: { active: boolean }) {
   return (
     <div
       ref={containerRef}
-      className={`relative flex h-screen w-screen snap-start justify-center overflow-hidden ${skillbgClasses[theme]}}`}
+      className={`relative flex h-screen snap-start justify-center overflow-hidden ${skillbgClasses[theme]}}`}
     >
       {stars.map((star, index) => (
         <div
@@ -111,7 +111,7 @@ function Skills({ active }: { active: boolean }) {
         value={speed}
         data-tip='speed'
         onChange={e => setSpeed(parseInt(e.target.value, 10))}
-        className={`slider range tooltip range-info absolute right-10 top-36 h-8 w-32`}
+        className={`slider range range-info tooltip absolute right-10 top-36 h-8 w-32`}
       />
       <div
         ref={textRef}

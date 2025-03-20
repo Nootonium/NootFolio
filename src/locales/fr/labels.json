@@ -1,0 +1,13 @@
+{
+    "date": "Date",
+    "status": "Statut",
+    "description": "Description",
+    "tech": "Technologies",
+    "prev": "précédent",
+    "visit": "VOIR LE PROJET",
+    "next": "suivant",
+    "company": "Entreprise",
+    "experienceType": "Type d'expérience",
+    "coldStorage": "Hors ligne",
+    "liveDemo": "Démo en direct"
+}

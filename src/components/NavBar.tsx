@@ -21,7 +21,7 @@ function NavBar({
   refs: {
     heroRef: React.RefObject<HTMLElement>;
     aboutRef: React.RefObject<HTMLElement>;
-    projectsRef: React.RefObject<HTMLElement>;
+    journeyRef: React.RefObject<HTMLElement>;
     skillsRef: React.RefObject<HTMLElement>;
   };
 }) {
@@ -50,9 +50,9 @@ function NavBar({
       />
       <NavButton
         Icon={BriefcaseIcon}
-        text={t('projects')}
-        isActive={activeSection == 'projects'}
-        onClick={() => scrollToRef(refs.projectsRef)}
+        text={t('journey')}
+        isActive={activeSection == 'journey'}
+        onClick={() => scrollToRef(refs.journeyRef)}
       />
       <NavButton
         Icon={CommandLineIcon}

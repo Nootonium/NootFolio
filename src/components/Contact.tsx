@@ -1,4 +1,4 @@
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog, Transition, TransitionChild, DialogPanel } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import ContactForm from './ContactForm';
 import { postMessage } from '../api';
@@ -40,7 +40,7 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
   return (
     <Transition show={isContactOpen} as={Fragment}>
       <Dialog onClose={() => onClose()}>
-        <Transition.Child
+        <TransitionChild
           as={Fragment}
           enter='ease-out duration-300'
           enterFrom='opacity-0'
@@ -50,8 +50,8 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
           leaveTo='opacity-0'
         >
           <div className='absolute inset-0 z-30 bg-black/60 transition-opacity' />
-        </Transition.Child>
-        <Transition.Child
+        </TransitionChild>
+        <TransitionChild
           as='div'
           enter='ease-out duration-300'
           enterFrom='opacity-0 translate-y-full'
@@ -61,7 +61,7 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
           leaveTo='opacity-0 translate-y-full'
           className='fixed inset-0 z-30'
         >
-          <Dialog.Panel
+          <DialogPanel
             as='div'
             className={`absolute left-1/2 top-1/2 h-auto max-h-screen w-full max-w-xl -translate-x-1/2 -translate-y-1/2 rounded-md p-4 sm:p-8 ${bgClasses[theme]}`}
           >
@@ -79,8 +79,8 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
                 <span>{`Oups something went wrong. Try again later.`}</span>
               </div>
             )}
-          </Dialog.Panel>
-        </Transition.Child>
+          </DialogPanel>
+        </TransitionChild>
       </Dialog>
     </Transition>
   );

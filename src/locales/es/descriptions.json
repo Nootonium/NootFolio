@@ -1,0 +1,26 @@
+{
+    "AIPlayMaker": {
+        "description": "API RESTful en JSON para IAs de juegos de mesa, desarrollada con Flask y PyTorch. Implementa el algoritmo Minimax con poda alfa-beta y Búsqueda de Monte Carlo para la generación óptima de movimientos. El código está bien documentado e incluye pruebas unitarias para todos los endpoints."
+    },
+    "Ugram": {
+        "description": "Un clon de Instagram construido con el stack MERN. Permite a los usuarios subir, compartir y dar 'me gusta' a fotos, con funcionalidad de búsqueda, perfiles de usuario y un diseño responsivo."
+    },
+    "CADE": {
+        "description": "Un servicio backend para procesar y automatizar mensajes de formularios de contacto. Se integra con Discord para eventos de GitHub y utiliza GPT para respuestas automáticas en correos electrónicos. CADE incluye pruebas con Jest, registro con Winston y CI/CD con GitHub Actions."
+    },
+    "Nootfolio": {
+        "description": "Un portafolio web moderno, responsivo y de alto rendimiento, desarrollado con React y TypeScript. Destaca proyectos, habilidades y un formulario de contacto, priorizando la experiencia del usuario y la accesibilidad."
+    },
+    "Desjardins-Internship": {
+        "description": "Prácticas en Desjardins para proyectos web de inversión y reinversión. Responsabilidades incluyeron análisis funcional, soporte a desarrolladores, pruebas de calidad y entrega de funcionalidades para trayectorias de inversión.",
+        "keyContributions": [
+            "Realicé análisis funcional y colaboré con desarrolladores para refinar la lógica de negocio.",
+            "Mejoré la documentación y ayudé a optimizar la comunicación entre equipos.",
+            "Contribuí a la entrega de una característica importante que redujo pasos en el proceso de reinversión.",
+            "Trabajé en un entorno ágil, adaptándome a requisitos cambiantes y plazos ajustados."
+        ]
+    },
+    "Nootflix": {
+        "description": "Solución casera para llevar un registro de películas y series de TV."
+    }
+}

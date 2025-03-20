@@ -1,10 +1,10 @@
 import { RefObject, useRef, useState } from 'react';
-import './assets/rainbow-theme.css';
+import { sendTrackingData } from './api';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Journey from './components/Journey';
 import NavBar from './components/NavBar';
 import useScrollSpy from './hooks/useScrollSpy';
 import ThemeToggle from './components/ThemeToggle';
@@ -14,11 +14,14 @@ import LanguageSelector from './components/LanguageSelector';
 function App() {
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
-  const projectsRef = useRef(null);
+  const journeyRef = useRef(null);
   const skillsRef = useRef(null);
-  const activeSection = useScrollSpy([heroRef, aboutRef, projectsRef, skillsRef]);
+  const activeSection = useScrollSpy([heroRef, aboutRef, journeyRef, skillsRef]);
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const onOpen = () => setIsContactOpen(true);
+  const onOpen = () => {
+    sendTrackingData({ type: 'click', data: 'contact' });
+    setIsContactOpen(true);
+  };
   const onClose = () => setIsContactOpen(false);
 
   const scrollToRef = (ref: RefObject<HTMLElement>) => {
@@ -38,33 +41,38 @@ function App() {
         muted
         playsInline
         className='fixed inset-0 -z-10 h-full w-full object-cover'
+        aria-hidden='true'
       >
         <source src={background} type='video/webm' />
         {`Sorry, your browser doesn't support embedded videos.`}
       </video>
-      <div className='relative z-10 min-h-screen'>
+      <header className='relative z-20'>
         <NavBar
           activeSection={activeSection}
           openContact={onOpen}
           scrollToRef={scrollToRef}
-          refs={{ heroRef, aboutRef, projectsRef, skillsRef }}
+          refs={{ heroRef, aboutRef, journeyRef, skillsRef }}
         />
+        <div className='absolute right-4 top-4 flex gap-2'>
+          <ThemeToggle />
+          <LanguageSelector />
+        </div>
+      </header>
+      <main className='relative z-10'>
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>
         <section ref={aboutRef} id='about'>
           <About />
         </section>
-        <section ref={projectsRef} id='projects'>
-          <Projects />
+        <section ref={journeyRef} id='journey'>
+          <Journey />
         </section>
         <section ref={skillsRef} id='skills'>
-          <Skills active={activeSection == 'skills'} />
+          <Skills active={activeSection === 'skills'} />
         </section>
-        <Contact isContactOpen={isContactOpen} onClose={onClose} />
-        <ThemeToggle />
-        <LanguageSelector />
-      </div>
+      </main>
+      <Contact isContactOpen={isContactOpen} onClose={onClose} />
     </>
   );
 }

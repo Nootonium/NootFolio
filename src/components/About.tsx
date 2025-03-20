@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/ThemeContext';
+import { sendTrackingData } from '../api';
 
 function About() {
   const { theme } = useTheme();
@@ -24,15 +25,15 @@ function About() {
 
   return (
     <div className={`flex min-h-screen snap-start justify-center ${aboutClasses[theme]}`}>
-      <div className='mx-4 mt-4 max-w-xl py-16 lg:mx-auto'>
+      <div className='mx-4 max-w-xl py-16 lg:mx-auto'>
         <h1
           className={`mb-1 font-JetBrainsMono text-4xl tracking-tighter sm:text-6xl ${headingClasses[theme]}`}
         >
           {t('title')}
         </h1>
         <div className='text-justify font-OpenSans text-lg leading-normal tracking-tight'>
-          <p className='mb-2 '>{t('intro')}</p>
-          <p className='mb-2 '>{t('body')}</p>
+          <p className='mb-2'>{t('intro')}</p>
+          <p className='mb-2'>{t('body')}</p>
           <p className=''>{t('conclusion')}</p>
         </div>
         <div className='flex space-x-4 pt-2'>
@@ -41,6 +42,7 @@ function About() {
             target='_blank'
             rel='noopener noreferrer'
             className={`rounded px-4 py-2 ${linksClasses[theme]} `}
+            onClick={() => sendTrackingData({ type: 'click', data: 'github' })}
           >
             <svg
               className='h-10 w-10 fill-current'
@@ -56,6 +58,7 @@ function About() {
             target='_blank'
             rel='noopener noreferrer'
             className={`rounded px-4 py-2 ${linksClasses[theme]} `}
+            onClick={() => sendTrackingData({ type: 'click', data: 'linkedin' })}
           >
             <svg
               className='h-10 w-10 fill-current'

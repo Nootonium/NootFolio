@@ -1,0 +1,13 @@
+{
+    "date": "Date",
+    "status": "Status",
+    "description": "Description",
+    "tech": "Technologies",
+    "prev": "prev",
+    "visit": "VIEW PROJECT",
+    "next": "next",
+    "company": "Company",
+    "experienceType": "Experience Type",
+    "coldStorage": "Offline",
+    "liveDemo": "Live Demo"
+}

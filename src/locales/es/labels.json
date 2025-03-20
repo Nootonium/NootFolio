@@ -1,0 +1,13 @@
+{
+    "date": "Fecha",
+    "status": "Estado",
+    "description": "Descripción",
+    "tech": "Tecnologías",
+    "prev": "anterior",
+    "visit": "VER PROYECTO",
+    "next": "siguiente",
+    "company": "Empresa",
+    "experienceType": "Tipo de experiencia",
+    "coldStorage": "Fuera de línea",
+    "liveDemo": "Demo en vivo"
+}

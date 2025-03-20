@@ -8,20 +8,20 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
-    "prettify": "prettier --write \"src/**/*.ts\""
+    "prettify": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
     "@headlessui/react": "^2.1.10",
     "@headlessui/tailwindcss": "^0.2.1",
     "@heroicons/react": "^2.1.5",
+    "@monaco-editor/react": "^4.7.0",
     "daisyui": "^4.12.23",
+    "date-fns": "^4.1.0",
     "i18next": "^23.16.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.1",
-    "react-i18next": "^15.1.0",
-    "react-router-dom": "^6.27.0",
-    "react-ui-scrollspy": "^2.3.0"
+    "react-i18next": "^15.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",
