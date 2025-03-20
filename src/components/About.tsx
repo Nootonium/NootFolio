@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/ThemeContext';
+import { sendTrackingData } from '../api';
 
 function About() {
   const { theme } = useTheme();
@@ -41,6 +42,7 @@ function About() {
             target='_blank'
             rel='noopener noreferrer'
             className={`rounded px-4 py-2 ${linksClasses[theme]} `}
+            onClick={() => sendTrackingData({ type: 'click', data: 'github' })}
           >
             <svg
               className='h-10 w-10 fill-current'
@@ -56,6 +58,7 @@ function About() {
             target='_blank'
             rel='noopener noreferrer'
             className={`rounded px-4 py-2 ${linksClasses[theme]} `}
+            onClick={() => sendTrackingData({ type: 'click', data: 'linkedin' })}
           >
             <svg
               className='h-10 w-10 fill-current'

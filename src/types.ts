@@ -61,3 +61,8 @@ export type JourneyItem = ExperienceItem | ProjectItem;
 export interface JourneyInterface {
   items: JourneyItem[];
 }
+
+export interface Event {
+  type: string;
+  data: string;
+}

@@ -1,5 +1,5 @@
 import { RefObject, useRef, useState } from 'react';
-import './assets/rainbow-theme.css';
+import { sendTrackingData } from './api';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -18,7 +18,10 @@ function App() {
   const skillsRef = useRef(null);
   const activeSection = useScrollSpy([heroRef, aboutRef, journeyRef, skillsRef]);
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const onOpen = () => setIsContactOpen(true);
+  const onOpen = () => {
+    sendTrackingData({ type: 'click', data: 'contact' });
+    setIsContactOpen(true);
+  };
   const onClose = () => setIsContactOpen(false);
 
   const scrollToRef = (ref: RefObject<HTMLElement>) => {

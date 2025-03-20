@@ -4,6 +4,7 @@ import { useJourneyHelper } from '../hooks/useJourneyHelper';
 import JourneyCard from './JourneyCard';
 import JourneyModal from './JourneyModal';
 import journeyData from '../data/journey.json';
+import { sendTrackingData } from '../api';
 
 const Journey = () => {
   const { theme } = useTheme();
@@ -48,7 +49,13 @@ const Journey = () => {
               className={`absolute left-1/2 h-5 w-5 -translate-x-1/2 transform rounded-full ${dotsClasses[theme]}`}
             ></div>
             {/* Card */}
-            <JourneyCard journeyItem={item} onClick={() => setJourneyById(item.id)} />
+            <JourneyCard
+              journeyItem={item}
+              onClick={() => {
+                sendTrackingData({ type: 'click', data: item.id });
+                setJourneyById(item.id);
+              }}
+            />
           </div>
         ))}
       </div>
