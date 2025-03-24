@@ -32,6 +32,7 @@ function TechBadge({ tech }: { tech: string }) {
     docker: 'bg-blue-500 text-white',
     trpc: 'bg-gradient-to-br from-blue-400 to-blue-600 text-white',
     'github actions': 'bg-gray-400 text-white',
+    'node.js': 'bg-green-500 text-white',
   };
 
   let colorClasses = 'bg-neutral-300 text-neutral-800';
