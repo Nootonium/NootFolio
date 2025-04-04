@@ -1,38 +1,40 @@
 import { GlobeAltIcon } from '@heroicons/react/24/solid';
 import { useTranslation } from 'react-i18next';
+import { sendTrackingData } from '../api';
 
 interface ExperienceButtonsProps {
   links?: {
     company?: string;
     linkedin?: string;
   };
+  id: string;
 }
 
-function ExperienceButtons({ links }: ExperienceButtonsProps) {
+function ExperienceButtons({ links, id }: ExperienceButtonsProps) {
   const { t } = useTranslation('experienceButtons');
   if (!links) return null;
   return (
     <div className='row-span-1 mt-4 flex gap-2'>
-      {/* Company Website Button */}
       {links.company && (
         <a
           href={links.company}
           target='_blank'
           rel='noopener noreferrer'
           className='btn btn-ghost flex items-center gap-2 rounded-full text-center shadow-md ring-2 ring-blue-500'
+          onClick={() => sendTrackingData({ type: 'click_link', data: `${id}:company` })}
         >
           <GlobeAltIcon className='h-6 w-6 text-blue-500' />
           {t('company')}
         </a>
       )}
 
-      {/* LinkedIn Button */}
       {links.linkedin && (
         <a
           href={links.linkedin}
           target='_blank'
           rel='noopener noreferrer'
           className='btn btn-ghost flex items-center gap-2 rounded-full text-center shadow-md ring-2 ring-blue-500'
+          onClick={() => sendTrackingData({ type: 'click_link', data: `${id}:linkedin` })}
         >
           <svg
             className='h-10 w-10 fill-current'
