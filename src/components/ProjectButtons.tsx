@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { LockClosedIcon, GlobeAltIcon } from '@heroicons/react/24/solid';
+import { sendTrackingData } from '../api';
 
 interface ProjectButtonsProps {
   links?: {
@@ -8,9 +9,10 @@ interface ProjectButtonsProps {
     privateRepo?: boolean;
     coldStorage?: boolean;
   };
+  id: string;
 }
 
-function ProjectButtons({ links }: ProjectButtonsProps) {
+function ProjectButtons({ links, id }: ProjectButtonsProps) {
   const { t } = useTranslation('labels');
   if (!links) return null;
   return (
@@ -22,6 +24,7 @@ function ProjectButtons({ links }: ProjectButtonsProps) {
             target='_blank'
             rel='noreferrer'
             className='btn btn-ghost flex items-center gap-2 rounded-full text-center shadow-md ring-2 ring-neutral-500'
+            onClick={() => sendTrackingData({ type: 'click_link', data: `${id}:repo` })}
           >
             <svg
               className='h-6 w-6 fill-current'
@@ -45,6 +48,7 @@ function ProjectButtons({ links }: ProjectButtonsProps) {
             target='_blank'
             rel='noreferrer'
             className='btn btn-ghost flex items-center gap-2 rounded-full text-center shadow-md ring-2 ring-blue-500'
+            onClick={() => sendTrackingData({ type: 'click_link', data: `${id}:live` })}
           >
             <GlobeAltIcon className='h-6 w-6 text-blue-500' />
             {t('liveDemo')}

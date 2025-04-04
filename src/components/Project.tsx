@@ -21,7 +21,7 @@ const Project = ({ project }: { project: ProjectItem }) => {
           <TechBadge key={index} tech={tech} />
         ))}{' '}
       </p>
-      <ProjectButtons links={project.links} />
+      <ProjectButtons links={project.links} id={project.id} />
     </div>
   );
 };

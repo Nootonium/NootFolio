@@ -48,7 +48,7 @@ const Experience = ({ experience }: { experience: ExperienceItem }) => {
           <TechBadge key={index} tech={tech} />
         ))}
       </p>
-      <ExperienceButtons links={experience.links} />
+      <ExperienceButtons links={experience.links} id={experience.id} />
     </div>
   );
 };
