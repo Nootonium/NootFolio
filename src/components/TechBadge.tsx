@@ -35,7 +35,7 @@ function TechBadge({ tech }: { tech: string }) {
     'node.js': 'bg-green-500 text-white',
   };
 
-  let colorClasses = 'bg-neutral-300 text-neutral-800';
+  let colorClasses = 'bg-stone-300 text-stone-800';
 
   if (techColors[tech.toLowerCase()]) {
     colorClasses = techColors[tech.toLowerCase()];

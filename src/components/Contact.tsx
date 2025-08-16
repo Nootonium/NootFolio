@@ -27,8 +27,8 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
   };
 
   const bgClasses = {
-    light: 'bg-gradient-to-tl from-white to-neutral-200',
-    dark: 'bg-gradient-to-tl from-black to-neutral-900',
+    light: 'bg-gradient-to-tl from-white to-stone-200',
+    dark: 'bg-gradient-to-tl from-black to-stone-900',
     rainbow: 'bg-rainbow-300',
   };
 

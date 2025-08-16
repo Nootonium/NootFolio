@@ -18,9 +18,9 @@ const Journey = () => {
 
   const headingClasses = { light: 'text-fuchsia-600', dark: 'text-teal-400', rainbow: '' };
   const dotsClasses = { light: 'bg-fuchsia-600', dark: 'bg-teal-400', rainbow: '' };
-  const bgClasses = { light: 'bg-neutral-500', dark: 'bg-neutral-900', rainbow: 'bg-rainbow-300' };
+  const bgClasses = { light: 'bg-stone-500', dark: 'bg-stone-900', rainbow: 'bg-rainbow-300' };
   const lineClasses = {
-    light: 'bg-neutral-800',
+    light: 'bg-stone-800',
     dark: 'bg-white',
     rainbow: 'border-rainbow-500',
   };
