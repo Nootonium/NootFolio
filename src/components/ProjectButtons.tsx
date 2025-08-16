@@ -23,7 +23,7 @@ function ProjectButtons({ links, id }: ProjectButtonsProps) {
             href={links.repo}
             target='_blank'
             rel='noreferrer'
-            className='btn btn-ghost flex items-center gap-2 rounded-full text-center shadow-md ring-2 ring-neutral-500'
+            className='btn btn-ghost flex items-center gap-2 rounded-full text-center shadow-md ring-2 ring-stone-500'
             onClick={() => sendTrackingData({ type: 'click_link', data: `${id}:repo` })}
           >
             <svg

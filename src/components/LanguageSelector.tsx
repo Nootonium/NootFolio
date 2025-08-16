@@ -25,20 +25,20 @@ function LanguageSelector() {
   };
 
   const buttonClasses = {
-    light: 'bg-neutral-200 text-black opacity-90',
+    light: 'bg-stone-200 text-black opacity-90',
     dark: 'bg-black text-white opacity-70',
     rainbow: 'bg-gradient-to-r from-red-400 via-green-400 to-blue-400',
   };
 
   const optionsClasses = {
-    light: 'bg-neutral-200 text-black',
+    light: 'bg-stone-200 text-black',
     dark: 'bg-black opacity-80 text-white',
     rainbow: 'bg-gradient-to-r from-red-400 via-green-400 to-blue-400',
   };
 
   const activeClasses = {
     light: 'bg-fuchsia-600 text-white',
-    dark: 'bg-neutral-700',
+    dark: 'bg-stone-700',
     rainbow: 'bg-white text-black',
   };
 
