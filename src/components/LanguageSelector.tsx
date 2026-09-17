@@ -27,25 +27,21 @@ function LanguageSelector() {
   const buttonClasses = {
     light: 'bg-stone-200 text-black opacity-90',
     dark: 'bg-black text-white opacity-70',
-    rainbow: 'bg-gradient-to-r from-red-400 via-green-400 to-blue-400',
   };
 
   const optionsClasses = {
     light: 'bg-stone-200 text-black',
     dark: 'bg-black opacity-80 text-white',
-    rainbow: 'bg-gradient-to-r from-red-400 via-green-400 to-blue-400',
   };
 
   const activeClasses = {
     light: 'bg-fuchsia-600 text-white',
     dark: 'bg-stone-700',
-    rainbow: 'bg-white text-black',
   };
 
   const inactiveClasses = {
     light: 'text-black',
     dark: 'text-white',
-    rainbow: 'text-black',
   };
 
   return (

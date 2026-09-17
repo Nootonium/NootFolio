@@ -33,7 +33,6 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
   const buttonClasses = {
     light: 'text-fuchsia-600 hover:text-black bg-stone-200 hover:bg-fuchsia-600',
     dark: 'text-teal-400 hover:text-black bg-stone-900 hover:bg-teal-500',
-    rainbow: 'bg-rainbow-300',
   };
 
   return (

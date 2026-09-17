@@ -64,13 +64,11 @@ const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
   const dialogClasses = {
     light: 'bg-white text-black',
     dark: 'bg-black text-white',
-    rainbow: 'bg-rainbow-500',
   };
 
   const headingClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
-    rainbow: '',
   };
 
   return (

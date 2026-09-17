@@ -4,7 +4,7 @@ import { Theme } from '../types';
 
 function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    return (localStorage.getItem('theme') as Theme) || 'dark';
+    return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
   });
 
   useEffect(() => {

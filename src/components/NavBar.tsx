@@ -30,7 +30,6 @@ function NavBar({
   const navbarBGClasses = {
     light: 'bg-white text-black',
     dark: 'bg-black text-white',
-    rainbow: '',
   };
   return (
     <nav

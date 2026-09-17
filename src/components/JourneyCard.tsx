@@ -13,13 +13,11 @@ const JourneyCard = ({ journeyItem, onClick }: JourneyCardProps) => {
   const typeClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-red-500',
-    rainbow: '',
   };
 
   const bgClasses = {
     light: 'bg-stone-300 hover:bg-stone-100 focus:bg-stone-200 text-black',
     dark: 'bg-stone-700 focus:bg-stone-600 text-white',
-    rainbow: 'bg-rainbow-300',
   };
 
   return (

@@ -16,10 +16,10 @@ function ThemeToggle() {
       <Switch
         checked={isDarkMode}
         onChange={() => setIsDarkMode(!isDarkMode)}
-        className={`relative z-20 inline-flex h-6 w-12 items-center rounded-full ui-checked:bg-stone-600 ui-not-checked:bg-stone-200`}
+        className={`data-checked:bg-stone-600 not-data-checked:bg-stone-200 relative z-20 inline-flex h-6 w-12 items-center rounded-full`}
       >
         <span className='sr-only'>Theme</span>
-        <span className='inline-block h-5 w-5 transform rounded-full bg-white transition ui-checked:translate-x-6 ui-not-checked:translate-x-1'>
+        <span className='data-checked:translate-x-6 not-data-checked:translate-x-1 inline-block h-5 w-5 transform rounded-full'>
           {isDarkMode ? (
             <MoonIcon className='h-5 w-5 text-stone-400' />
           ) : (

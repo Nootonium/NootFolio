@@ -16,13 +16,12 @@ const Journey = () => {
   const { selectedItem, setJourneyById, clearJourney, isShowingModal } =
     useJourneyHelper(timelineData);
 
-  const headingClasses = { light: 'text-fuchsia-600', dark: 'text-teal-400', rainbow: '' };
-  const dotsClasses = { light: 'bg-fuchsia-600', dark: 'bg-teal-400', rainbow: '' };
-  const bgClasses = { light: 'bg-stone-500', dark: 'bg-stone-900', rainbow: 'bg-rainbow-300' };
+  const headingClasses = { light: 'text-fuchsia-600', dark: 'text-teal-400' };
+  const dotsClasses = { light: 'bg-fuchsia-600', dark: 'bg-teal-400' };
+  const bgClasses = { light: 'bg-stone-500', dark: 'bg-stone-900' };
   const lineClasses = {
     light: 'bg-stone-800',
     dark: 'bg-white',
-    rainbow: 'border-rainbow-500',
   };
   return (
     <div

@@ -8,19 +8,16 @@ function About() {
   const aboutClasses = {
     light: 'bg-white bg-opacity-80 text-black',
     dark: 'bg-black bg-opacity-70 text-white',
-    rainbow: '',
   };
 
   const headingClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
-    rainbow: '',
   };
 
   const linksClasses = {
     light: 'text-black hover:bg-fuchsia-600',
     dark: 'text-white hover:bg-teal-400',
-    rainbow: '',
   };
 
   return (
