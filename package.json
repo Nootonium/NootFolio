@@ -1,5 +1,5 @@
 {
-  "name": "vite-react-typesript-tailwind-eslint-template",
+  "name": "nootfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,11 +11,10 @@
     "prettify": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@headlessui/react": "^2.1.10",
-    "@headlessui/tailwindcss": "^0.2.1",
+    "@headlessui/react": "^2.2.10",
     "@heroicons/react": "^2.1.5",
     "@monaco-editor/react": "^4.7.0",
-    "daisyui": "^5.0.50",
+    "daisyui": "5.0.50",
     "date-fns": "^4.1.0",
     "i18next": "^23.16.3",
     "react": "^18.3.1",
@@ -24,6 +23,8 @@
     "react-i18next": "^15.1.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
+    "@eslint/js": "^9.39.5",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^8.29.0",
@@ -35,9 +36,9 @@
     "eslint-plugin-prettier": "^5.5.3",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.18",
+    "eslint-plugin-react-refresh": "^0.4.26",
     "postcss": "^8.4.47",
-    "prettier": "^3.3.3",
+    "prettier": "^3.9.7",
     "prettier-plugin-tailwindcss": "^0.6.10",
     "supertest": "^7.1.4",
     "tailwindcss": "^3.4.14",

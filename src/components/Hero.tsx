@@ -9,17 +9,14 @@ function Hero({ openContact }: { openContact: () => void }) {
   const heroClasses = {
     light: 'text-black bg-white',
     dark: 'text-white bg-black',
-    rainbow: 'bg-rainbow-300',
   };
   const HTMLTagClasses = {
     light: 'text-fuchsia-600 tracking-wide',
     dark: 'text-teal-400 tracking-wide',
-    rainbow: 'text-syntax-rainbow',
   };
   const callToActionClasses = {
     light: 'text-pink-800 tracking-wide',
     dark: 'text-red-500 tracking-wide',
-    rainbow: 'text-syntax-rainbow',
   };
 
   const titleText = t('title');

@@ -15,7 +15,6 @@ export function NavButton({
   const activeClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
-    rainbow: 'bg-rainbow-300',
   };
 
   const activeSection = isActive ? activeClasses[theme] : '';

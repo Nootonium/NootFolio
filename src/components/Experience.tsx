@@ -44,7 +44,7 @@ const Experience = ({ experience }: { experience: ExperienceItem }) => {
       </p>
       <p className='mt-2'>
         {t('tech')}:{' '}
-        {experience.technologies.map((tech: string, index: any) => (
+        {experience.technologies.map((tech: string, index: number) => (
           <TechBadge key={index} tech={tech} />
         ))}
       </p>

@@ -44,7 +44,7 @@ const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
     }
 
     if (journeyItem.backdrop) {
-      let url = new URL(`../assets/${journeyItem.backdrop}`, import.meta.url).href;
+      const url = new URL(`../assets/${journeyItem.backdrop}`, import.meta.url).href;
       Backdrop = (
         <div
           className={`fixed inset-0 transition-opacity duration-500 ease-out ${
@@ -64,13 +64,11 @@ const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
   const dialogClasses = {
     light: 'bg-white text-black',
     dark: 'bg-black text-white',
-    rainbow: 'bg-rainbow-500',
   };
 
   const headingClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
-    rainbow: '',
   };
 
   return (

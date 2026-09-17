@@ -29,13 +29,11 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
   const bgClasses = {
     light: 'bg-gradient-to-tl from-white to-stone-200',
     dark: 'bg-gradient-to-tl from-black to-stone-900',
-    rainbow: 'bg-rainbow-300',
   };
 
   const headingClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
-    rainbow: '',
   };
   return (
     <Transition show={isContactOpen} as={Fragment}>

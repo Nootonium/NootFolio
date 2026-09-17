@@ -26,19 +26,16 @@ function Skills({ active }: { active: boolean }) {
     // spaces at the end are important dunnow why
     light: 'bg-white ',
     dark: 'bg-black ',
-    rainbow: 'bg-rainbow-300',
   };
 
   const skilltextClasses = {
     light: 'text-black',
     dark: 'text-yellow-500',
-    rainbow: 'text-rainbow-300',
   };
 
   const starClasses = {
     light: 'bg-black',
     dark: 'bg-yellow-100',
-    rainbow: 'bg-rainbow-300',
   };
 
   const generateStars = () => {

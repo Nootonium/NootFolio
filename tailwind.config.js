@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import daisyui from 'daisyui';
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -8,14 +9,11 @@ export default {
         JetBrainsMono: ['JetBrains Mono', 'monospace'],
         OpenSans: ['Open Sans', 'sans-serif'],
       },
-      backgroundColor: {
-        rainbow: 'bg-gradient-to-r from-red-500 via-yellow-500 to-cyan-500',
-      },
       textColor: {},
       colors: {},
     },
   },
-  plugins: [require('daisyui'), require('@headlessui/tailwindcss')],
+  plugins: [daisyui],
   daisyui: {
     themes: ['light', 'dark', 'black'],
   },

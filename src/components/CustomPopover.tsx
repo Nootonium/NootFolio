@@ -13,13 +13,11 @@ export default function CustomPopover({ children }: CustomPopoverProps) {
   const popoverIconClasses = {
     light: 'bg-white text-black',
     dark: 'text-yellow-500',
-    rainbow: 'bg-rainbow-300',
   };
 
   const popoverPanelClasses = {
     light: 'bg-white text-black border-black border-2 border-inset rounded-sm',
     dark: 'bg-black text-yellow-500 border-yellow-500 border-2 border-inset rounded-sm',
-    rainbow: 'bg-rainbow-300',
   };
 
   return (
