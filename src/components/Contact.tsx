@@ -27,8 +27,8 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
   };
 
   const bgClasses = {
-    light: 'bg-gradient-to-tl from-white to-stone-200',
-    dark: 'bg-gradient-to-tl from-black to-stone-900',
+    light: 'bg-linear-to-tl from-white to-stone-200',
+    dark: 'bg-linear-to-tl from-black to-stone-900',
   };
 
   const headingClasses = {
@@ -61,9 +61,9 @@ function Contact({ isContactOpen, onClose }: ContactProps) {
         >
           <DialogPanel
             as='div'
-            className={`absolute left-1/2 top-1/2 h-auto max-h-screen w-full max-w-xl -translate-x-1/2 -translate-y-1/2 rounded-md p-4 sm:p-8 ${bgClasses[theme]}`}
+            className={`absolute top-1/2 left-1/2 h-auto max-h-screen w-full max-w-xl -translate-x-1/2 -translate-y-1/2 rounded-md p-4 sm:p-8 ${bgClasses[theme]}`}
           >
-            <h3 className={`py-2 font-JetBrainsMono text-3xl ${headingClasses[theme]}`}>
+            <h3 className={`font-JetBrainsMono py-2 text-3xl ${headingClasses[theme]}`}>
               Contact Me
             </h3>
             <ContactForm onSubmit={onSubmit} />

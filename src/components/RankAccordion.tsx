@@ -15,13 +15,13 @@ function RankAccordion() {
               <DisclosureButton
                 as='div'
                 role='button'
-                className='flex flex-wrap px-4 py-2 font-JetBrainsMono tracking-tighter hover:text-lg'
+                className='font-JetBrainsMono flex flex-wrap px-4 py-2 tracking-tighter hover:text-lg'
               >
                 {t(`ranks.${rank}`)}
-                <div className='flex-grow'></div>
+                <div className='grow'></div>
                 <ChevronDownIcon className={`w-5 ${open ? 'rotate-180' : ''}`} />
               </DisclosureButton>
-              <DisclosurePanel className='px-4 font-OpenSans'>
+              <DisclosurePanel className='font-OpenSans px-4'>
                 {t(`rankDescription.${rank}_description`)}{' '}
               </DisclosurePanel>
             </>

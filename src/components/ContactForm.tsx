@@ -36,17 +36,17 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmitWithLoading)} className={`flex flex-col font-OpenSans`}>
+    <form onSubmit={handleSubmit(onSubmitWithLoading)} className={`font-OpenSans flex flex-col`}>
       <input
         {...register('name', { required: true })}
         placeholder='Name'
-        className={`input my-2 rounded border p-2`}
+        className={`input my-2 rounded-sm border p-2`}
       />
       {errors.name && <Alert message='This field is required' type='error' />}
       <input
         {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
         placeholder='Email'
-        className={`input my-2 rounded border p-2`}
+        className={`input my-2 rounded-sm border p-2`}
       />
       {errors.email && <Alert message='Please enter a valid email address' type='error' />}
       <textarea
@@ -58,7 +58,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
           },
         })}
         placeholder='Message'
-        className={`textarea my-2 h-48 max-h-64 rounded border p-2`}
+        className={`textarea my-2 h-48 max-h-64 rounded-sm border p-2`}
         onChange={handleMessageChange}
       />
       <div className='text-right text-sm text-gray-500'>{messageLength} / 500 characters</div>
@@ -73,7 +73,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
       ) : (
         <input
           type='submit'
-          className={`btn mt-2 cursor-pointer rounded p-2 font-JetBrainsMono text-lg tracking-wider ${buttonClasses[theme]}`}
+          className={`btn font-JetBrainsMono mt-2 cursor-pointer rounded-sm p-2 text-lg tracking-wider ${buttonClasses[theme]}`}
         />
       )}
     </form>

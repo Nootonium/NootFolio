@@ -22,7 +22,7 @@ const JourneyCard = ({ journeyItem, onClick }: JourneyCardProps) => {
 
   return (
     <div
-      className={`bg-sla w-5/12 cursor-pointer rounded-lg p-4 font-OpenSans shadow-lg ${bgClasses[theme]}`}
+      className={`bg-sla font-OpenSans w-5/12 cursor-pointer rounded-lg p-4 shadow-lg ${bgClasses[theme]}`}
       onClick={onClick}
     >
       <h2 className='text-xl font-bold'>{journeyItem.title}</h2>
