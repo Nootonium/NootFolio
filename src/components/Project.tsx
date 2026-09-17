@@ -17,7 +17,7 @@ const Project = ({ project }: { project: ProjectItem }) => {
       <Status status={project.status} />
       <p className='mt-4 text-lg leading-relaxed tracking-normal'>{project.description}</p>
       <p className='mt-4'>
-        {project.technologies.map((tech: string, index: any) => (
+        {project.technologies.map((tech: string, index: number) => (
           <TechBadge key={index} tech={tech} />
         ))}{' '}
       </p>

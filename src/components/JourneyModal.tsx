@@ -44,7 +44,7 @@ const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
     }
 
     if (journeyItem.backdrop) {
-      let url = new URL(`../assets/${journeyItem.backdrop}`, import.meta.url).href;
+      const url = new URL(`../assets/${journeyItem.backdrop}`, import.meta.url).href;
       Backdrop = (
         <div
           className={`fixed inset-0 transition-opacity duration-500 ease-out ${

@@ -1,6 +1,5 @@
 import { useForm } from 'react-hook-form';
 import Alert from './Alert';
-import { XCircleIcon } from '@heroicons/react/24/outline';
 import { MessageData } from '../types';
 import { useState, ChangeEvent } from 'react';
 import { useTheme } from '../hooks/ThemeContext';
@@ -44,15 +43,13 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
         placeholder='Name'
         className={`input my-2 rounded border p-2`}
       />
-      {errors.name && <Alert message='This field is required' Icon={XCircleIcon} type='error' />}
+      {errors.name && <Alert message='This field is required' type='error' />}
       <input
         {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
         placeholder='Email'
         className={`input my-2 rounded border p-2`}
       />
-      {errors.email && (
-        <Alert message='Please enter a valid email address' Icon={XCircleIcon} type='error' />
-      )}
+      {errors.email && <Alert message='Please enter a valid email address' type='error' />}
       <textarea
         {...register('message', {
           required: 'This field is required',
@@ -66,9 +63,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
         onChange={handleMessageChange}
       />
       <div className='text-right text-sm text-gray-500'>{messageLength} / 500 characters</div>
-      {errors.message && (
-        <Alert message={errors.message?.message || ''} Icon={XCircleIcon} type='error' />
-      )}
+      {errors.message && <Alert message={errors.message?.message || ''} type='error' />}
       {isLoading ? (
         <div className='flex w-full justify-center p-2'>
           <div
