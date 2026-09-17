@@ -47,7 +47,7 @@ function LanguageSelector() {
   return (
     <div
       data-tip='Language'
-      className='tooltip tooltip-left tooltip-info fixed right-24 top-5 font-JetBrainsMono'
+      className='tooltip tooltip-left tooltip-info font-JetBrainsMono fixed top-5 right-24'
     >
       <Listbox value={selectedLanguage} onChange={changeLanguage}>
         <ListboxButton className={`rounded-md px-4 py-1 text-left ${buttonClasses[theme]}`}>
@@ -61,7 +61,7 @@ function LanguageSelector() {
               key={language.id}
               value={language}
               className={({ active }) =>
-                `cursor-pointer select-none px-2 py-1 text-left first:rounded-t-md last:rounded-b-md ${
+                `cursor-pointer px-2 py-1 text-left select-none first:rounded-t-md last:rounded-b-md ${
                   active ? activeClasses[theme] : inactiveClasses[theme]
                 }`
               }

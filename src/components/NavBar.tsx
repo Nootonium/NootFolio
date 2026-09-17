@@ -28,12 +28,12 @@ function NavBar({
   const { theme } = useTheme();
   const { t } = useTranslation('navbar');
   const navbarBGClasses = {
-    light: 'bg-white text-black',
-    dark: 'bg-black text-white',
+    light: 'bg-white/80 text-black',
+    dark: 'bg-black/90 text-white',
   };
   return (
     <nav
-      className={`fixed bottom-0 left-1/2 z-30 mb-6 flex -translate-x-1/2 flex-row rounded-md bg-opacity-80 pr-1 ${navbarBGClasses[theme]}`}
+      className={`fixed bottom-0 left-1/2 z-30 mb-6 flex -translate-x-1/2 flex-row rounded-md pr-1 ${navbarBGClasses[theme]}`}
     >
       <NavButton
         Icon={HomeIcon}

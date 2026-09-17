@@ -37,7 +37,7 @@ function ProjectButtons({ links, id }: ProjectButtonsProps) {
             {t('github')}
           </a>
           {links.privateRepo && (
-            <LockClosedIcon className='absolute right-2 top-1 h-4 w-4 text-red-500' />
+            <LockClosedIcon className='absolute top-1 right-2 h-4 w-4 text-red-500' />
           )}
         </div>
       )}
@@ -54,7 +54,7 @@ function ProjectButtons({ links, id }: ProjectButtonsProps) {
             {t('liveDemo')}
           </a>
           {links.coldStorage && (
-            <span className='absolute -right-1 top-0 rounded px-2 py-0.5 text-xs text-white'>
+            <span className='absolute top-0 -right-1 rounded-sm px-2 py-0.5 text-xs text-white'>
               {t('coldStorage')}
             </span>
           )}

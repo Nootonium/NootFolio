@@ -12,14 +12,14 @@ function ThemeToggle() {
   }, [isDarkMode, toggleTheme]);
 
   return (
-    <div data-tip='theme' className='tooltip tooltip-left tooltip-info fixed right-6 top-6'>
+    <div data-tip='theme' className='tooltip tooltip-left tooltip-info fixed top-6 right-6'>
       <Switch
         checked={isDarkMode}
         onChange={() => setIsDarkMode(!isDarkMode)}
-        className={`data-checked:bg-stone-600 not-data-checked:bg-stone-200 relative z-20 inline-flex h-6 w-12 items-center rounded-full`}
+        className={`relative z-20 inline-flex h-6 w-12 items-center rounded-full not-data-checked:bg-stone-200 data-checked:bg-stone-600`}
       >
         <span className='sr-only'>Theme</span>
-        <span className='data-checked:translate-x-6 not-data-checked:translate-x-1 inline-block h-5 w-5 transform rounded-full'>
+        <span className='inline-block h-5 w-5 transform rounded-full not-data-checked:translate-x-1 data-checked:translate-x-6'>
           {isDarkMode ? (
             <MoonIcon className='h-5 w-5 text-stone-400' />
           ) : (

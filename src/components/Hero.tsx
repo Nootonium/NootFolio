@@ -7,8 +7,8 @@ function Hero({ openContact }: { openContact: () => void }) {
   const { t } = useTranslation('hero');
 
   const heroClasses = {
-    light: 'text-black bg-white',
-    dark: 'text-white bg-black',
+    light: 'text-black bg-white/80',
+    dark: 'text-white bg-black/80',
   };
   const HTMLTagClasses = {
     light: 'text-fuchsia-600 tracking-wide',
@@ -24,10 +24,8 @@ function Hero({ openContact }: { openContact: () => void }) {
   const callToActionText = t('callToAction');
 
   return (
-    <div
-      className={`relative flex h-screen items-center justify-center bg-opacity-20 ${heroClasses[theme]}`}
-    >
-      <div className={`max-w-5xl px-4 pb-4 font-JetBrainsMono text-2xl leading-tight lg:px-2`}>
+    <div className={`relative flex h-screen items-center justify-center ${heroClasses[theme]}`}>
+      <div className={`font-JetBrainsMono max-w-5xl px-4 pb-4 text-2xl leading-tight lg:px-2`}>
         <span className={HTMLTagClasses[theme]}>{'<h1>'}</span>
         <h1 className='pl-8 text-4xl tracking-tighter sm:text-5xl lg:text-6xl'>
           <Typewriter text={titleText} />
