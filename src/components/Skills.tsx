@@ -26,19 +26,16 @@ function Skills({ active }: { active: boolean }) {
     // spaces at the end are important dunnow why
     light: 'bg-white ',
     dark: 'bg-black ',
-    rainbow: 'bg-rainbow-300',
   };
 
   const skilltextClasses = {
     light: 'text-black',
     dark: 'text-yellow-500',
-    rainbow: 'text-rainbow-300',
   };
 
   const starClasses = {
     light: 'bg-black',
     dark: 'bg-yellow-100',
-    rainbow: 'bg-rainbow-300',
   };
 
   const generateStars = () => {
@@ -111,11 +108,11 @@ function Skills({ active }: { active: boolean }) {
         value={speed}
         data-tip='speed'
         onChange={e => setSpeed(parseInt(e.target.value, 10))}
-        className={`slider range range-info tooltip absolute right-10 top-36 h-8 w-32`}
+        className={`slider range range-info tooltip absolute top-36 right-10 h-8 w-32`}
       />
       <div
         ref={textRef}
-        className={`crawl max-w-xs px-8 font-JetBrainsMono text-lg sm:max-w-md sm:text-2xl ${skilltextClasses[theme]}`}
+        className={`crawl font-JetBrainsMono max-w-xs px-8 text-lg sm:max-w-md sm:text-2xl ${skilltextClasses[theme]}`}
       >
         <h1 className='text-center text-4xl tracking-tighter sm:text-6xl'>{t('title')}</h1>
         <br />
@@ -128,9 +125,9 @@ function Skills({ active }: { active: boolean }) {
               </h1>
               <div className='h-2' />
               {skills[skillKey].map((skill, index) => (
-                <div key={index} className='flex flex-wrap font-OpenSans'>
+                <div key={index} className='font-OpenSans flex flex-wrap'>
                   <span className='text-left'>{t(`skills.${skill.id}`)}</span>
-                  <span className='flex-grow' />
+                  <span className='grow' />
                   <span className='text-right'>{t(`ranks.${skill.level}`)}</span>
                 </div>
               ))}
@@ -141,7 +138,7 @@ function Skills({ active }: { active: boolean }) {
       </div>
       <button
         data-tip='refresh'
-        className='tooltip tooltip-left tooltip-info absolute right-8 top-24'
+        className='tooltip tooltip-left tooltip-info absolute top-24 right-8'
         onClick={() => resetAnimation()}
       >
         <ArrowPathIcon className={`w-8 ${skilltextClasses[theme]}`} />

@@ -23,7 +23,7 @@ const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
   let Backdrop = (
     <DialogBackdrop
       transition
-      className='duration-800 fixed inset-0 bg-black/70 ease-out data-[closed]:opacity-0'
+      className='fixed inset-0 bg-black/70 duration-800 ease-out data-closed:opacity-0'
     />
   );
 
@@ -44,7 +44,7 @@ const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
     }
 
     if (journeyItem.backdrop) {
-      let url = new URL(`../assets/${journeyItem.backdrop}`, import.meta.url).href;
+      const url = new URL(`../assets/${journeyItem.backdrop}`, import.meta.url).href;
       Backdrop = (
         <div
           className={`fixed inset-0 transition-opacity duration-500 ease-out ${
@@ -64,13 +64,11 @@ const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
   const dialogClasses = {
     light: 'bg-white text-black',
     dark: 'bg-black text-white',
-    rainbow: 'bg-rainbow-500',
   };
 
   const headingClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
-    rainbow: '',
   };
 
   return (
@@ -83,7 +81,7 @@ const JourneyModal = ({ journeyItem, onClose, isOpen }: JourneyModalProps) => {
       <div className='fixed inset-0 flex w-screen items-center justify-center p-4'>
         <DialogPanel
           transition
-          className={`w-full max-w-3xl translate-y-0 transform overflow-hidden rounded-lg p-6 opacity-95 shadow-xl duration-500 ease-out data-[closed]:translate-y-10 data-[closed]:opacity-0 ${dialogClasses[theme]}`}
+          className={`w-full max-w-3xl translate-y-0 transform overflow-hidden rounded-lg p-6 opacity-95 shadow-xl duration-500 ease-out data-closed:translate-y-10 data-closed:opacity-0 ${dialogClasses[theme]}`}
         >
           <DialogTitle className={`pb-4 text-2xl font-bold ${headingClasses[theme]}`}>
             {journeyItem?.title}

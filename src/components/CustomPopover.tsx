@@ -13,17 +13,15 @@ export default function CustomPopover({ children }: CustomPopoverProps) {
   const popoverIconClasses = {
     light: 'bg-white text-black',
     dark: 'text-yellow-500',
-    rainbow: 'bg-rainbow-300',
   };
 
   const popoverPanelClasses = {
-    light: 'bg-white text-black border-black border-2 border-inset rounded-sm',
-    dark: 'bg-black text-yellow-500 border-yellow-500 border-2 border-inset rounded-sm',
-    rainbow: 'bg-rainbow-300',
+    light: 'bg-white text-black border-black border-2 border-inset rounded-xs',
+    dark: 'bg-black text-yellow-500 border-yellow-500 border-2 border-inset rounded-xs',
   };
 
   return (
-    <Popover className='absolute right-8 top-16'>
+    <Popover className='absolute top-16 right-8'>
       <PopoverButton data-tip='info' className='tooltip tooltip-left tooltip-info'>
         <InformationCircleIcon
           className={`tooltip tooltip-left tooltip-info w-8 ${popoverIconClasses[theme]}`}

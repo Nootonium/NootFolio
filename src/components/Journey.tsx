@@ -16,26 +16,25 @@ const Journey = () => {
   const { selectedItem, setJourneyById, clearJourney, isShowingModal } =
     useJourneyHelper(timelineData);
 
-  const headingClasses = { light: 'text-fuchsia-600', dark: 'text-teal-400', rainbow: '' };
-  const dotsClasses = { light: 'bg-fuchsia-600', dark: 'bg-teal-400', rainbow: '' };
-  const bgClasses = { light: 'bg-stone-500', dark: 'bg-stone-900', rainbow: 'bg-rainbow-300' };
+  const headingClasses = { light: 'text-fuchsia-600', dark: 'text-teal-400' };
+  const dotsClasses = { light: 'bg-fuchsia-600', dark: 'bg-teal-400' };
+  const bgClasses = { light: 'bg-stone-500', dark: 'bg-stone-900' };
   const lineClasses = {
     light: 'bg-stone-800',
     dark: 'bg-white',
-    rainbow: 'border-rainbow-500',
   };
   return (
     <div
       className={`relative flex min-h-screen flex-col items-center py-16 text-white opacity-90 ${bgClasses[theme]}`}
     >
       <h1
-        className={`mb-8 font-JetBrainsMono text-4xl font-bold sm:text-6xl ${headingClasses[theme]}`}
+        className={`font-JetBrainsMono mb-8 text-4xl font-bold sm:text-6xl ${headingClasses[theme]}`}
       >
         Journey
       </h1>
       {/* Timeline Line */}
       <div
-        className={`absolute left-1/2 top-28 h-full w-1 -translate-x-1/2 transform ${lineClasses[theme]}`}
+        className={`absolute top-28 left-1/2 h-full w-1 -translate-x-1/2 transform ${lineClasses[theme]}`}
       ></div>
       {/* Timeline Items */}
       <div className='w-full max-w-2xl'>

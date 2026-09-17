@@ -27,31 +27,27 @@ function LanguageSelector() {
   const buttonClasses = {
     light: 'bg-stone-200 text-black opacity-90',
     dark: 'bg-black text-white opacity-70',
-    rainbow: 'bg-gradient-to-r from-red-400 via-green-400 to-blue-400',
   };
 
   const optionsClasses = {
     light: 'bg-stone-200 text-black',
     dark: 'bg-black opacity-80 text-white',
-    rainbow: 'bg-gradient-to-r from-red-400 via-green-400 to-blue-400',
   };
 
   const activeClasses = {
     light: 'bg-fuchsia-600 text-white',
     dark: 'bg-stone-700',
-    rainbow: 'bg-white text-black',
   };
 
   const inactiveClasses = {
     light: 'text-black',
     dark: 'text-white',
-    rainbow: 'text-black',
   };
 
   return (
     <div
       data-tip='Language'
-      className='tooltip tooltip-left tooltip-info fixed right-24 top-5 font-JetBrainsMono'
+      className='tooltip tooltip-left tooltip-info font-JetBrainsMono fixed top-5 right-24'
     >
       <Listbox value={selectedLanguage} onChange={changeLanguage}>
         <ListboxButton className={`rounded-md px-4 py-1 text-left ${buttonClasses[theme]}`}>
@@ -65,7 +61,7 @@ function LanguageSelector() {
               key={language.id}
               value={language}
               className={({ active }) =>
-                `cursor-pointer select-none px-2 py-1 text-left first:rounded-t-md last:rounded-b-md ${
+                `cursor-pointer px-2 py-1 text-left select-none first:rounded-t-md last:rounded-b-md ${
                   active ? activeClasses[theme] : inactiveClasses[theme]
                 }`
               }

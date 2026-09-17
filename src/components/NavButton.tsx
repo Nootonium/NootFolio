@@ -15,7 +15,6 @@ export function NavButton({
   const activeClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-teal-400',
-    rainbow: 'bg-rainbow-300',
   };
 
   const activeSection = isActive ? activeClasses[theme] : '';
@@ -26,8 +25,8 @@ export function NavButton({
       onClick={onClick}
       className={`tooltip tooltip-info flex w-auto flex-col items-center justify-center rounded-md p-2 sm:w-32 sm:p-1 ${activeSection}`}
     >
-      <Icon className='h-8 flex-shrink-0 sm:mr-1' />
-      <span className='sr-only font-JetBrainsMono text-lg tracking-tighter sm:not-sr-only'>
+      <Icon className='h-8 shrink-0 sm:mr-1' />
+      <span className='font-JetBrainsMono sr-only text-lg tracking-tighter sm:not-sr-only'>
         {text}
       </span>
     </button>

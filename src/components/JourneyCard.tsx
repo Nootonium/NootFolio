@@ -13,18 +13,16 @@ const JourneyCard = ({ journeyItem, onClick }: JourneyCardProps) => {
   const typeClasses = {
     light: 'text-fuchsia-600',
     dark: 'text-red-500',
-    rainbow: '',
   };
 
   const bgClasses = {
     light: 'bg-stone-300 hover:bg-stone-100 focus:bg-stone-200 text-black',
     dark: 'bg-stone-700 focus:bg-stone-600 text-white',
-    rainbow: 'bg-rainbow-300',
   };
 
   return (
     <div
-      className={`bg-sla w-5/12 cursor-pointer rounded-lg p-4 font-OpenSans shadow-lg ${bgClasses[theme]}`}
+      className={`bg-sla font-OpenSans w-5/12 cursor-pointer rounded-lg p-4 shadow-lg ${bgClasses[theme]}`}
       onClick={onClick}
     >
       <h2 className='text-xl font-bold'>{journeyItem.title}</h2>

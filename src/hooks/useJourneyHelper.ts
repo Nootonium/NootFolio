@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { JourneyItem } from '../types';
 
 export const useJourneyHelper = (timelineData: JourneyItem[]) => {
   const [selectedItem, setSelectedItem] = useState<JourneyItem | null>(null);
   const [isShowingModal, setIsShowingModal] = useState(false);
 
-  const getJourneyById = (id: string) => timelineData.find(item => item.id === id) || null;
+  const getJourneyById = useCallback(
+    (id: string) => timelineData.find(item => item.id === id) || null,
+    [timelineData],
+  );
 
   const setJourneyById = (id: string) => {
     const journey = getJourneyById(id);
@@ -32,7 +35,7 @@ export const useJourneyHelper = (timelineData: JourneyItem[]) => {
       if (journey) setSelectedItem(journey);
     }
     setIsShowingModal(!!journeyId);
-  }, []);
+  }, [getJourneyById]);
 
   return { selectedItem, setJourneyById, clearJourney, isShowingModal };
 };
