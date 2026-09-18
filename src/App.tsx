@@ -1,4 +1,4 @@
-import { RefObject, useRef, useState } from 'react';
+import { useRef, useState, type RefObject } from 'react';
 import { sendTrackingData } from './api';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,10 +12,10 @@ import background from './assets/pinguBg.webm';
 import LanguageSelector from './components/LanguageSelector';
 
 function App() {
-  const heroRef = useRef(null);
-  const aboutRef = useRef(null);
-  const journeyRef = useRef(null);
-  const skillsRef = useRef(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
+  const journeyRef = useRef<HTMLElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
   const activeSection = useScrollSpy([heroRef, aboutRef, journeyRef, skillsRef]);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const onOpen = () => {
@@ -24,7 +24,7 @@ function App() {
   };
   const onClose = () => setIsContactOpen(false);
 
-  const scrollToRef = (ref: RefObject<HTMLElement>) => {
+  const scrollToRef = (ref: RefObject<HTMLElement | null>) => {
     const element = ref.current;
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });

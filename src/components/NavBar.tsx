@@ -8,6 +8,7 @@ import {
 import { useTheme } from '../hooks/ThemeContext';
 import { NavButton } from './NavButton';
 import { useTranslation } from 'react-i18next';
+import type { RefObject } from 'react';
 
 function NavBar({
   activeSection,
@@ -17,12 +18,12 @@ function NavBar({
 }: {
   activeSection: string;
   openContact: () => void;
-  scrollToRef: (ref: React.RefObject<HTMLElement>) => void;
+  scrollToRef: (ref: RefObject<HTMLElement | null>) => void;
   refs: {
-    heroRef: React.RefObject<HTMLElement>;
-    aboutRef: React.RefObject<HTMLElement>;
-    journeyRef: React.RefObject<HTMLElement>;
-    skillsRef: React.RefObject<HTMLElement>;
+    heroRef: RefObject<HTMLElement | null>;
+    aboutRef: RefObject<HTMLElement | null>;
+    journeyRef: RefObject<HTMLElement | null>;
+    skillsRef: RefObject<HTMLElement | null>;
   };
 }) {
   const { theme } = useTheme();
