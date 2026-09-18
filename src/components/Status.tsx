@@ -1,6 +1,7 @@
 import { CheckCircleIcon, ClockIcon, BoltIcon, CalendarIcon } from '@heroicons/react/24/solid';
+import { ReactNode } from 'react';
 
-const statusAttributes: Record<string, { color: string; icon: JSX.Element }> = {
+const statusAttributes: Record<string, { color: string; icon: ReactNode }> = {
   completed: {
     color: 'text-green-500',
     icon: <CheckCircleIcon className='h-5 w-5 text-green-500' />,

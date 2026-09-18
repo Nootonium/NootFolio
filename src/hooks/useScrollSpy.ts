@@ -1,7 +1,7 @@
-import { useState, useEffect, RefObject, useRef } from 'react';
+import { useState, useEffect, useRef, type RefObject } from 'react';
 import { sendTrackingData } from '../api';
 
-function useScrollSpy(sections: RefObject<HTMLElement>[]) {
+function useScrollSpy(sections: RefObject<HTMLElement | null>[]) {
   const [activeSection, setActiveSection] = useState('');
   const visitedSections = useRef(new Set<string>());
 

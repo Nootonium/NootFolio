@@ -8,7 +8,7 @@ interface TypewriterProps {
   speed?: 'slow' | 'normal' | 'fast';
 }
 
-const Typewriter = ({ text, onComplete, speed = 'fast' }: TypewriterProps) => {
+const TypewriterAnimation = ({ text, onComplete, speed = 'fast' }: TypewriterProps) => {
   const [typedText, setTypedText] = useState('');
   const [index, setIndex] = useState(0);
 
@@ -33,11 +33,6 @@ const Typewriter = ({ text, onComplete, speed = 'fast' }: TypewriterProps) => {
     }
   }, [text, index, onComplete, msPerChar]);
 
-  useEffect(() => {
-    setTypedText('');
-    setIndex(0);
-  }, [text]);
-
   return (
     <p>
       {typedText}
@@ -45,5 +40,9 @@ const Typewriter = ({ text, onComplete, speed = 'fast' }: TypewriterProps) => {
     </p>
   );
 };
+
+const Typewriter = ({ text, onComplete, speed }: TypewriterProps) => (
+  <TypewriterAnimation key={text} text={text} onComplete={onComplete} speed={speed} />
+);
 
 export default Typewriter;

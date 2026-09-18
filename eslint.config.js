@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { reactRefresh } from 'eslint-plugin-react-refresh';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -39,7 +40,7 @@ export default [
       sourceType: 'module',
     },
 
-    plugins: ['react-refresh', 'prettier'],
+    plugins: ['prettier'],
 
     settings: {
       react: {
@@ -48,7 +49,6 @@ export default [
     },
 
     rules: {
-      'react-refresh/only-export-components': 'warn',
       'prettier/prettier': 'error',
     },
   }),

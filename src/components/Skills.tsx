@@ -82,10 +82,14 @@ function Skills({ active }: { active: boolean }) {
   }, [active]);
 
   useEffect(() => {
-    generateStars();
-    window.addEventListener('resize', generateStars);
+    const container = containerRef.current;
+    if (!container) return;
+
+    const resizeObserver = new ResizeObserver(generateStars);
+    resizeObserver.observe(container);
+
     return () => {
-      window.removeEventListener('resize', generateStars);
+      resizeObserver.disconnect();
     };
   }, []);
 
