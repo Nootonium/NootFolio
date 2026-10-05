@@ -1,54 +1,82 @@
 {
-  "programming_languages": [
-    { "id": "python", "level": 3 },
-    { "id": "javascript", "level": 2 },
-    { "id": "typescript", "level": 2 },
-    { "id": "java", "level": 2 },
-    { "id": "html", "level": 2 },
-    { "id": "css", "level": 2 },
-    { "id": "sql", "level": 2 }
+  "catalog": {
+    "python": { "label": "Python" },
+    "typescript": { "label": "TypeScript" },
+    "react": { "label": "React" },
+    "node": { "label": "Node.js" },
+
+    "fastapi": { "label": "FastAPI" },
+    "express": { "label": "Express" },
+    "trpc": { "label": "tRPC" },
+    "rest": { "label": "REST APIs" },
+
+    "tanstack_query": { "label": "TanStack Query" },
+    "vite": { "label": "Vite" },
+    "tailwindcss": { "label": "Tailwind CSS" },
+
+    "docker": { "label": "Docker" },
+    "linux": { "label": "Linux" },
+    "github_actions": { "label": "GitHub Actions" },
+    "terraform": { "label": "Terraform" },
+    "azure": { "label": "Azure" },
+    "aws": { "label": "AWS" },
+
+    "mongodb": { "label": "MongoDB" },
+    "redis": { "label": "Redis" },
+    "sql": { "label": "SQL" },
+    "pytest": { "label": "pytest" },
+    "vitest": { "label": "Vitest" },
+
+    "llm_applications": {
+      "label": "LLM Applications",
+      "translationKey": "skills.llm_applications"
+    },
+    "agentic_workflows": {
+      "label": "Agentic Workflows",
+      "translationKey": "skills.agentic_workflows"
+    },
+
+    "pytorch": { "label": "PyTorch" },
+
+    "java": { "label": "Java" },
+    "spring": { "label": "Spring" },
+    "django": { "label": "Django" },
+    "flask": { "label": "Flask" },
+    "vue": { "label": "Vue" },
+    "mysql": { "label": "MySQL" },
+    "nx": { "label": "Nx" }
+  },
+
+  "categories": [
+    {
+      "id": "core",
+      "skills": ["python", "typescript", "react", "node"]
+    },
+    {
+      "id": "backend",
+      "skills": ["fastapi", "express", "trpc", "rest"]
+    },
+    {
+      "id": "frontend",
+      "skills": ["react", "typescript", "tanstack_query", "vite", "tailwindcss"]
+    },
+    {
+      "id": "infrastructure",
+      "skills": ["docker", "linux", "github_actions", "terraform", "azure", "aws"]
+    }
   ],
-
-  "frontend_skills": [
-    { "id": "react", "level": 3 },
-    { "id": "vue", "level": 2 },
-    { "id": "bootstrap", "level": 2 },
-    { "id": "tailwindcss", "level": 3 }
-  ],
-
-  "backend_skills": [
-    { "id": "django", "level": 3 },
-    { "id": "flask", "level": 3 },
-    { "id": "node", "level": 3 },
-    { "id": "express", "level": 2 },
-    { "id": "spring", "level": 3 }
-  ],
-
-  "database_skills": [
-    { "id": "postgresql", "level": 3 },
-    { "id": "mysql", "level": 3 },
-    { "id": "mongodb", "level": 2 }
-  ],
-
-  "soft_skills": [
-    { "id": "problem-solving", "level": 3 },
-    { "id": "communication", "level": 3 },
-    { "id": "teamwork", "level": 3 },
-    { "id": "autonomy", "level": 3 }
-  ],
-
-  "other_skills": [
-    { "id": "git", "level": 3 },
-    { "id": "docker", "level": 2 },
-    { "id": "linux", "level": 3 },
-    { "id": "pytorch", "level": 2 },
-    { "id": "aws", "level": 2 }
-
-  ],
-
   "languages": [
-    { "id": "english", "level": 4 },
-    { "id": "spanish", "level": 3 },
-    { "id": "french", "level": 5 }
+    {
+      "id": "french",
+      "proficiency": "native"
+    },
+    {
+      "id": "english",
+      "proficiency": "professional"
+    },
+    {
+      "id": "spanish",
+      "proficiency": "conversational"
+    }
   ]
 }

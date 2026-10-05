@@ -1,60 +1,34 @@
 {
   "title": "Skills",
+  "description": "I build across the stack, from interfaces and APIs to infrastructure and deployment.",
+  "download_cv": "Download CV",
+  "animate": "Animate",
+
   "categories": {
-    "programming_languages": "Programming Languages",
-    "frontend_skills": "Frontend Skills",
-    "backend_skills": "Backend Skills",
-    "database_skills": "Database Skills",
-    "soft_skills": "Soft Skills",
-    "other_skills": "Other Skills",
+    "core": "Core Stack",
+    "backend": "Backend & APIs",
+    "frontend": "Frontend",
+    "infrastructure": "Infrastructure & Delivery",
+    "data_testing": "Data & Testing",
+    "ai": "AI & Automation",
+    "additional": "Additional Experience",
     "languages": "Languages"
   },
+
   "skills": {
-    "python": "Python",
-    "javascript": "Javascript",
-    "typescript": "TypeScript",
-    "java": "Java",
-    "html": "HTML",
-    "css": "CSS",
-    "sql": "SQL",
-
-    "react": "React",
-    "vue": "Vue",
-    "bootstrap": "Bootstrap",
-    "tailwindcss": "TailwindCSS",
-
-    "django": "Django",
-    "flask": "Flask",
-    "node": "Node",
-    "express": "Express",
-    "spring": "Spring",
-
-    "postgresql": "PostgreSQL",
-    "mysql": "MySQL",
-    "mongodb": "MongoDB",
-
-    "problem-solving": "Problem-Solving",
-    "communication": "Communication",
-    "teamwork": "Teamwork",
-    "autonomy": "Autonomy",
-
-    "git": "Git",
-    "docker": "Docker",
-    "linux": "Linux",
-    "pytorch": "PyTorch",
-    "aws": "AWS",
-
-    "english": "English",
-    "spanish": "Spanish",
-    "french": "French"
+    "llm_applications": "LLM Applications",
+    "agentic_workflows": "Agentic Workflows"
   },
-  "ranks": [
-    "youngling",
-    "padawan",
-    "knight",
-    "master",
-    "council_member",
-    "master_of_the_order",
-    "grand_master"
-  ]
+
+  "languages": {
+    "french": "French",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+
+  "proficiency": {
+    "native": "Native",
+    "professional": "Professional",
+    "conversational": "Conversational"
+  }
 }

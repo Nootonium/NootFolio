@@ -22,10 +22,9 @@ function ScrollDown({ targetRef, label = 'Scroll' }: ScrollDownProps) {
       type='button'
       onClick={scrollToNext}
       aria-label='Scroll to next section'
-      className='fixed bottom-28 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center opacity-70 transition-opacity hover:opacity-100'
+      className='fixed bottom-28 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center opacity-75 transition-opacity hover:opacity-100'
     >
-      <span className='mb-1 text-xs tracking-widest uppercase'>{label}</span>
-
+      <span className='font-JetBrainsMono mb-1 text-sm tracking-widest uppercase'>{label}</span>
       <svg
         className='h-5 w-5 animate-bounce'
         fill='none'

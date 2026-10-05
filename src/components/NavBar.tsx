@@ -43,12 +43,6 @@ function NavBar({
         onClick={() => scrollToRef(refs.heroRef)}
       />
       <NavButton
-        Icon={IdentificationIcon}
-        text={t('about')}
-        isActive={activeSection == 'about'}
-        onClick={() => scrollToRef(refs.aboutRef)}
-      />
-      <NavButton
         Icon={BriefcaseIcon}
         text={t('journey')}
         isActive={activeSection == 'journey'}
@@ -59,6 +53,12 @@ function NavBar({
         text={t('skills')}
         isActive={activeSection == 'skills'}
         onClick={() => scrollToRef(refs.skillsRef)}
+      />
+      <NavButton
+        Icon={IdentificationIcon}
+        text={t('about')}
+        isActive={activeSection == 'about'}
+        onClick={() => scrollToRef(refs.aboutRef)}
       />
       <NavButton
         Icon={EnvelopeIcon}

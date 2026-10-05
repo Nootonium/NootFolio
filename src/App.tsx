@@ -36,11 +36,11 @@ function App() {
 
   const nextSectionRef =
     activeSection === 'home'
-      ? aboutRef
-      : activeSection === 'about'
-        ? journeyRef
-        : activeSection === 'journey'
-          ? skillsRef
+      ? journeyRef
+      : activeSection === 'journey'
+        ? skillsRef
+        : activeSection === 'skills'
+          ? aboutRef
           : null;
 
   return (
@@ -72,14 +72,14 @@ function App() {
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>
-        <section ref={aboutRef} id='about'>
-          <About />
-        </section>
         <section ref={journeyRef} id='journey'>
           <Journey />
         </section>
         <section ref={skillsRef} id='skills'>
           <Skills active={activeSection === 'skills'} />
+        </section>
+        <section ref={aboutRef} id='about'>
+          <About />
         </section>
       </main>
       <ScrollDown targetRef={nextSectionRef} />
