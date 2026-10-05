@@ -12,7 +12,7 @@ function ThemeToggle() {
   }, [isDarkMode, toggleTheme]);
 
   return (
-    <div data-tip='theme' className='tooltip tooltip-left tooltip-info fixed top-6 right-6'>
+    <div data-tip='theme' className='tooltip tooltip-bottom tooltip-info fixed top-6 right-6'>
       <Switch
         checked={isDarkMode}
         onChange={() => setIsDarkMode(!isDarkMode)}

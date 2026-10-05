@@ -1,6 +1,7 @@
 import { JourneyItem } from '../types';
 import { useTheme } from '../hooks/ThemeContext';
 import { useJourneyHelper } from '../hooks/useJourneyHelper';
+import { useTranslation } from 'react-i18next';
 import JourneyCard from './JourneyCard';
 import JourneyModal from './JourneyModal';
 import journeyData from '../data/journey.json';
@@ -8,6 +9,8 @@ import { sendTrackingData } from '../api';
 
 const Journey = () => {
   const { theme } = useTheme();
+  const { t } = useTranslation('journey');
+
   const timelineData = journeyData.items as JourneyItem[];
 
   const sortedTimelineData = [...timelineData].sort(
@@ -28,13 +31,13 @@ const Journey = () => {
       className={`relative flex min-h-screen flex-col items-center py-16 text-white opacity-90 ${bgClasses[theme]}`}
     >
       <h1
-        className={`font-JetBrainsMono mb-8 text-4xl font-bold sm:text-6xl ${headingClasses[theme]}`}
+        className={`font-JetBrainsMono relative z-10 mb-8 text-4xl font-bold sm:text-6xl ${headingClasses[theme]}`}
       >
-        Journey
+        {t('title')}
       </h1>
       {/* Timeline Line */}
       <div
-        className={`absolute top-28 left-1/2 h-full w-1 -translate-x-1/2 transform ${lineClasses[theme]}`}
+        className={`absolute top-40 bottom-0 left-1/2 w-1 -translate-x-1/2 transform ${lineClasses[theme]}`}
       ></div>
       {/* Timeline Items */}
       <div className='w-full max-w-2xl'>

@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Journey from './components/Journey';
 import NavBar from './components/NavBar';
+import ScrollDown from './components/ScrollDown';
 import useScrollSpy from './hooks/useScrollSpy';
 import ThemeToggle from './components/ThemeToggle';
 import background from './assets/pinguBg.webm';
@@ -32,6 +33,15 @@ function App() {
       console.error('Element not found');
     }
   };
+
+  const nextSectionRef =
+    activeSection === 'home'
+      ? aboutRef
+      : activeSection === 'about'
+        ? journeyRef
+        : activeSection === 'journey'
+          ? skillsRef
+          : null;
 
   return (
     <>
@@ -72,6 +82,7 @@ function App() {
           <Skills active={activeSection === 'skills'} />
         </section>
       </main>
+      <ScrollDown targetRef={nextSectionRef} />
       <Contact isContactOpen={isContactOpen} onClose={onClose} />
     </>
   );

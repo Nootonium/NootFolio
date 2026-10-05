@@ -21,6 +21,9 @@ import esdescriptions from './locales/es/descriptions.json';
 import enlabels from './locales/en/labels.json';
 import frlabels from './locales/fr/labels.json';
 import eslabels from './locales/es/labels.json';
+import enJourney from './locales/en/journey.json';
+import frJourney from './locales/fr/journey.json';
+import esJourney from './locales/es/journey.json';
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -32,6 +35,7 @@ i18n.use(initReactI18next).init({
       ranks: enRanks,
       descriptions: endescriptions,
       labels: enlabels,
+      journey: enJourney,
     },
     fr: {
       navbar: frNavbar,
@@ -41,6 +45,7 @@ i18n.use(initReactI18next).init({
       ranks: frRanks,
       descriptions: frdescriptions,
       labels: frlabels,
+      journey: frJourney,
     },
     es: {
       navbar: esNavbar,
@@ -50,6 +55,7 @@ i18n.use(initReactI18next).init({
       ranks: esRanks,
       descriptions: esdescriptions,
       labels: eslabels,
+      journey: esJourney,
     },
   },
   lng: 'en',

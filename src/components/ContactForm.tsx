@@ -40,13 +40,13 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
       <input
         {...register('name', { required: true })}
         placeholder='Name'
-        className={`input my-2 rounded-sm border p-2`}
+        className={`input my-2 w-full rounded-sm border p-2`}
       />
       {errors.name && <Alert message='This field is required' type='error' />}
       <input
         {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
         placeholder='Email'
-        className={`input my-2 rounded-sm border p-2`}
+        className={`input my-2 w-full rounded-sm border p-2`}
       />
       {errors.email && <Alert message='Please enter a valid email address' type='error' />}
       <textarea
@@ -58,7 +58,7 @@ function ContactForm({ onSubmit }: { onSubmit: (data: MessageData) => void }) {
           },
         })}
         placeholder='Message'
-        className={`textarea my-2 h-48 max-h-64 rounded-sm border p-2`}
+        className={`textarea my-2 h-48 max-h-64 w-full rounded-sm border p-2`}
         onChange={handleMessageChange}
       />
       <div className='text-right text-sm text-gray-500'>{messageLength} / 500 characters</div>
