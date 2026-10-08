@@ -12,17 +12,15 @@ function ScrollDown({ targetRef, label = 'Scroll' }: ScrollDownProps) {
       block: 'start',
     });
   };
-
   if (!targetRef) {
     return null;
   }
-
   return (
     <button
       type='button'
       onClick={scrollToNext}
       aria-label='Scroll to next section'
-      className='fixed bottom-28 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center opacity-75 transition-opacity hover:opacity-100'
+      className='fixed bottom-20 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center opacity-75 transition-opacity hover:opacity-100 sm:bottom-28'
     >
       <span className='font-JetBrainsMono mb-1 text-sm tracking-widest uppercase'>{label}</span>
       <svg

@@ -12,9 +12,7 @@ import esNavbar from './locales/es/navbar.json';
 import enSkills from './locales/en/skills.json';
 import frSkills from './locales/fr/skills.json';
 import esSkills from './locales/es/skills.json';
-import enRanks from './locales/en/ranks.json';
-import frRanks from './locales/fr/ranks.json';
-import esRanks from './locales/es/ranks.json';
+
 import endescriptions from './locales/en/descriptions.json';
 import frdescriptions from './locales/fr/descriptions.json';
 import esdescriptions from './locales/es/descriptions.json';
@@ -32,7 +30,6 @@ i18n.use(initReactI18next).init({
       hero: enHero,
       about: enAbout,
       skills: enSkills,
-      ranks: enRanks,
       descriptions: endescriptions,
       labels: enlabels,
       journey: enJourney,
@@ -42,7 +39,6 @@ i18n.use(initReactI18next).init({
       hero: frHero,
       about: frAbout,
       skills: frSkills,
-      ranks: frRanks,
       descriptions: frdescriptions,
       labels: frlabels,
       journey: frJourney,
@@ -52,7 +48,6 @@ i18n.use(initReactI18next).init({
       hero: esHero,
       about: esAbout,
       skills: esSkills,
-      ranks: esRanks,
       descriptions: esdescriptions,
       labels: eslabels,
       journey: esJourney,

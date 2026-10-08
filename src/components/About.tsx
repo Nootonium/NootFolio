@@ -33,6 +33,7 @@ function About() {
         <div className='font-OpenSans text-justify text-lg leading-normal tracking-tight'>
           <p className='mb-2'>{t('intro')}</p>
           <p className='mb-2'>{t('body')}</p>
+          <p className='mb-2'>{t('conclusion')}</p>
         </div>
         <div className='flex space-x-4 pt-2'>
           <a

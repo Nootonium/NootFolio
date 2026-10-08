@@ -2,7 +2,8 @@
   "title": "Skills",
   "description": "I build across the stack, from interfaces and APIs to infrastructure and deployment.",
   "download_cv": "Download CV",
-  "animate": "Animate",
+  "start_crawl": "Start crawl",
+  "stop_crawl": "Stop crawl",
 
   "categories": {
     "core": "Core Stack",

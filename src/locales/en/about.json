@@ -1,5 +1,6 @@
 {
-  "title": "About Me",
-  "intro": "I'm Daniel. I enjoy building software and understanding how all the pieces fit together, from the interface to the backend and the infrastructure running it. My projects often start with something I want to use myself, like Nootflix, a media system I build and run across my home server and the cloud. I've also worked as a functional analyst intern at Desjardins.",
-  "body": "Outside of software, I spend my time trail running, training for endurance events, tinkering with hardware, and reading science fiction. I like figuring out how things work, trying ideas, and having something tangible to show for the effort."
+  "title": "A Bit About Me",
+  "intro": "I like building things end to end and understanding what happens beyond the code itself, from how the pieces fit together to how a system behaves once it's deployed and being used. I tend to learn best by building, breaking things, fixing them, and gradually turning an idea into something real.",
+  "body": "That curiosity goes beyond software too. I've taught myself enough about cars to replace a BMW steering rack without a mechanic, and I enjoy tinkering with hardware for the same reason. Outside of that, I spend time trail running, training for endurance events, playing video games, and reading science fiction. I like figuring out how things work, pushing myself a little further than last time, and having something tangible to show for the effort.",
+  "conclusion": "If you'd like to talk about a role, a project, or anything else, please don't hesitate to use the contact form. I'm always happy to hear from people."
 }
