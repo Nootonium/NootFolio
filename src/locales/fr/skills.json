@@ -1,60 +1,35 @@
 {
   "title": "Compétences",
+  "description": "Je travaille sur l'ensemble de la stack, des interfaces et API jusqu'à l'infrastructure et au déploiement.",
+  "download_cv": "Télécharger le CV",
+  "start_crawl": "Lancer le défilement",
+  "stop_crawl": "Arrêter le défilement",
+
   "categories": {
-    "programming_languages": "Langages de programmation",
-    "frontend_skills": "Compétences frontend",
-    "backend_skills": "Compétences backend",
-    "database_skills": "Compétences en base de données",
-    "soft_skills": "Qualités personnelles",
-    "other_skills": "Autres compétences",
+    "core": "Stack principale",
+    "backend": "Backend et API",
+    "frontend": "Frontend",
+    "infrastructure": "Infrastructure et déploiement",
+    "data_testing": "Données et tests",
+    "ai": "IA et automatisation",
+    "additional": "Expérience complémentaire",
     "languages": "Langues"
   },
+
   "skills": {
-    "python": "Python",
-    "javascript": "Javascript",
-    "typescript": "TypeScript",
-    "java": "Java",
-    "html": "HTML",
-    "css": "CSS",
-    "sql": "SQL",
-
-    "react": "React",
-    "vue": "Vue",
-    "bootstrap": "Bootstrap",
-    "tailwindcss": "TailwindCSS",
-
-    "django": "Django",
-    "flask": "Flask",
-    "node": "Node",
-    "express": "Express",
-    "spring": "Spring",
-
-    "postgresql": "PostgreSQL",
-    "mysql": "MySQL",
-    "mongodb": "MongoDB",
-
-    "problem-solving": "Résolution de problèmes",
-    "communication": "Communication",
-    "teamwork": "Travail d'équipe",
-    "autonomy": "Autonomie",
-
-    "git": "Git",
-    "docker": "Docker",
-    "linux": "Linux",
-    "pytorch": "PyTorch",
-    "aws": "AWS",
-
-    "english": "Anglais",
-    "spanish": "Espagnol",
-    "french": "Français"
+    "llm_applications": "Applications basées sur les LLM",
+    "agentic_workflows": "Workflows agentiques"
   },
-  "ranks": [
-    "Jeune padawan",
-    "Padawan",
-    "Chevalier",
-    "Maître",
-    "Membre du Conseil",
-    "Maître de l'Ordre",
-    "Grand Maître"
-  ]
+
+  "languages": {
+    "french": "Français",
+    "english": "Anglais",
+    "spanish": "Espagnol"
+  },
+
+  "proficiency": {
+    "native": "Langue maternelle",
+    "professional": "Professionnel",
+    "conversational": "Conversationnel"
+  }
 }

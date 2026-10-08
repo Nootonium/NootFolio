@@ -17,12 +17,12 @@ const JourneyCard = ({ journeyItem, onClick }: JourneyCardProps) => {
 
   const bgClasses = {
     light: 'bg-stone-300 hover:bg-stone-100 focus:bg-stone-200 text-black',
-    dark: 'bg-stone-700 focus:bg-stone-600 text-white',
+    dark: 'bg-stone-700 hover:bg-stone-600 focus:bg-stone-600 text-white',
   };
 
   return (
-    <div
-      className={`bg-sla font-OpenSans w-5/12 cursor-pointer rounded-lg p-4 shadow-lg ${bgClasses[theme]}`}
+    <button
+      className={`font-OpenSans w-5/12 cursor-pointer rounded-lg p-4 shadow-lg ${bgClasses[theme]}`}
       onClick={onClick}
     >
       <h2 className='text-xl font-bold'>{journeyItem.title}</h2>
@@ -32,7 +32,7 @@ const JourneyCard = ({ journeyItem, onClick }: JourneyCardProps) => {
       <p className='text-sm'>
         {`${formatDate(journeyItem.start_date)} (${humanizeDate(journeyItem.start_date)})`}
       </p>
-    </div>
+    </button>
   );
 };
 

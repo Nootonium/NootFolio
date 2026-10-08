@@ -17,7 +17,18 @@
       "id": "Ugram",
       "type": "project",
       "title": "Ugram",
-      "technologies": ["React", "Node.js", "Express", "MongoDB", "Jest", "GitHub Actions", "TypeScript", "AWS", "Docker", "tRPC"],
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Jest",
+        "GitHub Actions",
+        "TypeScript",
+        "AWS",
+        "Docker",
+        "tRPC"
+      ],
       "status": "completed",
       "links": {
         "live": "https://d1scz8xo84js7t.cloudfront.net",
@@ -33,7 +44,15 @@
       "id": "CADE",
       "type": "project",
       "title": "C.A.D.E. - Comprehensive Automated Digital E-butler",
-      "technologies": ["Node.js", "Express", "MongoDB", "Jest", "Winston", "GitHub Actions", "TypeScript"],
+      "technologies": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Jest",
+        "Winston",
+        "GitHub Actions",
+        "TypeScript"
+      ],
       "status": "active",
       "links": {
         "repo": "https://github.com/Nootonium/CADEMK0"
@@ -58,7 +77,18 @@
       "type": "experience",
       "title": "Analyste Fonctionnel",
       "company": "Desjardins",
-      "technologies": ["Angular", "Node.js", "Flask", "MongoDB", "Docker", "Camunda", "Jira", "Confluence", "Java", "Spring Boot"],
+      "technologies": [
+        "Angular",
+        "Node.js",
+        "Flask",
+        "MongoDB",
+        "Docker",
+        "Camunda",
+        "Jira",
+        "Confluence",
+        "Java",
+        "Spring Boot"
+      ],
       "status": "completed",
       "experienceType": "internship",
       "links": {
@@ -71,9 +101,25 @@
       "id": "Nootflix",
       "type": "project",
       "title": "Nootflix",
-      "technologies": ["Python", "Flask", "Poetry", "Docker", "ffmpeg"],
-      "status": "in-progress",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "tRPC",
+        "Python",
+        "FastAPI",
+        "MongoDB",
+        "Docker",
+        "ffmpeg",
+        "Jellyfin",
+        "Terraform",
+        "Azure",
+        "Cloudflare",
+        "GitHub Actions"
+      ],
+      "status": "active",
       "links": {
+        "live": "https://nootflix.pingusquad.ca"
       },
       "start_date": "2025-01-28"
     }

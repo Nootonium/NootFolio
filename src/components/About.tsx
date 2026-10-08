@@ -21,8 +21,10 @@ function About() {
   };
 
   return (
-    <div className={`flex min-h-screen snap-start justify-center ${aboutClasses[theme]}`}>
-      <div className='mx-4 max-w-xl py-16 lg:mx-auto'>
+    <div
+      className={`flex min-h-screen snap-start items-center justify-center ${aboutClasses[theme]}`}
+    >
+      <div className='mx-4 max-w-xl py-12 lg:mx-auto'>
         <h1
           className={`font-JetBrainsMono mb-1 text-4xl tracking-tighter sm:text-6xl ${headingClasses[theme]}`}
         >
@@ -31,7 +33,7 @@ function About() {
         <div className='font-OpenSans text-justify text-lg leading-normal tracking-tight'>
           <p className='mb-2'>{t('intro')}</p>
           <p className='mb-2'>{t('body')}</p>
-          <p className=''>{t('conclusion')}</p>
+          <p className='mb-2'>{t('conclusion')}</p>
         </div>
         <div className='flex space-x-4 pt-2'>
           <a

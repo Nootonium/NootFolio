@@ -21,6 +21,6 @@
     ]
   },
   "Nootflix": {
-    "description": "Working on a replacement for streaming services like Netflix, Disney+, and Amazon Prime Video that will be used by a small group of friends. Currently working on the backend APIs"
+    "description": "A deployed full-stack personal media platform for discovering, requesting, processing, and streaming movies and TV shows. Nootflix combines a React frontend, a TypeScript/tRPC gateway, and a Python media-processing backend that integrates with Jellyfin and automates media normalization, metadata generation, and transcoding with ffmpeg."
   }
 }

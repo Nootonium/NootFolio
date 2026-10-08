@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Journey from './components/Journey';
 import NavBar from './components/NavBar';
+import ScrollDown from './components/ScrollDown';
 import useScrollSpy from './hooks/useScrollSpy';
 import ThemeToggle from './components/ThemeToggle';
 import background from './assets/pinguBg.webm';
@@ -32,6 +33,15 @@ function App() {
       console.error('Element not found');
     }
   };
+
+  const nextSectionRef =
+    activeSection === 'home'
+      ? journeyRef
+      : activeSection === 'journey'
+        ? skillsRef
+        : activeSection === 'skills'
+          ? aboutRef
+          : null;
 
   return (
     <>
@@ -62,16 +72,17 @@ function App() {
         <section ref={heroRef} id='home'>
           <Hero openContact={onOpen} />
         </section>
-        <section ref={aboutRef} id='about'>
-          <About />
-        </section>
         <section ref={journeyRef} id='journey'>
           <Journey />
         </section>
         <section ref={skillsRef} id='skills'>
           <Skills active={activeSection === 'skills'} />
         </section>
+        <section ref={aboutRef} id='about'>
+          <About />
+        </section>
       </main>
+      <ScrollDown targetRef={nextSectionRef} />
       <Contact isContactOpen={isContactOpen} onClose={onClose} />
     </>
   );

@@ -1,17 +1,65 @@
-.crawl {
-  transform: perspective(250px) rotateX(20deg);
-  animation: scrollCrawl  var(--crawl-duration, 90s) linear infinite;
+.skills-crawl-viewport {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+
+  overflow: hidden;
+
+  perspective: 450px;
+  perspective-origin: 50% 15%;
 }
-@keyframes scrollCrawl {
-  0% {
-    transform: perspective(250px) rotateX(20deg) translateY(500px);
-    opacity: 1;
+
+/**
+ * This is the long tilted plane the text sits on.
+ */
+.skills-crawl-plane {
+  position: absolute;
+  top: 100%;
+
+  width: min(1100px, 90vw);
+
+  transform-origin: 50% 100%;
+  transform: rotateX(55deg);
+
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/**
+ * This element only moves.
+ * It no longer controls the perspective angle.
+ */
+.skills-crawl {
+  width: 100%;
+
+  will-change: transform;
+  backface-visibility: hidden;
+
+  animation: skills-crawl 45s linear forwards;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+@keyframes skills-crawl {
+  from {
+    transform: translate3d(0, 70vh, 0);
   }
-  50% {
-    opacity: 1;
+
+  to {
+    transform: translate3d(0, -5200px, 0);
   }
-  100% {
-    transform: perspective(250px) rotateX(20deg) translateY(-3500px);
-    opacity: 0;
+}
+
+.skills-crawl-paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-crawl {
+    animation-duration: 1ms;
   }
 }
